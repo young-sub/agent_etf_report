@@ -1,0 +1,23 @@
+{
+  "schema_version": "agent_treport.active_strategy_seed.v1",
+  "entries": [
+    {
+      "source_provider_id": "sol",
+      "provider_etf_id": "211099",
+      "is_active_strategy_etf": true,
+      "active_strategy_confidence": "high"
+    },
+    {
+      "source_provider_id": "sol",
+      "provider_etf_id": "210920",
+      "is_active_strategy_etf": false,
+      "active_strategy_confidence": "high"
+    },
+    {
+      "source_provider_id": "kodex",
+      "provider_etf_id": "2ETF35",
+      "is_active_strategy_etf": false,
+      "active_strategy_confidence": "high"
+    }
+  ]
+}

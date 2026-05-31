@@ -1,0 +1,9 @@
+# Daily Operational External Data Approval
+
+Accepted. Agent TReport daily operation treats fresh live data acquisition and model-backed report generation as the normal path for producing a current pre-publish preview, but that path exports workspace-derived holdings, target, evidence, and report context outside the local workspace. A durable `PrePublishExternalDataApproval` profile records operator approval for the disclosed daily boundary scopes: live source catalog acquisition, live holdings acquisition, live external evidence collection, and model export.
+
+The approval profile authorizes a disclosed boundary shape rather than one specific trading day's changing ETF, holdings, or ticker values. Reapproval is required when the approved provider/model set, data classes, excluded raw fields, report/model export scope, maximum target-count bound, live SourceProvider cohort, approval status, or optional expiry no longer covers the run; narrower runs inside the approved bounds can proceed without repeated approval prompts.
+
+The implementation writes a path-safe preflight disclosure and a sibling pending approval template before guarded export paths proceed. Missing, pending, revoked, expired, tampered, or insufficient approval stops before external provider calls or real Codex model calls. Blocked pre-publish preview writes a failed `pre_publish_handoff.json` with `reason="external_data_approval_required"`, approval summary, preflight/template references, and no Telegram delivery. Staged commands write command-specific approval block summaries.
+
+Telegram delivery and `live_source_baseline` remain separate approvals. Telegram delivery has delivery, receipt, duplicate-send, and retry semantics outside pre-publish preview. `live_source_baseline` is an initial, recovery, or bulk backfill operation rather than normal daily pre-publish closure.

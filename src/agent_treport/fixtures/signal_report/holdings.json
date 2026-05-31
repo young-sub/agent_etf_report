@@ -1,0 +1,317 @@
+{
+  "focus_etf_id": "etf_focus_ai",
+  "snapshots": {
+    "as_of_date": "2026-05-08",
+    "previous_date": "2026-05-01",
+    "current_date": "2026-05-08",
+    "lookback_days": 7,
+    "universe": "fixture_active_etf_universe",
+    "etfs": [
+      {
+        "etf_id": "etf_focus_ai",
+        "etf_name": "AI Innovation Active ETF",
+        "brand_id": "brand_alpha",
+        "source_provider_id": "provider_fixture",
+        "previous": [
+          {
+            "security_id": "sec_nvda",
+            "ticker": "NVDA",
+            "name": "NVIDIA Corp.",
+            "market": "US",
+            "sector": "Information Technology",
+            "theme": "AI infrastructure",
+            "country": "US",
+            "weight_percent": 6.1,
+            "shares": 1200,
+            "market_value_krw": 180000000,
+            "price_krw": 150000
+          },
+          {
+            "security_id": "sec_pltr",
+            "ticker": "PLTR",
+            "name": "Palantir Technologies",
+            "market": "US",
+            "sector": "Information Technology",
+            "theme": "Data platforms",
+            "country": "US",
+            "weight_percent": 5.0,
+            "shares": 3000,
+            "market_value_krw": 90000000,
+            "price_krw": 30000
+          },
+          {
+            "security_id": "sec_tsla",
+            "ticker": "TSLA",
+            "name": "Tesla Inc.",
+            "market": "US",
+            "sector": "Consumer Discretionary",
+            "theme": "Autonomous mobility",
+            "country": "US",
+            "weight_percent": 2.0,
+            "shares": 400,
+            "market_value_krw": 60000000,
+            "price_krw": 150000
+          },
+          {
+            "security_id": "sec_cash",
+            "ticker": "CASH",
+            "name": "Cash and short-term instruments",
+            "market": null,
+            "sector": "Cash",
+            "theme": "Cash",
+            "country": null,
+            "weight_percent": 3.0,
+            "shares": null,
+            "market_value_krw": 45000000,
+            "price_krw": null,
+            "is_cash": true
+          }
+        ],
+        "current": [
+          {
+            "security_id": "sec_nvda",
+            "ticker": "NVDA",
+            "name": "NVIDIA Corp.",
+            "market": "US",
+            "sector": "Information Technology",
+            "theme": "AI infrastructure",
+            "country": "US",
+            "weight_percent": 7.4,
+            "shares": 1500,
+            "market_value_krw": 240000000,
+            "price_krw": 160000
+          },
+          {
+            "security_id": "sec_pltr",
+            "ticker": "PLTR",
+            "name": "Palantir Technologies",
+            "market": "US",
+            "sector": "Information Technology",
+            "theme": "Data platforms",
+            "country": "US",
+            "weight_percent": 3.8,
+            "shares": 2600,
+            "market_value_krw": 78000000,
+            "price_krw": 30000
+          },
+          {
+            "security_id": "sec_tsla",
+            "ticker": "TSLA",
+            "name": "Tesla Inc.",
+            "market": "US",
+            "sector": "Consumer Discretionary",
+            "theme": "Autonomous mobility",
+            "country": "US",
+            "weight_percent": 3.1,
+            "shares": 620,
+            "market_value_krw": 93000000,
+            "price_krw": 150000
+          },
+          {
+            "security_id": "sec_meta",
+            "ticker": "META",
+            "name": "Meta Platforms",
+            "market": "US",
+            "sector": "Communication Services",
+            "theme": "AI platforms",
+            "country": "US",
+            "weight_percent": 1.0,
+            "shares": 100,
+            "market_value_krw": 50000000,
+            "price_krw": 500000
+          },
+          {
+            "security_id": "sec_cash",
+            "ticker": "CASH",
+            "name": "Cash and short-term instruments",
+            "market": null,
+            "sector": "Cash",
+            "theme": "Cash",
+            "country": null,
+            "weight_percent": 2.2,
+            "shares": null,
+            "market_value_krw": 33000000,
+            "price_krw": null,
+            "is_cash": true
+          }
+        ]
+      },
+      {
+        "etf_id": "etf_robotics_growth",
+        "etf_name": "Robotics Growth Active ETF",
+        "brand_id": "brand_beta",
+        "source_provider_id": "provider_fixture",
+        "previous": [
+          {
+            "security_id": "sec_nvda",
+            "ticker": "NVDA",
+            "name": "NVIDIA Corp.",
+            "market": "US",
+            "sector": "Information Technology",
+            "theme": "AI infrastructure",
+            "country": "US",
+            "weight_percent": 4.2,
+            "shares": 900,
+            "market_value_krw": 135000000,
+            "price_krw": 150000
+          },
+          {
+            "security_id": "sec_pltr",
+            "ticker": "PLTR",
+            "name": "Palantir Technologies",
+            "market": "US",
+            "sector": "Information Technology",
+            "theme": "Data platforms",
+            "country": "US",
+            "weight_percent": 4.6,
+            "shares": 2500,
+            "market_value_krw": 75000000,
+            "price_krw": 30000
+          },
+          {
+            "security_id": "sec_meta",
+            "ticker": "META",
+            "name": "Meta Platforms",
+            "market": "US",
+            "sector": "Communication Services",
+            "theme": "AI platforms",
+            "country": "US",
+            "weight_percent": 2.0,
+            "shares": 180,
+            "market_value_krw": 90000000,
+            "price_krw": 500000
+          }
+        ],
+        "current": [
+          {
+            "security_id": "sec_nvda",
+            "ticker": "NVDA",
+            "name": "NVIDIA Corp.",
+            "market": "US",
+            "sector": "Information Technology",
+            "theme": "AI infrastructure",
+            "country": "US",
+            "weight_percent": 5.7,
+            "shares": 1100,
+            "market_value_krw": 176000000,
+            "price_krw": 160000
+          },
+          {
+            "security_id": "sec_pltr",
+            "ticker": "PLTR",
+            "name": "Palantir Technologies",
+            "market": "US",
+            "sector": "Information Technology",
+            "theme": "Data platforms",
+            "country": "US",
+            "weight_percent": 3.2,
+            "shares": 2200,
+            "market_value_krw": 66000000,
+            "price_krw": 30000
+          },
+          {
+            "security_id": "sec_meta",
+            "ticker": "META",
+            "name": "Meta Platforms",
+            "market": "US",
+            "sector": "Communication Services",
+            "theme": "AI platforms",
+            "country": "US",
+            "weight_percent": 2.8,
+            "shares": 210,
+            "market_value_krw": 105000000,
+            "price_krw": 500000
+          }
+        ]
+      },
+      {
+        "etf_id": "etf_cloud_disruption",
+        "etf_name": "Cloud Disruption Active ETF",
+        "brand_id": "brand_beta",
+        "source_provider_id": "provider_fixture",
+        "previous": [
+          {
+            "security_id": "sec_pltr",
+            "ticker": "PLTR",
+            "name": "Palantir Technologies",
+            "market": "US",
+            "sector": "Information Technology",
+            "theme": "Data platforms",
+            "country": "US",
+            "weight_percent": 3.3,
+            "shares": 1600,
+            "market_value_krw": 48000000,
+            "price_krw": 30000
+          },
+          {
+            "security_id": "sec_msft",
+            "ticker": "MSFT",
+            "name": "Microsoft Corp.",
+            "market": "US",
+            "sector": "Information Technology",
+            "theme": "Cloud platforms",
+            "country": "US",
+            "weight_percent": 5.5,
+            "shares": 500,
+            "market_value_krw": 200000000,
+            "price_krw": 400000
+          }
+        ],
+        "current": [
+          {
+            "security_id": "sec_nvda",
+            "ticker": "NVDA",
+            "name": "NVIDIA Corp.",
+            "market": "US",
+            "sector": "Information Technology",
+            "theme": "AI infrastructure",
+            "country": "US",
+            "weight_percent": 1.2,
+            "shares": 120,
+            "market_value_krw": 19200000,
+            "price_krw": 160000
+          },
+          {
+            "security_id": "sec_pltr",
+            "ticker": "PLTR",
+            "name": "Palantir Technologies",
+            "market": "US",
+            "sector": "Information Technology",
+            "theme": "Data platforms",
+            "country": "US",
+            "weight_percent": 1.7,
+            "shares": 1000,
+            "market_value_krw": 30000000,
+            "price_krw": 30000
+          },
+          {
+            "security_id": "sec_msft",
+            "ticker": "MSFT",
+            "name": "Microsoft Corp.",
+            "market": "US",
+            "sector": "Information Technology",
+            "theme": "Cloud platforms",
+            "country": "US",
+            "weight_percent": 5.0,
+            "shares": 490,
+            "market_value_krw": 196000000,
+            "price_krw": 400000
+          },
+          {
+            "security_id": "sec_unmapped_ai_basket",
+            "ticker": null,
+            "name": "Unmapped AI Basket",
+            "market": "US",
+            "sector": null,
+            "theme": null,
+            "country": null,
+            "weight_percent": 0.9,
+            "shares": 90,
+            "market_value_krw": 9000000,
+            "price_krw": null
+          }
+        ]
+      }
+    ]
+  }
+}

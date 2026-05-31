@@ -11,6 +11,9 @@ requires-python = ">=3.12"
 dependencies = [
     "agent-pack",
     "agent-pack-docs",
+    "pydantic>=2.0",
+    "python-dotenv>=1.0",
+    "requests>=2.32",
 ]
 
 [project.scripts]
@@ -21,7 +24,7 @@ packages = ["src/agent_treport"]
 dev-mode-dirs = ["src"]
 
 [tool.hatch.build.targets.sdist]
-only-include = ["src/agent_treport", "README.md", "pyproject.toml"]
+only-include = ["src/agent_treport", "data/agent_treport", "README.md", "pyproject.toml"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
@@ -29,8 +32,12 @@ pythonpath = ["src"]
 addopts = "-p no:cacheprovider"
 
 [tool.ruff]
-line-length = 88
+line-length = 100
 target-version = "py312"
+extend-exclude = ["pip-*", "pytest-cache-files-*", ".pytest-basetemp-*", "pytest-of-*"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
 
 [tool.pyright]
 pythonVersion = "3.12"

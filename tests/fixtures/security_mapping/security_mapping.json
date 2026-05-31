@@ -1,0 +1,17 @@
+{
+  "schema_version": "agent_treport.security_mapping.v1",
+  "mappings": [
+    {
+      "security_id": "US67066G1040",
+      "ticker": "NVDA"
+    },
+    {
+      "security_id": "US88160R1014",
+      "ticker": "TSLA"
+    },
+    {
+      "security_id": "KR7000000001",
+      "ticker": "Korea Equity A"
+    }
+  ]
+}

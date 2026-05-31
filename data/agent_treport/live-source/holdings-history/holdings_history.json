@@ -1,0 +1,59 @@
+{
+  "dates": [
+    "2026-05-15",
+    "2026-05-14",
+    "2026-05-13",
+    "2026-05-12",
+    "2026-05-11",
+    "2026-04-20",
+    "2025-06-05",
+    "2025-06-04"
+  ],
+  "partitions": {
+    "2025-06-04": {
+      "file": "holdings_history.json.parts/2025-06-04.jsonl",
+      "record_count": 20,
+      "snapshot_count": 1
+    },
+    "2025-06-05": {
+      "file": "holdings_history.json.parts/2025-06-05.jsonl",
+      "record_count": 23,
+      "snapshot_count": 1
+    },
+    "2026-04-20": {
+      "file": "holdings_history.json.parts/2026-04-20.jsonl",
+      "record_count": 352,
+      "snapshot_count": 1
+    },
+    "2026-05-11": {
+      "file": "holdings_history.json.parts/2026-05-11.jsonl",
+      "record_count": 2761,
+      "snapshot_count": 72
+    },
+    "2026-05-12": {
+      "file": "holdings_history.json.parts/2026-05-12.jsonl",
+      "record_count": 4434,
+      "snapshot_count": 90
+    },
+    "2026-05-13": {
+      "file": "holdings_history.json.parts/2026-05-13.jsonl",
+      "record_count": 6414,
+      "snapshot_count": 111
+    },
+    "2026-05-14": {
+      "file": "holdings_history.json.parts/2026-05-14.jsonl",
+      "record_count": 5157,
+      "snapshot_count": 96
+    },
+    "2026-05-15": {
+      "file": "holdings_history.json.parts/2026-05-15.jsonl",
+      "record_count": 2806,
+      "snapshot_count": 73
+    }
+  },
+  "record_count": 21967,
+  "schema_version": "agent_treport.native_holdings.history.v1",
+  "snapshot_count": 445,
+  "storage_format": "native_history_partitioned_jsonl_v1",
+  "updated_at": "2026-05-16T03:54:19.505533+00:00"
+}

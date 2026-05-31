@@ -1,0 +1,3 @@
+# Operational export fingerprint binds readiness handoffs
+
+Accepted. Operational `run-report` treats an `OperationalRunReadiness` handoff as valid only when a structured SHA-256 `OperationalExportFingerprint` from `check-operational-readiness` matches a recomputed fingerprint of the copied manifest and every copied partition referenced by that manifest. The fingerprint covers the whole copied `OperationalHoldingsExport`, not only the selected focus-ETF partitions, because a readiness handoff claims the copied export content it inspected has not changed; `sync_metadata.json` does not store this fingerprint in this slice because the safety contract is the readiness handoff plus consumption-time recomputation.

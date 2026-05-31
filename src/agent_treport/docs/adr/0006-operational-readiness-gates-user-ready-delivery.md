@@ -1,0 +1,5 @@
+# Operational readiness gates user-ready delivery
+
+Accepted. Operational readiness decides whether an operational `run-report` may expose final `user_ready` delivery output, not whether report generation is technically possible. `ready` and `ready_with_warnings` can produce user-ready output when disclosure requirements are met, so combining them with the operator-review override is invalid and stops before model calls. `hold` requires an explicit operator-review override and produces review-only artifacts, missing readiness with an explicit override produces synthetic path-safe review-only evidence only, and `failed` or mismatched readiness stops before model calls.
+
+This keeps report generation inspectable for operator diagnosis while preventing stale, mismatched, or high-risk operational data from being mistaken for final user delivery. `not_provided` is synthetic evidence for the missing-readiness override, not a `check-operational-readiness` status. `ReportQualityGate` remains a product/rendering contract and does not fail solely because operational readiness warns or holds; CLI delivery gating owns user-ready withholding for readiness outcomes.
