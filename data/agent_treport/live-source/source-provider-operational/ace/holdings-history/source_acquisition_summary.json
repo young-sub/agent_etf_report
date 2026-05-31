@@ -1,0 +1,53 @@
+{
+  "aggregate_counts": {
+    "failed": 0,
+    "fetched": 1,
+    "rate_limited": 0,
+    "row_count": 118,
+    "skipped_existing": 0,
+    "target_count": 1,
+    "unsupported": 0,
+    "written_snapshot_count": 1
+  },
+  "history_store": {
+    "manifest_path": "holdings_history.json"
+  },
+  "observed_dates": [
+    "2026-05-29"
+  ],
+  "provider_rollout_status": "supported",
+  "requested_dates": [
+    "2026-05-29"
+  ],
+  "row_count": 118,
+  "run_outcome": "succeeded",
+  "schema_version": "agent_treport.source_acquisition.summary.v1",
+  "source_provider_id": "ace",
+  "target_outcomes": [
+    {
+      "brand_id": "brand_korea_investment_asset_management",
+      "date_alignment": {
+        "observed_date": "2026-05-29",
+        "requested_date": "2026-05-29",
+        "status": "matched"
+      },
+      "etf_id": "etf_ace_k55101ep9634",
+      "latest_upload_freshness": {
+        "latest_acceptable_observed_date": "2026-05-28",
+        "observed_date": "2026-05-29",
+        "status": "fresh_latest"
+      },
+      "observed_date": "2026-05-29",
+      "outcome": "fetched",
+      "reason_code": null,
+      "requested_date": "2026-05-29",
+      "retry_attempt_count": 0,
+      "row_count": 118,
+      "scope": "holdings_snapshot",
+      "source_provider_id": "ace"
+    }
+  ],
+  "updated_at": "2026-05-31T09:33:31.045535+00:00",
+  "warnings": [],
+  "written_snapshot_count": 1
+}

@@ -1,0 +1,98 @@
+{
+  "approval": {
+    "boundary_fingerprint": "ff5e52d01b20238bdeb3687cb8e07eb56687c479cfb1597ca4b0c7ba7ff2b99d",
+    "required_scopes": [
+      "live_holdings_acquisition"
+    ]
+  },
+  "boundary": {
+    "approved_max_target_count": 1,
+    "data_classes": [
+      "live_source_holdings_request_identifiers",
+      "normalized_holdings_snapshot_summary",
+      "safe_provider_etf_identifiers"
+    ],
+    "excluded_raw_fields": [
+      "raw_holdings_rows",
+      "raw_report_text",
+      "raw_provider_payloads",
+      "provider_response_envelopes",
+      "raw_urls_or_endpoints",
+      "headers",
+      "credentials",
+      "environment_values",
+      "stack_traces",
+      "absolute_local_paths",
+      "raw_approval_comments"
+    ],
+    "external_evidence_provider_ids": [],
+    "known_unvalidated_provider_exceptions": [],
+    "live_source_cohort": [
+      "ace"
+    ],
+    "live_source_provider_ids": [
+      "ace"
+    ],
+    "model_exports": [],
+    "report_model_export_scope": "path_safe_pre_publish_report_context_for_commentary_generation",
+    "required_scopes": [
+      "live_holdings_acquisition"
+    ]
+  },
+  "command": "update-holdings-history-source",
+  "disclosure": {
+    "approved_max_target_count": 1,
+    "credential_expectations": [],
+    "data_classes": [
+      "live_source_holdings_request_identifiers",
+      "normalized_holdings_snapshot_summary",
+      "safe_provider_etf_identifiers"
+    ],
+    "evidence_categories": [
+      "financial",
+      "disclosure",
+      "news"
+    ],
+    "excluded_raw_fields": [
+      "raw_holdings_rows",
+      "raw_report_text",
+      "raw_provider_payloads",
+      "provider_response_envelopes",
+      "raw_urls_or_endpoints",
+      "headers",
+      "credentials",
+      "environment_values",
+      "stack_traces",
+      "absolute_local_paths",
+      "raw_approval_comments"
+    ],
+    "focus_etf_ids": [],
+    "live_source_cohort": [
+      "ace"
+    ],
+    "provider_exception_summary": [],
+    "provider_identities": {
+      "external_evidence": [],
+      "known_unvalidated_external_evidence": [],
+      "live_source": [
+        "ace"
+      ],
+      "model_exports": []
+    },
+    "report_model_export_scope": "path_safe_pre_publish_report_context_for_commentary_generation",
+    "selected_security_identifiers": {
+      "count": 0,
+      "fingerprint": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "sample": [],
+      "sample_limit": 20
+    },
+    "selected_ticker_identifiers": {
+      "count": 0,
+      "fingerprint": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "sample": [],
+      "sample_limit": 20
+    }
+  },
+  "generated_at": "2026-05-31T09:33:30.702816+00:00",
+  "schema_version": "agent_treport.daily_operational_external_data_preflight.v1"
+}

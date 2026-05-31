@@ -1,0 +1,411 @@
+{
+  "approval": {
+    "approved_boundary_fingerprint": "1253c2e5fcbd40d35393f417e29328196edcb9a16b4bfc5f8ce0d2d2e238a12c",
+    "missing_scopes": [],
+    "outside_approved_bounds": [],
+    "requested_boundary_fingerprint": "640833fa57c0bdd2d7548e702c346fbdd70b2403798853af90f65f09ba5c956e",
+    "required_scopes": [
+      "live_external_evidence",
+      "model_export"
+    ],
+    "status": "approved",
+    "unapproved_scopes": [],
+    "valid": true
+  },
+  "closure": {
+    "full_live_pre_publish_artifact_closure": {
+      "missing_artifacts": [],
+      "status": "met",
+      "telegram_alert_artifact_id": "artifact_treport_telegram_alert",
+      "telegram_message_body_included": true
+    },
+    "full_user_ready_closure": {
+      "blocking_reasons": [
+        "readiness_hold",
+        "delivery_blocked",
+        "verified_operational_flow_acceptance_not_met"
+      ],
+      "delivery_blocked": true,
+      "status": "blocked"
+    }
+  },
+  "delivery_blocked": true,
+  "exit_code": 0,
+  "external_evidence": {
+    "category_coverage": {
+      "disclosure": {
+        "coverage_ratio": 0.0,
+        "notes": [],
+        "provider_states": {
+          "dart": "no_data"
+        },
+        "ticker_states": {}
+      },
+      "financial": {
+        "coverage_ratio": 0.0,
+        "notes": [],
+        "provider_states": {
+          "finnhub": "no_data",
+          "yfinance": "no_data"
+        },
+        "ticker_states": {}
+      },
+      "news": {
+        "coverage_ratio": 0.0,
+        "notes": [],
+        "provider_states": {
+          "alpha_vantage": "no_data",
+          "naver": "no_data",
+          "newsapi": "no_data"
+        },
+        "ticker_states": {}
+      }
+    },
+    "evidence_reuse": {
+      "collected_provider_ids": [
+        "finnhub",
+        "yfinance",
+        "dart",
+        "alpha_vantage",
+        "newsapi",
+        "naver"
+      ],
+      "reason": "no_existing_evidence",
+      "reused_provider_ids": [],
+      "scope": "same_smoke",
+      "status": "not_reused"
+    },
+    "known_unvalidated_provider_exceptions": [
+      {
+        "category": "disclosure",
+        "exception_type": "known_unvalidated_provider_exception",
+        "execution_status": "not_requested",
+        "non_call_rule": "SEC EDGAR must not be called for this goal.",
+        "promotion_condition": "Promote only after a separate SEC-policy-compliant live smoke returns success or normal no_data with path-safe evidence and no active cooldown.",
+        "provider_id": "sec_edgar",
+        "required_for_user_ready_closure": false,
+        "safe_reason": "SEC EDGAR remains disclosed but outside the validated provider denominator for this pre-publish closure."
+      }
+    ],
+    "policy_failure": null,
+    "provider_exception_outcomes": {
+      "sec_edgar": "not_requested"
+    },
+    "provider_limitations": [],
+    "provider_outcomes": [
+      {
+        "attempt_count": 1,
+        "category": "financial",
+        "deduped_count": 0,
+        "error_code": null,
+        "metadata": {},
+        "provider_id": "finnhub",
+        "retryable": false,
+        "safe_message": "Finnhub returned no financial evidence for selected targets.",
+        "status": "no_data",
+        "stopped_reason": null,
+        "target_tickers": []
+      },
+      {
+        "attempt_count": 1,
+        "category": "financial",
+        "deduped_count": 0,
+        "error_code": null,
+        "metadata": {},
+        "provider_id": "yfinance",
+        "retryable": false,
+        "safe_message": "yfinance returned no financial evidence for selected targets.",
+        "status": "no_data",
+        "stopped_reason": null,
+        "target_tickers": []
+      },
+      {
+        "attempt_count": 1,
+        "category": "disclosure",
+        "deduped_count": 0,
+        "error_code": null,
+        "metadata": {},
+        "provider_id": "dart",
+        "retryable": false,
+        "safe_message": "DART returned no disclosure evidence for selected targets.",
+        "status": "no_data",
+        "stopped_reason": null,
+        "target_tickers": []
+      },
+      {
+        "attempt_count": 1,
+        "category": "news",
+        "deduped_count": 0,
+        "error_code": null,
+        "metadata": {
+          "omitted_target_count": 0,
+          "policy": "alpha_vantage_free_api_grouped_news_sentiment",
+          "provider_target_cap": 5,
+          "queried_target_count": 0,
+          "requested_target_count": 0
+        },
+        "provider_id": "alpha_vantage",
+        "retryable": false,
+        "safe_message": "Alpha Vantage returned no news evidence for selected targets.",
+        "status": "no_data",
+        "stopped_reason": null,
+        "target_tickers": []
+      },
+      {
+        "attempt_count": 1,
+        "category": "news",
+        "deduped_count": 0,
+        "error_code": null,
+        "metadata": {},
+        "provider_id": "newsapi",
+        "retryable": false,
+        "safe_message": "NewsAPI returned no news evidence for selected targets.",
+        "status": "no_data",
+        "stopped_reason": null,
+        "target_tickers": []
+      },
+      {
+        "attempt_count": 1,
+        "category": "news",
+        "deduped_count": 0,
+        "error_code": null,
+        "metadata": {},
+        "provider_id": "naver",
+        "retryable": false,
+        "safe_message": "Naver returned no news evidence for selected targets.",
+        "status": "no_data",
+        "stopped_reason": null,
+        "target_tickers": []
+      }
+    ],
+    "required_provider_failures": [],
+    "required_provider_ids": [
+      "finnhub",
+      "yfinance",
+      "dart",
+      "alpha_vantage",
+      "newsapi",
+      "naver"
+    ],
+    "required_provider_outcomes": {
+      "alpha_vantage": "no_data",
+      "dart": "no_data",
+      "finnhub": "no_data",
+      "naver": "no_data",
+      "newsapi": "no_data",
+      "yfinance": "no_data"
+    },
+    "status": "provided"
+  },
+  "operator_review_only": {
+    "artifact_root": ".scratch\\live_api_env_probe_20260531_001\\preview\\artifacts",
+    "artifacts": {
+      "canonical_payload": {
+        "artifact_id": "artifact_treport_signal_payload",
+        "media_type": "application/json",
+        "name": "signal_payload.json",
+        "path": ".scratch\\live_api_env_probe_20260531_001\\preview\\artifacts\\artifact_treport_signal_payload.json"
+      },
+      "html_report": {
+        "artifact_id": "artifact_treport_html_report",
+        "media_type": "text/html",
+        "name": "report.html",
+        "path": ".scratch\\live_api_env_probe_20260531_001\\preview\\artifacts\\artifact_treport_html_report.html"
+      },
+      "markdown_report": {
+        "artifact_id": "artifact_treport_report",
+        "media_type": "text/markdown",
+        "name": "report.md",
+        "path": ".scratch\\live_api_env_probe_20260531_001\\preview\\artifacts\\artifact_treport_report.md"
+      },
+      "quality_report": {
+        "artifact_id": "artifact_treport_quality",
+        "media_type": "application/json",
+        "name": "quality.json",
+        "path": ".scratch\\live_api_env_probe_20260531_001\\preview\\artifacts\\artifact_treport_quality.json"
+      },
+      "readiness": {
+        "artifact_id": "artifact_treport_operational_readiness",
+        "media_type": "application/json",
+        "name": "operational_readiness.json",
+        "path": ".scratch\\live_api_env_probe_20260531_001\\preview\\artifacts\\artifact_treport_operational_readiness.json"
+      },
+      "telegram_alert": {
+        "artifact_id": "artifact_treport_telegram_alert",
+        "media_type": "text/plain",
+        "name": "telegram_alert.txt",
+        "path": ".scratch\\live_api_env_probe_20260531_001\\preview\\artifacts\\artifact_treport_telegram_alert.txt"
+      }
+    },
+    "commands": {
+      "inspect": "agent-treport inspect --run-id run_20260531_live_api_env_probe_001 --sqlite-path '.scratch\\live_api_env_probe_20260531_001\\preview\\runtime.sqlite3'",
+      "inspect_argv": [
+        "agent-treport",
+        "inspect",
+        "--run-id",
+        "run_20260531_live_api_env_probe_001",
+        "--sqlite-path",
+        ".scratch\\live_api_env_probe_20260531_001\\preview\\runtime.sqlite3"
+      ]
+    },
+    "delivery_blocked": true,
+    "readiness_artifact_id": "artifact_treport_operational_readiness",
+    "reason": "readiness_hold",
+    "run_id": "run_20260531_live_api_env_probe_001",
+    "sqlite_path": ".scratch\\live_api_env_probe_20260531_001\\preview\\runtime.sqlite3",
+    "user_ready_status": "not user-ready"
+  },
+  "preview": {
+    "result_package_path": "data\\agent_treport\\live-source\\daily-smoke-summaries\\run_20260531_live_api_env_probe_001",
+    "telegram_delivery": "not_sent",
+    "telegram_message": {
+      "artifact_id": "artifact_treport_telegram_alert",
+      "delivery_status": "not_sent",
+      "parse_mode": "HTML",
+      "send_method": "sendMessage",
+      "text": "<b>ETF 시그널 브리핑</b>\n<code>2026-05-29</code> | ETF 1개 | operational_holdings_focus_set:2026-05-29:2026-05-15\n<b>오늘의 핵심</b>\nNVIDIA Corp는 1개 ETF에서 비중 축소가 겹쳐 판단 유보 신호로 분류됐습니다.\n<b>핵심 신호 Top 5</b>\n1. <code>미확인</code> | 판단 유보(defer) | 활용 불가(Unusable) | 7점\n   NVIDIA Corp 신호는 식별자 또는 분류 품질 한계로 해석을 보류합니다.\n2. <code>미확인</code> | 판단 유보(defer) | 활용 불가(Unusable) | 2점\n   APPLE Inc 신호는 식별자 또는 분류 품질 한계로 해석을 보류합니다.\n3. <code>미확인</code> | 판단 유보(defer) | 활용 불가(Unusable) | 0점\n   ADVANCED MICRO DEVICES 신호는 식별자 또는 분류 품질 한계로 해석을 보류합니다.\n4. <code>미확인</code> | 판단 유보(defer) | 활용 불가(Unusable) | 0점\n   ALPHABET INC-CL A 신호는 식별자 또는 분류 품질 한계로 해석을 보류합니다.\n5. <code>미확인</code> | 판단 유보(defer) | 활용 불가(Unusable) | 0점\n   ALPHABET INC-CL C 신호는 식별자 또는 분류 품질 한계로 해석을 보류합니다.\n<b>데이터 품질</b>\n상태 limited; 이슈 359개; fixture 기반 deterministic 분석이며 live enrichment는 포함하지 않습니다.\n<b>전체 리포트</b>\nHTML artifact: <code>artifact_treport_html_report</code>"
+    },
+    "type": "pre_publish"
+  },
+  "readiness": {
+    "current_date": "2026-05-29",
+    "disclosures": [
+      {
+        "code": "readiness_active_etf_coverage_gap",
+        "message": "Some non-focus active ETFs are missing one side of the comparison window; this is operator diagnostic coverage and does not block the focus handoff.",
+        "metric": "non_focus_active_etf_coverage_ratio",
+        "severity": "medium",
+        "threshold": 0.8,
+        "value": 0.95
+      },
+      {
+        "code": "readiness_security_resolution_missing",
+        "message": "Native history export was not run with reviewed security resolution.",
+        "metric": "security_resolution_available",
+        "severity": "medium",
+        "threshold": true,
+        "value": false
+      },
+      {
+        "code": "readiness_observed_date_lag",
+        "message": "Latest copied observed holdings date lags the operator date.",
+        "metric": "latest_observed_age_days",
+        "severity": "medium",
+        "threshold": 3,
+        "value": 2
+      }
+    ],
+    "focus_etf_id": "etf_ace_k55101ep9634",
+    "focus_etf_ids": [
+      "etf_ace_k55101ep9634"
+    ],
+    "previous_date": "2026-05-15",
+    "status": "hold"
+  },
+  "reason": "readiness_hold",
+  "references": {
+    "artifacts": {
+      "approval_preflight": {
+        "artifact_id": "artifact_treport_daily_approval_preflight",
+        "media_type": "application/json",
+        "name": "daily_operational_external_data_preflight.json",
+        "path": ".scratch\\live_api_env_probe_20260531_001\\preview\\daily_operational_external_data_preflight.json"
+      },
+      "approval_template": {
+        "artifact_id": "artifact_treport_daily_approval_template",
+        "media_type": "application/json",
+        "name": "daily_operational_external_data_approval_template.json",
+        "path": ".scratch\\live_api_env_probe_20260531_001\\preview\\daily_operational_external_data_approval_template.json"
+      },
+      "canonical_payload": {
+        "artifact_id": "artifact_treport_signal_payload",
+        "media_type": "application/json",
+        "name": "signal_payload.json",
+        "path": ".scratch\\live_api_env_probe_20260531_001\\preview\\artifacts\\artifact_treport_signal_payload.json"
+      },
+      "collection_summary": {
+        "artifact_id": "artifact_treport_collection_summary",
+        "media_type": "application/json",
+        "name": "collection_summary.json",
+        "path": ".scratch\\live_api_env_probe_20260531_001\\preview\\operational-holdings\\collection_summary.json"
+      },
+      "external_evidence": {
+        "artifact_id": "artifact_treport_external_evidence",
+        "media_type": "application/json",
+        "name": "external_evidence.json",
+        "path": ".scratch\\live_api_env_probe_20260531_001\\preview\\external_evidence.json"
+      },
+      "external_evidence_summary": {
+        "artifact_id": "artifact_treport_external_evidence_summary",
+        "media_type": "application/json",
+        "name": "external_evidence_summary.json",
+        "path": ".scratch\\live_api_env_probe_20260531_001\\preview\\external_evidence_summary.json"
+      },
+      "html_report": {
+        "artifact_id": "artifact_treport_html_report",
+        "media_type": "text/html",
+        "name": "report.html",
+        "path": ".scratch\\live_api_env_probe_20260531_001\\preview\\artifacts\\artifact_treport_html_report.html"
+      },
+      "markdown_report": {
+        "artifact_id": "artifact_treport_report",
+        "media_type": "text/markdown",
+        "name": "report.md",
+        "path": ".scratch\\live_api_env_probe_20260531_001\\preview\\artifacts\\artifact_treport_report.md"
+      },
+      "provider_etf_exclusion_summary": {
+        "artifact_id": "artifact_treport_provider_etf_exclusion_summary",
+        "media_type": "application/json",
+        "name": "provider_etf_exclusion_summary.json",
+        "path": ".scratch\\live_api_env_probe_20260531_001\\preview\\provider_etf_exclusion_summary.json"
+      },
+      "quality_report": {
+        "artifact_id": "artifact_treport_quality",
+        "media_type": "application/json",
+        "name": "quality.json",
+        "path": ".scratch\\live_api_env_probe_20260531_001\\preview\\artifacts\\artifact_treport_quality.json"
+      },
+      "readiness": {
+        "artifact_id": "artifact_treport_operational_readiness",
+        "media_type": "application/json",
+        "name": "operational_readiness.json",
+        "path": ".scratch\\live_api_env_probe_20260531_001\\preview\\artifacts\\artifact_treport_operational_readiness.json"
+      },
+      "source_acquisition_summary": {
+        "artifact_id": "artifact_treport_source_acquisition_summary",
+        "media_type": "application/json",
+        "name": "source_acquisition_summary.json",
+        "path": "data\\agent_treport\\live-source\\source-provider-operational\\ace\\holdings-history\\source_acquisition_summary.json"
+      },
+      "telegram_alert": {
+        "artifact_id": "artifact_treport_telegram_alert",
+        "media_type": "text/plain",
+        "name": "telegram_alert.txt",
+        "path": ".scratch\\live_api_env_probe_20260531_001\\preview\\artifacts\\artifact_treport_telegram_alert.txt"
+      }
+    },
+    "follow_up": {
+      "inspect": "agent-treport inspect --run-id run_20260531_live_api_env_probe_001 --sqlite-path '.scratch\\live_api_env_probe_20260531_001\\preview\\runtime.sqlite3'",
+      "inspect_argv": [
+        "agent-treport",
+        "inspect",
+        "--run-id",
+        "run_20260531_live_api_env_probe_001",
+        "--sqlite-path",
+        ".scratch\\live_api_env_probe_20260531_001\\preview\\runtime.sqlite3"
+      ]
+    },
+    "run_result_status": "succeeded"
+  },
+  "registered_cohort_statement": "This report evaluated the registered live provider cohort, disclosed excluded providers/ETFs with reasons, and judged user-ready status using the remaining eligible cohort.",
+  "run_id": "run_20260531_live_api_env_probe_001",
+  "schema_version": "agent_treport.native_operational_handoff.v1",
+  "status": "operator_review_only",
+  "user_ready_status": "not user-ready",
+  "verified_operational_flow_acceptance": {
+    "status": "not_met",
+    "unmet_criteria": [
+      "reviewed_security_identity"
+    ]
+  }
+}

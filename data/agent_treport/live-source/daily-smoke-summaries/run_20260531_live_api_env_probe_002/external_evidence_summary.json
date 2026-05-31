@@ -1,0 +1,238 @@
+{
+  "category_coverage": {
+    "disclosure": {
+      "coverage_ratio": 0.0,
+      "notes": [
+        "disclosure:NVDA=no_data",
+        "disclosure:AAPL=no_data",
+        "disclosure:AVGO=no_data",
+        "disclosure:GOOGL=no_data",
+        "disclosure:LRCX=no_data"
+      ],
+      "provider_states": {
+        "dart": "no_data"
+      },
+      "ticker_states": {
+        "AAPL": "no_data",
+        "AVGO": "no_data",
+        "GOOGL": "no_data",
+        "LRCX": "no_data",
+        "NVDA": "no_data"
+      }
+    },
+    "financial": {
+      "coverage_ratio": 1.0,
+      "notes": [
+        "financial:NVDA=covered",
+        "financial:AAPL=covered",
+        "financial:AVGO=covered",
+        "financial:GOOGL=covered",
+        "financial:LRCX=covered"
+      ],
+      "provider_states": {
+        "finnhub": "success",
+        "yfinance": "success"
+      },
+      "ticker_states": {
+        "AAPL": "covered",
+        "AVGO": "covered",
+        "GOOGL": "covered",
+        "LRCX": "covered",
+        "NVDA": "covered"
+      }
+    },
+    "news": {
+      "coverage_ratio": 1.0,
+      "notes": [
+        "news:NVDA=covered",
+        "news:AAPL=covered",
+        "news:AVGO=covered",
+        "news:GOOGL=covered",
+        "news:LRCX=covered"
+      ],
+      "provider_states": {
+        "alpha_vantage": "no_data",
+        "naver": "success",
+        "newsapi": "success"
+      },
+      "ticker_states": {
+        "AAPL": "covered",
+        "AVGO": "covered",
+        "GOOGL": "covered",
+        "LRCX": "covered",
+        "NVDA": "covered"
+      }
+    }
+  },
+  "evidence_reuse": {
+    "collected_provider_ids": [
+      "finnhub",
+      "yfinance",
+      "dart",
+      "alpha_vantage",
+      "newsapi",
+      "naver"
+    ],
+    "reason": "no_existing_evidence",
+    "reused_provider_ids": [],
+    "scope": "same_smoke",
+    "status": "not_reused"
+  },
+  "known_unvalidated_provider_exceptions": [
+    {
+      "category": "disclosure",
+      "exception_type": "known_unvalidated_provider_exception",
+      "execution_status": "not_requested",
+      "non_call_rule": "SEC EDGAR must not be called for this goal.",
+      "promotion_condition": "Promote only after a separate SEC-policy-compliant live smoke returns success or normal no_data with path-safe evidence and no active cooldown.",
+      "provider_id": "sec_edgar",
+      "required_for_user_ready_closure": false,
+      "safe_reason": "SEC EDGAR remains disclosed but outside the validated provider denominator for this pre-publish closure."
+    }
+  ],
+  "policy_failure": null,
+  "provider_exception_outcomes": {
+    "sec_edgar": "not_requested"
+  },
+  "provider_limitations": [],
+  "provider_outcomes": [
+    {
+      "attempt_count": 1,
+      "category": "financial",
+      "deduped_count": 0,
+      "error_code": null,
+      "metadata": {},
+      "provider_id": "finnhub",
+      "retryable": false,
+      "safe_message": "Finnhub financial evidence collected.",
+      "status": "success",
+      "stopped_reason": null,
+      "target_tickers": [
+        "NVDA",
+        "AAPL",
+        "AVGO",
+        "GOOGL",
+        "LRCX"
+      ]
+    },
+    {
+      "attempt_count": 1,
+      "category": "financial",
+      "deduped_count": 0,
+      "error_code": null,
+      "metadata": {},
+      "provider_id": "yfinance",
+      "retryable": false,
+      "safe_message": "yfinance financial evidence collected.",
+      "status": "success",
+      "stopped_reason": null,
+      "target_tickers": [
+        "NVDA",
+        "AAPL",
+        "AVGO",
+        "GOOGL",
+        "LRCX"
+      ]
+    },
+    {
+      "attempt_count": 1,
+      "category": "disclosure",
+      "deduped_count": 0,
+      "error_code": null,
+      "metadata": {},
+      "provider_id": "dart",
+      "retryable": false,
+      "safe_message": "DART returned no disclosure evidence for selected targets.",
+      "status": "no_data",
+      "stopped_reason": null,
+      "target_tickers": [
+        "NVDA",
+        "AAPL",
+        "AVGO",
+        "GOOGL",
+        "LRCX"
+      ]
+    },
+    {
+      "attempt_count": 1,
+      "category": "news",
+      "deduped_count": 0,
+      "error_code": null,
+      "metadata": {
+        "omitted_target_count": 0,
+        "policy": "alpha_vantage_free_api_grouped_news_sentiment",
+        "provider_target_cap": 5,
+        "queried_target_count": 5,
+        "requested_target_count": 5
+      },
+      "provider_id": "alpha_vantage",
+      "retryable": false,
+      "safe_message": "Alpha Vantage returned no news evidence for selected targets.",
+      "status": "no_data",
+      "stopped_reason": null,
+      "target_tickers": [
+        "NVDA",
+        "AAPL",
+        "AVGO",
+        "GOOGL",
+        "LRCX"
+      ]
+    },
+    {
+      "attempt_count": 1,
+      "category": "news",
+      "deduped_count": 0,
+      "error_code": null,
+      "metadata": {},
+      "provider_id": "newsapi",
+      "retryable": false,
+      "safe_message": "NewsAPI evidence collected.",
+      "status": "success",
+      "stopped_reason": null,
+      "target_tickers": [
+        "NVDA",
+        "AAPL",
+        "AVGO",
+        "GOOGL",
+        "LRCX"
+      ]
+    },
+    {
+      "attempt_count": 1,
+      "category": "news",
+      "deduped_count": 0,
+      "error_code": null,
+      "metadata": {},
+      "provider_id": "naver",
+      "retryable": false,
+      "safe_message": "Naver news evidence collected.",
+      "status": "success",
+      "stopped_reason": null,
+      "target_tickers": [
+        "NVDA",
+        "AAPL",
+        "AVGO",
+        "GOOGL",
+        "LRCX"
+      ]
+    }
+  ],
+  "required_provider_failures": [],
+  "required_provider_ids": [
+    "finnhub",
+    "yfinance",
+    "dart",
+    "alpha_vantage",
+    "newsapi",
+    "naver"
+  ],
+  "required_provider_outcomes": {
+    "alpha_vantage": "no_data",
+    "dart": "no_data",
+    "finnhub": "success",
+    "naver": "success",
+    "newsapi": "success",
+    "yfinance": "success"
+  },
+  "status": "provided"
+}

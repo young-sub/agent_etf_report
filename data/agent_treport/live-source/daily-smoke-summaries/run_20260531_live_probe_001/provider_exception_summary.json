@@ -1,0 +1,18 @@
+{
+  "known_unvalidated_provider_exceptions": [
+    {
+      "category": "disclosure",
+      "exception_type": "known_unvalidated_provider_exception",
+      "execution_status": "not_requested",
+      "non_call_rule": "SEC EDGAR must not be called for this goal.",
+      "promotion_condition": "Promote only after a separate SEC-policy-compliant live smoke returns success or normal no_data with path-safe evidence and no active cooldown.",
+      "provider_id": "sec_edgar",
+      "required_for_user_ready_closure": false,
+      "safe_reason": "SEC EDGAR remains disclosed but outside the validated provider denominator for this pre-publish closure."
+    }
+  ],
+  "provider_exception_outcomes": {
+    "sec_edgar": "not_requested"
+  },
+  "schema_version": "agent_treport.pre_publish.provider_exception_summary.v1"
+}

@@ -1,0 +1,413 @@
+{
+  "items": [
+    {
+      "candidate_name": "2026-06 삼성전자개별선물",
+      "reason": "ticker_candidate_unresolved",
+      "security_id": "A11660",
+      "source": "holdings_observation"
+    },
+    {
+      "candidate_name": "2026-06 SK하이닉스개별선물",
+      "reason": "ticker_candidate_unresolved",
+      "security_id": "A50660",
+      "source": "holdings_observation"
+    },
+    {
+      "candidate_name": "Cameco Corp",
+      "reason": "ticker_candidate_unresolved",
+      "security_id": "CA13321L1085",
+      "source": "holdings_observation"
+    },
+    {
+      "candidate_name": "Celestica Inc",
+      "reason": "ticker_candidate_unresolved",
+      "security_id": "CA15101Q2071",
+      "source": "holdings_observation"
+    },
+    {
+      "candidate_name": "MDA Space Ltd",
+      "reason": "ticker_candidate_unresolved",
+      "security_id": "CA55293N1096",
+      "source": "holdings_observation"
+    },
+    {
+      "candidate_name": "Telesat Corp",
+      "reason": "ticker_candidate_unresolved",
+      "security_id": "CA8795123097",
+      "source": "holdings_observation"
+    },
+    {
+      "candidate_name": "Xiamen King Long Motor Group Co Ltd",
+      "reason": "ticker_candidate_unresolved",
+      "security_id": "CNE000000479",
+      "source": "holdings_observation"
+    },
+    {
+      "candidate_name": "Shenzhen SED Industry Co Ltd",
+      "reason": "ticker_candidate_unresolved",
+      "security_id": "CNE000000BK3",
+      "source": "holdings_observation"
+    },
+    {
+      "candidate_name": "Yutong Bus Co Ltd",
+      "reason": "ticker_candidate_unresolved",
+      "security_id": "CNE000000PY4",
+      "source": "holdings_observation"
+    },
+    {
+      "candidate_name": "Chongqing Changan Automobile Co Ltd",
+      "reason": "ticker_candidate_unresolved",
+      "security_id": "CNE000000R36",
+      "source": "holdings_observation"
+    },
+    {
+      "candidate_name": "(후)SAIC MOTOR CORPORATION LTD-A",
+      "reason": "ticker_candidate_unresolved",
+      "security_id": "CNE000000TY6",
+      "source": "holdings_observation"
+    },
+    {
+      "candidate_name": "Shanghai Aerospace Automobile Electromec",
+      "reason": "ticker_candidate_unresolved",
+      "security_id": "CNE000000W96",
+      "source": "holdings_observation"
+    },
+    {
+      "candidate_name": "Beiqi Foton Motor Co Ltd",
+      "reason": "ticker_candidate_unresolved",
+      "security_id": "CNE000000WC6",
+      "source": "holdings_observation"
+    },
+    {
+      "candidate_name": "DongFeng Automobile Co Ltd",
+      "reason": "ticker_candidate_unresolved",
+      "security_id": "CNE000000ZT3",
+      "source": "holdings_observation"
+    },
+    {
+      "candidate_name": "Xiamen Tungsten Co Ltd",
+      "reason": "ticker_candidate_unresolved",
+      "security_id": "CNE000001D15",
+      "source": "holdings_observation"
+    },
+    {
+      "candidate_name": "Zhejiang Sanhua Intelligent Controls Co",
+      "reason": "ticker_candidate_unresolved",
+      "security_id": "CNE000001M22",
+      "source": "holdings_observation"
+    },
+    {
+      "candidate_name": "TongFu Microelectronics Co Ltd",
+      "reason": "ticker_candidate_unresolved",
+      "security_id": "CNE1000006C3",
+      "source": "holdings_observation"
+    },
+    {
+      "candidate_name": "CHENGXIN LITHIUM GROUP CO-A",
+      "reason": "ticker_candidate_unresolved",
+      "security_id": "CNE100000BN6",
+      "source": "holdings_observation"
+    },
+    {
+      "candidate_name": "(선)EVE ENERGY CO LTD-A",
+      "reason": "ticker_candidate_unresolved",
+      "security_id": "CNE100000GS4",
+      "source": "holdings_observation"
+    },
+    {
+      "candidate_name": "Zhejiang Chint Electrics Co Ltd",
+      "reason": "ticker_candidate_unresolved",
+      "security_id": "CNE100000KD8",
+      "source": "holdings_observation"
+    },
+    {
+      "candidate_name": "Yantai Jereh Oilfield Services Group Co",
+      "reason": "ticker_candidate_unresolved",
+      "security_id": "CNE100000L55",
+      "source": "holdings_observation"
+    },
+    {
+      "candidate_name": "Suzhou Dongshan Precision Manufacturing",
+      "reason": "ticker_candidate_unresolved",
+      "security_id": "CNE100000N79",
+      "source": "holdings_observation"
+    },
+    {
+      "candidate_name": "GANFENG LITHIUM GROUP CO L-A",
+      "reason": "ticker_candidate_unresolved",
+      "security_id": "CNE100000SF6",
+      "source": "holdings_observation"
+    },
+    {
+      "candidate_name": "WUS Printed Circuit Kunshan Co Ltd",
+      "reason": "ticker_candidate_unresolved",
+      "security_id": "CNE100000SP5",
+      "source": "holdings_observation"
+    },
+    {
+      "candidate_name": "Tianqi Lithium Corp",
+      "reason": "ticker_candidate_unresolved",
+      "security_id": "CNE100000T32",
+      "source": "holdings_observation"
+    },
+    {
+      "candidate_name": "Chongqing Afari Technology Co Ltd",
+      "reason": "ticker_candidate_unresolved",
+      "security_id": "CNE100000X10",
+      "source": "holdings_observation"
+    },
+    {
+      "candidate_name": "Kingnet Network Co Ltd",
+      "reason": "ticker_candidate_unresolved",
+      "security_id": "CNE100000XB5",
+      "source": "holdings_observation"
+    },
+    {
+      "candidate_name": "Sungrow Power Supply Co Ltd",
+      "reason": "ticker_candidate_unresolved",
+      "security_id": "CNE1000018M7",
+      "source": "holdings_observation"
+    },
+    {
+      "candidate_name": "Zhongji Innolight Co Ltd",
+      "reason": "ticker_candidate_unresolved",
+      "security_id": "CNE100001CY9",
+      "source": "holdings_observation"
+    },
+    {
+      "candidate_name": "CMOC GROUP LTD-A",
+      "reason": "ticker_candidate_unresolved",
+      "security_id": "CNE100001NR0",
+      "source": "holdings_observation"
+    },
+    {
+      "candidate_name": "(선)GUANGZHOU TINCI MATERIALS -A",
+      "reason": "ticker_candidate_unresolved",
+      "security_id": "CNE100001RG4",
+      "source": "holdings_observation"
+    },
+    {
+      "candidate_name": "(후)ZHEJIANG HUAYOU COBALT CO -A",
+      "reason": "ticker_candidate_unresolved",
+      "security_id": "CNE100001VW3",
+      "source": "holdings_observation"
+    },
+    {
+      "candidate_name": "Suzhou TFC Optical Communication Co Ltd",
+      "reason": "ticker_candidate_unresolved",
+      "security_id": "CNE100001XQ1",
+      "source": "holdings_observation"
+    },
+    {
+      "candidate_name": "WUXI LEAD INTELLIGENT EQUI-A",
+      "reason": "ticker_candidate_unresolved",
+      "security_id": "CNE100001ZF9",
+      "source": "holdings_observation"
+    },
+    {
+      "candidate_name": "Ningbo Tuopu Group Co Ltd",
+      "reason": "ticker_candidate_unresolved",
+      "security_id": "CNE1000023J3",
+      "source": "holdings_observation"
+    },
+    {
+      "candidate_name": "Eoptolink Technology Inc Ltd",
+      "reason": "ticker_candidate_unresolved",
+      "security_id": "CNE100002615",
+      "source": "holdings_observation"
+    },
+    {
+      "candidate_name": "SHENZHEN KEDALI INDUSTRY C-A",
+      "reason": "ticker_candidate_unresolved",
+      "security_id": "CNE100002JW6",
+      "source": "holdings_observation"
+    },
+    {
+      "candidate_name": "Goke Microelectronics Co Ltd",
+      "reason": "ticker_candidate_unresolved",
+      "security_id": "CNE100002NQ0",
+      "source": "holdings_observation"
+    },
+    {
+      "candidate_name": "Shennan Circuits Co Ltd",
+      "reason": "ticker_candidate_unresolved",
+      "security_id": "CNE100003373",
+      "source": "holdings_observation"
+    },
+    {
+      "candidate_name": "Huizhou Desay Sv Automotive Co",
+      "reason": "ticker_candidate_unresolved",
+      "security_id": "CNE1000033C7",
+      "source": "holdings_observation"
+    },
+    {
+      "candidate_name": "(선)CONTEMPORARY AMPEREX TECHN-A",
+      "reason": "ticker_candidate_unresolved",
+      "security_id": "CNE100003662",
+      "source": "holdings_observation"
+    },
+    {
+      "candidate_name": "(후)AMLOGIC SHANGHAI INC-A",
+      "reason": "ticker_candidate_unresolved",
+      "security_id": "CNE100003LZ3",
+      "source": "holdings_observation"
+    },
+    {
+      "candidate_name": "Montage Technology Co Ltd",
+      "reason": "ticker_candidate_unresolved",
+      "security_id": "CNE100003MN7",
+      "source": "holdings_observation"
+    },
+    {
+      "candidate_name": "Cambricon Technologies Corp Ltd",
+      "reason": "ticker_candidate_unresolved",
+      "security_id": "CNE1000041R8",
+      "source": "holdings_observation"
+    },
+    {
+      "candidate_name": "3peak Inc",
+      "reason": "ticker_candidate_unresolved",
+      "security_id": "CNE1000042T2",
+      "source": "holdings_observation"
+    },
+    {
+      "candidate_name": "Dazhong Mining Co Ltd",
+      "reason": "ticker_candidate_unresolved",
+      "security_id": "CNE100004JY8",
+      "source": "holdings_observation"
+    },
+    {
+      "candidate_name": "Suzhou K-Hiragawa Electronic Technology",
+      "reason": "ticker_candidate_unresolved",
+      "security_id": "CNE100005NW1",
+      "source": "holdings_observation"
+    },
+    {
+      "candidate_name": "Yuanjie Semiconductor Technology Co Ltd",
+      "reason": "ticker_candidate_unresolved",
+      "security_id": "CNE100005VF9",
+      "source": "holdings_observation"
+    },
+    {
+      "candidate_name": "HUNAN YUNENG NEW ENERGY BA-A",
+      "reason": "ticker_candidate_unresolved",
+      "security_id": "CNE100005YS6",
+      "source": "holdings_observation"
+    },
+    {
+      "candidate_name": "CRH PLC",
+      "reason": "ticker_candidate_unresolved",
+      "security_id": "IE0001827041",
+      "source": "holdings_observation"
+    },
+    {
+      "candidate_name": "Flutter Entertainment PLC",
+      "reason": "ticker_candidate_unresolved",
+      "security_id": "IE00BWT6H894",
+      "source": "holdings_observation"
+    },
+    {
+      "candidate_name": "Trent Ltd",
+      "reason": "ticker_candidate_unresolved",
+      "security_id": "INE849A01020",
+      "source": "holdings_observation"
+    },
+    {
+      "candidate_name": "Zhen Ding Technology Holding Ltd",
+      "reason": "ticker_candidate_unresolved",
+      "security_id": "KYG989221000",
+      "source": "holdings_observation"
+    },
+    {
+      "candidate_name": "Compeq Manufacturing Co Ltd",
+      "reason": "ticker_candidate_unresolved",
+      "security_id": "TW0002313004",
+      "source": "holdings_observation"
+    },
+    {
+      "candidate_name": "AVALONBAY COMMUNITIES INC",
+      "reason": "ticker_candidate_unresolved",
+      "security_id": "US0534841012",
+      "source": "holdings_observation"
+    },
+    {
+      "candidate_name": "CROWN CASTLE Inc",
+      "reason": "ticker_candidate_unresolved",
+      "security_id": "US22822V1017",
+      "source": "holdings_observation"
+    },
+    {
+      "candidate_name": "DIGITAL REALTY TRUST INC",
+      "reason": "ticker_candidate_unresolved",
+      "security_id": "US2538681030",
+      "source": "holdings_observation"
+    },
+    {
+      "candidate_name": "DIRX DLY TSLA BUL 2X ETF-AUI",
+      "reason": "ticker_candidate_unresolved",
+      "security_id": "US25460G2865",
+      "source": "holdings_observation"
+    },
+    {
+      "candidate_name": "EQUINIX",
+      "reason": "ticker_candidate_unresolved",
+      "security_id": "US29444U7000",
+      "source": "holdings_observation"
+    },
+    {
+      "candidate_name": "EQUITY RESIDENTIAL",
+      "reason": "ticker_candidate_unresolved",
+      "security_id": "US29476L1070",
+      "source": "holdings_observation"
+    },
+    {
+      "candidate_name": "EXTRA SPACE STORAGE INC",
+      "reason": "ticker_candidate_unresolved",
+      "security_id": "US30225T1025",
+      "source": "holdings_observation"
+    },
+    {
+      "candidate_name": "INVITATION HOMES",
+      "reason": "ticker_candidate_unresolved",
+      "security_id": "US46187W1071",
+      "source": "holdings_observation"
+    },
+    {
+      "candidate_name": "IRON MOUNTAIN INC",
+      "reason": "ticker_candidate_unresolved",
+      "security_id": "US46284V1017",
+      "source": "holdings_observation"
+    },
+    {
+      "candidate_name": "PROLOGIS INC",
+      "reason": "ticker_candidate_unresolved",
+      "security_id": "US74340W1036",
+      "source": "holdings_observation"
+    },
+    {
+      "candidate_name": "SIMON PROPERTY GROUP INC",
+      "reason": "ticker_candidate_unresolved",
+      "security_id": "US8288061091",
+      "source": "holdings_observation"
+    },
+    {
+      "candidate_name": "TESLA MOTORS",
+      "reason": "ticker_candidate_unresolved",
+      "security_id": "US88160R1014",
+      "source": "holdings_observation"
+    },
+    {
+      "candidate_name": "VENTAS INC",
+      "reason": "ticker_candidate_unresolved",
+      "security_id": "US92276F1003",
+      "source": "holdings_observation"
+    },
+    {
+      "candidate_name": "WELLTOWER INC",
+      "reason": "ticker_candidate_unresolved",
+      "security_id": "US95040Q1040",
+      "source": "holdings_observation"
+    }
+  ],
+  "schema_version": "agent_treport.security_master.review_queue.v1"
+}

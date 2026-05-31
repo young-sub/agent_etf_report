@@ -1,0 +1,162 @@
+{
+  "brands": [
+    {
+      "brand_id": "brand_korea_investment_asset_management",
+      "brand_name": "Korea Investment Asset Management",
+      "source_provider_id": "ace",
+      "status": "active"
+    }
+  ],
+  "collection_source_type": "source_provider",
+  "etfs": [
+    {
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101bq9602",
+      "etf_name": "ACE 중장기국공채액티브",
+      "source_provider_id": "ace",
+      "status": "active"
+    },
+    {
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101dh7878",
+      "etf_name": "ACE 2차전지&친환경차액티브",
+      "source_provider_id": "ace",
+      "status": "active"
+    },
+    {
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101di3603",
+      "etf_name": "ACE ESG액티브",
+      "source_provider_id": "ace",
+      "status": "active"
+    },
+    {
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101dp1319",
+      "etf_name": "ACE 글로벌자율주행액티브",
+      "source_provider_id": "ace",
+      "status": "active"
+    },
+    {
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101dy4338",
+      "etf_name": "ACE 주주환원가치주액티브",
+      "source_provider_id": "ace",
+      "status": "active"
+    },
+    {
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101e19387",
+      "etf_name": "ACE 테슬라밸류체인액티브",
+      "source_provider_id": "ace",
+      "status": "active"
+    },
+    {
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101e42918",
+      "etf_name": "ACE 애플밸류체인액티브",
+      "source_provider_id": "ace",
+      "status": "active"
+    },
+    {
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101eb6081",
+      "etf_name": "ACE 마이크로소프트밸류체인액티브",
+      "source_provider_id": "ace",
+      "status": "active"
+    },
+    {
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101eb6099",
+      "etf_name": "ACE 구글밸류체인액티브",
+      "source_provider_id": "ace",
+      "status": "active"
+    },
+    {
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101eb6172",
+      "etf_name": "ACE 엔비디아밸류체인액티브",
+      "source_provider_id": "ace",
+      "status": "active"
+    },
+    {
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101eb6453",
+      "etf_name": "ACE 인도컨슈머파워액티브",
+      "source_provider_id": "ace",
+      "status": "active"
+    },
+    {
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101ec1768",
+      "etf_name": "ACE 인도시장대표BIG5그룹액티브",
+      "source_provider_id": "ace",
+      "status": "active"
+    },
+    {
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101ee7904",
+      "etf_name": "ACE 라이프자산주주가치액티브",
+      "source_provider_id": "ace",
+      "status": "active"
+    },
+    {
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101ej7669",
+      "etf_name": "ACE BYD밸류체인액티브",
+      "source_provider_id": "ace",
+      "status": "active"
+    },
+    {
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101em0842",
+      "etf_name": "ACE 차이나AI빅테크TOP2+액티브",
+      "source_provider_id": "ace",
+      "status": "active"
+    },
+    {
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101eo4453",
+      "etf_name": "ACE 미국AI테크핵심산업액티브",
+      "source_provider_id": "ace",
+      "status": "active"
+    },
+    {
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101ep9626",
+      "etf_name": "ACE 미국대형가치주액티브",
+      "source_provider_id": "ace",
+      "status": "active"
+    },
+    {
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101ep9634",
+      "etf_name": "ACE 미국대형성장주액티브",
+      "source_provider_id": "ace",
+      "status": "active"
+    },
+    {
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101ep9774",
+      "etf_name": "ACE 리츠부동산인프라액티브",
+      "source_provider_id": "ace",
+      "status": "active"
+    },
+    {
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101es8039",
+      "etf_name": "ACE K수출핵심TOP10산업액티브",
+      "source_provider_id": "ace",
+      "status": "active"
+    },
+    {
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101et7451",
+      "etf_name": "ACE 미국우주테크액티브",
+      "source_provider_id": "ace",
+      "status": "active"
+    }
+  ],
+  "schema_version": "agent_treport.native_universe.state.v1",
+  "updated_at": "2026-05-31T09:32:30.567873+00:00"
+}

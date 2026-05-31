@@ -1,0 +1,22 @@
+{
+  "approval": {
+    "approved_boundary_fingerprint": "1253c2e5fcbd40d35393f417e29328196edcb9a16b4bfc5f8ce0d2d2e238a12c",
+    "missing_scopes": [],
+    "outside_approved_bounds": [],
+    "requested_boundary_fingerprint": "ef9893f9c9a3960cc206d19f9dd692ebae5d0120a186fa855f4079ce88f2834c",
+    "required_scopes": [
+      "live_external_evidence",
+      "model_export"
+    ],
+    "status": "approved",
+    "unapproved_scopes": [],
+    "valid": true
+  },
+  "approval_preflight_artifact": {
+    "artifact_id": "artifact_treport_daily_approval_preflight",
+    "media_type": "application/json",
+    "name": "daily_operational_external_data_preflight.json",
+    "path": ".scratch\\live_probe_20260531_001\\preview_yfinance\\daily_operational_external_data_preflight.json"
+  },
+  "schema_version": "agent_treport.pre_publish.approval_preflight_summary.v1"
+}

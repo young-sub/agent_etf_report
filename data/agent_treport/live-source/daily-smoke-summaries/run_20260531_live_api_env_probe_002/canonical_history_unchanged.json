@@ -1,0 +1,7 @@
+{
+  "canonical_history_mutated": false,
+  "canonical_history_path": "data\\agent_treport\\live-source\\holdings-history",
+  "schema_version": "agent_treport.pre_publish.canonical_history_unchanged.v1",
+  "smoke_history_path": "data\\agent_treport\\live-source\\source-provider-operational\\ace\\holdings-history",
+  "status": "not_mutated_by_preview"
+}

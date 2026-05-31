@@ -14,6 +14,7 @@ dependencies = [
     "pydantic>=2.0",
     "python-dotenv>=1.0",
     "requests>=2.32",
+    "yfinance>=1.4.1",
 ]
 
 [project.scripts]

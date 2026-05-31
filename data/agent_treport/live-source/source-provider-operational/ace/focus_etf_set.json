@@ -1,0 +1,8 @@
+{
+  "schema_version": "agent_treport.focus_etf_set.v1",
+  "focus_etf_ids": [
+    "etf_ace_k55101ep9634"
+  ],
+  "label": "ACE operational live source focus set",
+  "notes": "Single-ETF operational probe set for reusing parsed ACE SourceProvider catalog and holdings history while minimizing live provider calls."
+}

@@ -1,0 +1,43 @@
+{
+  "approved_external_evidence_provider_ids": [],
+  "approved_live_source_cohort": [
+    "ace"
+  ],
+  "approved_live_source_provider_ids": [
+    "ace"
+  ],
+  "approved_max_target_count": 1,
+  "approved_model_exports": [],
+  "boundary_fingerprint": "ff5e52d01b20238bdeb3687cb8e07eb56687c479cfb1597ca4b0c7ba7ff2b99d",
+  "data_classes": [
+    "live_source_holdings_request_identifiers",
+    "normalized_holdings_snapshot_summary",
+    "safe_provider_etf_identifiers"
+  ],
+  "excluded_raw_fields": [
+    "raw_holdings_rows",
+    "raw_report_text",
+    "raw_provider_payloads",
+    "provider_response_envelopes",
+    "raw_urls_or_endpoints",
+    "headers",
+    "credentials",
+    "environment_values",
+    "stack_traces",
+    "absolute_local_paths",
+    "raw_approval_comments"
+  ],
+  "expires_at": null,
+  "instructions": [
+    "Review the sibling preflight disclosure before approving.",
+    "Set status to approved only when this boundary is acceptable.",
+    "Set status to revoked to stop future daily export under this profile."
+  ],
+  "known_unvalidated_provider_exceptions": [],
+  "report_model_export_scope": "path_safe_pre_publish_report_context_for_commentary_generation",
+  "required_scopes": [
+    "live_holdings_acquisition"
+  ],
+  "schema_version": "agent_treport.daily_operational_external_data_approval.v1",
+  "status": "pending"
+}

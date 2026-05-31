@@ -12,12 +12,11 @@
 
 - Repository: `young-sub/agent_etf_report`.
 - Default branch: `main`.
-- Current contents are control-plane docs, an extraction-era package skeleton,
-  and contract-freeze tests. The full domain implementation has not migrated
-  from `agent_pack` yet.
+- Current contents include the migrated extraction-era `agent_treport` domain
+  implementation, tests, docs, fixtures, and Agent TReport data.
 - The repository name is `agent_etf_report`, but extraction-era Python package,
   CLI, data path, schema, and event names stay `agent_treport` until the domain
-  is fully separated from `agent_pack`.
+  is explicitly renamed in a later Work Packet.
 
 ## Source Of Truth
 
@@ -60,6 +59,7 @@ Allowed:
 
 - `agent_treport -> agent_pack`
 - `agent_treport -> agent_pack_docs`
+- `agent_treport -> yfinance`
 - `agent_pack_docs -> agent_pack`
 - `agent_pack_docs -> doc_parser`
 
@@ -81,8 +81,8 @@ Forbidden:
 
 ## Verification And Done
 
-- Do not claim extraction complete until this repo installs independently, the
-  migrated domain tests pass here, `agent_pack` runtime tests still pass there,
-  and active docs in both repos point at the new ownership boundary.
+- Extraction cleanup requires this repo to install independently, domain tests
+  to pass here, `agent_pack` runtime tests to pass there, and active docs in
+  both repos to point at the current ownership boundary.
 - Report unrun checks, legacy compatibility assumptions, and remaining rename
   risks explicitly in Korean by default.

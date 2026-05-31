@@ -64,6 +64,32 @@ surface to `agent_pack_docs` first instead of importing `doc_parser` directly.
 - `SignalReportWorkflow` currently creates an empty `ToolRegistry()` and uses
   `max_tool_rounds=0`; this keeps model-driven tools closed today.
 
+## 2026-05-31 Completion Update
+
+Completed extraction-era slices:
+
+- Phase 1 domain source, tests, fixtures, docs, and `data/agent_treport/**`
+  are present in `agent_etf_report`.
+- Phase 2 keeps `agent_treport` package, CLI, schema, event, artifact, and
+  `data/agent_treport` paths as the extraction-era compatibility contract.
+- Phase 3 cleanup PR #241 removed the domain from `agent_pack`, but
+  2026-05-31 re-verification of current `agent_pack` HEAD found tracked
+  Agent TReport files still present: 81 under `src/agent_treport`, 19
+  `tests/test_agent_treport*.py` files, and 11 under `data/agent_treport`.
+  Current-head runtime-only cleanup remains open.
+- Phase 4 deterministic document evidence composition is implemented.
+- A 2026-05-31 live pre-publish probe stored reusable ACE SourceProvider
+  operational cache under
+  `data/agent_treport/live-source/source-provider-operational/ace/`.
+- The same probe verified `.env`-injected live external API execution without
+  reading or printing secret values. Final API targets were `NVDA`, `AAPL`,
+  `AVGO`, `GOOGL`, and `LRCX`; `finnhub`, `yfinance`, `newsapi`, and `naver`
+  succeeded, while `dart` and `alpha_vantage` returned normal `no_data`.
+
+Remaining post-extraction work is current-head `agent_pack` runtime cleanup,
+operational source-provider expansion, optional model-driven document tools, and
+the later rename packet.
+
 ## Non-Goals
 
 - Do not rename package/import/CLI/data/schema/event names to

@@ -1,0 +1,4248 @@
+{
+  "exclusions": [
+    {
+      "name": "Cash",
+      "reason": "excluded",
+      "security_classification": "cash_like",
+      "security_id": "010010"
+    }
+  ],
+  "mappings": [
+    {
+      "exchange": "KRX",
+      "name": "CJ대한통운",
+      "security_classification": "ticker_candidate",
+      "security_id": "000120",
+      "ticker": "000120"
+    },
+    {
+      "exchange": "KRX",
+      "name": "기아",
+      "security_classification": "ticker_candidate",
+      "security_id": "000270",
+      "ticker": "000270"
+    },
+    {
+      "exchange": "KRX",
+      "name": "동아쏘시오홀딩스",
+      "security_classification": "ticker_candidate",
+      "security_id": "000640",
+      "ticker": "000640"
+    },
+    {
+      "exchange": "KRX",
+      "name": "SK하이닉스",
+      "security_classification": "ticker_candidate",
+      "security_id": "000660",
+      "ticker": "000660"
+    },
+    {
+      "exchange": "KRX",
+      "name": "현대건설",
+      "security_classification": "ticker_candidate",
+      "security_id": "000720",
+      "ticker": "000720"
+    },
+    {
+      "exchange": "KRX",
+      "name": "삼성화재",
+      "security_classification": "ticker_candidate",
+      "security_id": "000810",
+      "ticker": "000810"
+    },
+    {
+      "exchange": "KRX",
+      "name": "DB하이텍",
+      "security_classification": "ticker_candidate",
+      "security_id": "000990",
+      "ticker": "000990"
+    },
+    {
+      "exchange": "KRX",
+      "name": "LX인터내셔널",
+      "security_classification": "ticker_candidate",
+      "security_id": "001120",
+      "ticker": "001120"
+    },
+    {
+      "exchange": "KRX",
+      "name": "현대해상",
+      "security_classification": "ticker_candidate",
+      "security_id": "001450",
+      "ticker": "001450"
+    },
+    {
+      "exchange": "KRX",
+      "name": "삼화콘덴서",
+      "security_classification": "ticker_candidate",
+      "security_id": "001820",
+      "ticker": "001820"
+    },
+    {
+      "exchange": "KRX",
+      "name": "세아제강지주",
+      "security_classification": "ticker_candidate",
+      "security_id": "003030",
+      "ticker": "003030"
+    },
+    {
+      "exchange": "KRX",
+      "name": "삼양식품",
+      "security_classification": "ticker_candidate",
+      "security_id": "003230",
+      "ticker": "003230"
+    },
+    {
+      "exchange": "KRX",
+      "name": "포스코퓨처엠",
+      "security_classification": "ticker_candidate",
+      "security_id": "003670",
+      "ticker": "003670"
+    },
+    {
+      "exchange": "KRX",
+      "name": "코리안리",
+      "security_classification": "ticker_candidate",
+      "security_id": "003690",
+      "ticker": "003690"
+    },
+    {
+      "exchange": "KRX",
+      "name": "삼영",
+      "security_classification": "ticker_candidate",
+      "security_id": "003720",
+      "ticker": "003720"
+    },
+    {
+      "exchange": "KRX",
+      "name": "세방전지",
+      "security_classification": "ticker_candidate",
+      "security_id": "004490",
+      "ticker": "004490"
+    },
+    {
+      "exchange": "KRX",
+      "name": "현대차",
+      "security_classification": "ticker_candidate",
+      "security_id": "005380",
+      "ticker": "005380"
+    },
+    {
+      "exchange": "KRX",
+      "name": "POSCO홀딩스",
+      "security_classification": "ticker_candidate",
+      "security_id": "005490",
+      "ticker": "005490"
+    },
+    {
+      "exchange": "KRX",
+      "name": "삼성전자",
+      "security_classification": "ticker_candidate",
+      "security_id": "005930",
+      "ticker": "005930"
+    },
+    {
+      "exchange": "KRX",
+      "name": "동원산업",
+      "security_classification": "ticker_candidate",
+      "security_id": "006040",
+      "ticker": "006040"
+    },
+    {
+      "exchange": "KRX",
+      "name": "삼성SDI",
+      "security_classification": "ticker_candidate",
+      "security_id": "006400",
+      "ticker": "006400"
+    },
+    {
+      "exchange": "KRX",
+      "name": "DN오토모티브",
+      "security_classification": "ticker_candidate",
+      "security_id": "007340",
+      "ticker": "007340"
+    },
+    {
+      "exchange": "KRX",
+      "name": "삼성전기",
+      "security_classification": "ticker_candidate",
+      "security_id": "009150",
+      "ticker": "009150"
+    },
+    {
+      "exchange": "KRX",
+      "name": "모토닉",
+      "security_classification": "ticker_candidate",
+      "security_id": "009680",
+      "ticker": "009680"
+    },
+    {
+      "exchange": "KRX",
+      "name": "명신산업",
+      "security_classification": "ticker_candidate",
+      "security_id": "009900",
+      "ticker": "009900"
+    },
+    {
+      "exchange": "KRX",
+      "name": "영원무역홀딩스",
+      "security_classification": "ticker_candidate",
+      "security_id": "009970",
+      "ticker": "009970"
+    },
+    {
+      "exchange": "KRX",
+      "name": "LS ELECTRIC",
+      "security_classification": "ticker_candidate",
+      "security_id": "010120",
+      "ticker": "010120"
+    },
+    {
+      "exchange": "KRX",
+      "name": "LG이노텍",
+      "security_classification": "ticker_candidate",
+      "security_id": "011070",
+      "ticker": "011070"
+    },
+    {
+      "exchange": "KRX",
+      "name": "금호석유화학",
+      "security_classification": "ticker_candidate",
+      "security_id": "011780",
+      "ticker": "011780"
+    },
+    {
+      "exchange": "KRX",
+      "name": "현대모비스",
+      "security_classification": "ticker_candidate",
+      "security_id": "012330",
+      "ticker": "012330"
+    },
+    {
+      "exchange": "KRX",
+      "name": "한화에어로스페이스",
+      "security_classification": "ticker_candidate",
+      "security_id": "012450",
+      "ticker": "012450"
+    },
+    {
+      "exchange": "KRX",
+      "name": "한솔케미칼",
+      "security_classification": "ticker_candidate",
+      "security_id": "014680",
+      "ticker": "014680"
+    },
+    {
+      "exchange": "KRX",
+      "name": "유니드",
+      "security_classification": "ticker_candidate",
+      "security_id": "014830",
+      "ticker": "014830"
+    },
+    {
+      "exchange": "KRX",
+      "name": "SK텔레콤",
+      "security_classification": "ticker_candidate",
+      "security_id": "017670",
+      "ticker": "017670"
+    },
+    {
+      "exchange": "KRX",
+      "name": "SK가스",
+      "security_classification": "ticker_candidate",
+      "security_id": "018670",
+      "ticker": "018670"
+    },
+    {
+      "exchange": "KRX",
+      "name": "한온시스템",
+      "security_classification": "ticker_candidate",
+      "security_id": "018880",
+      "ticker": "018880"
+    },
+    {
+      "exchange": "KRX",
+      "name": "롯데에너지머티리얼즈",
+      "security_classification": "ticker_candidate",
+      "security_id": "020150",
+      "ticker": "020150"
+    },
+    {
+      "exchange": "KRX",
+      "name": "코웨이",
+      "security_classification": "ticker_candidate",
+      "security_id": "021240",
+      "ticker": "021240"
+    },
+    {
+      "exchange": "KRX",
+      "name": "태광",
+      "security_classification": "ticker_candidate",
+      "security_id": "023160",
+      "ticker": "023160"
+    },
+    {
+      "exchange": "KRX",
+      "name": "한국단자",
+      "security_classification": "ticker_candidate",
+      "security_id": "025540",
+      "ticker": "025540"
+    },
+    {
+      "exchange": "KRX",
+      "name": "삼성물산",
+      "security_classification": "ticker_candidate",
+      "security_id": "028260",
+      "ticker": "028260"
+    },
+    {
+      "exchange": "KRX",
+      "name": "팬오션",
+      "security_classification": "ticker_candidate",
+      "security_id": "028670",
+      "ticker": "028670"
+    },
+    {
+      "exchange": "KRX",
+      "name": "LG유플러스",
+      "security_classification": "ticker_candidate",
+      "security_id": "032640",
+      "ticker": "032640"
+    },
+    {
+      "exchange": "KRX",
+      "name": "SJG세종",
+      "security_classification": "ticker_candidate",
+      "security_id": "033530",
+      "ticker": "033530"
+    },
+    {
+      "exchange": "KRX",
+      "name": "두산에너빌리티",
+      "security_classification": "ticker_candidate",
+      "security_id": "034020",
+      "ticker": "034020"
+    },
+    {
+      "exchange": "KRX",
+      "name": "LG디스플레이",
+      "security_classification": "ticker_candidate",
+      "security_id": "034220",
+      "ticker": "034220"
+    },
+    {
+      "exchange": "KRX",
+      "name": "NICE",
+      "security_classification": "ticker_candidate",
+      "security_id": "034310",
+      "ticker": "034310"
+    },
+    {
+      "exchange": "KRX",
+      "name": "SK",
+      "security_classification": "ticker_candidate",
+      "security_id": "034730",
+      "ticker": "034730"
+    },
+    {
+      "exchange": "KRX",
+      "name": "백산",
+      "security_classification": "ticker_candidate",
+      "security_id": "035150",
+      "ticker": "035150"
+    },
+    {
+      "exchange": "KRX",
+      "name": "강원랜드",
+      "security_classification": "ticker_candidate",
+      "security_id": "035250",
+      "ticker": "035250"
+    },
+    {
+      "exchange": "KRX",
+      "name": "서희건설",
+      "security_classification": "ticker_candidate",
+      "security_id": "035890",
+      "ticker": "035890"
+    },
+    {
+      "exchange": "KRX",
+      "name": "SNT홀딩스",
+      "security_classification": "ticker_candidate",
+      "security_id": "036530",
+      "ticker": "036530"
+    },
+    {
+      "exchange": "KRX",
+      "name": "나이스정보통신",
+      "security_classification": "ticker_candidate",
+      "security_id": "036800",
+      "ticker": "036800"
+    },
+    {
+      "exchange": "KRX",
+      "name": "솔브레인홀딩스",
+      "security_classification": "ticker_candidate",
+      "security_id": "036830",
+      "ticker": "036830"
+    },
+    {
+      "exchange": "KRX",
+      "name": "광주신세계",
+      "security_classification": "ticker_candidate",
+      "security_id": "037710",
+      "ticker": "037710"
+    },
+    {
+      "exchange": "KRX",
+      "name": "한미반도체",
+      "security_classification": "ticker_candidate",
+      "security_id": "042700",
+      "ticker": "042700"
+    },
+    {
+      "exchange": "KRX",
+      "name": "KSS해운",
+      "security_classification": "ticker_candidate",
+      "security_id": "044450",
+      "ticker": "044450"
+    },
+    {
+      "exchange": "KRX",
+      "name": "LG화학",
+      "security_classification": "ticker_candidate",
+      "security_id": "051910",
+      "ticker": "051910"
+    },
+    {
+      "exchange": "KRX",
+      "name": "한전기술",
+      "security_classification": "ticker_candidate",
+      "security_id": "052690",
+      "ticker": "052690"
+    },
+    {
+      "exchange": "KRX",
+      "name": "신한지주",
+      "security_classification": "ticker_candidate",
+      "security_id": "055550",
+      "ticker": "055550"
+    },
+    {
+      "exchange": "KRX",
+      "name": "SNT모티브",
+      "security_classification": "ticker_candidate",
+      "security_id": "064960",
+      "ticker": "064960"
+    },
+    {
+      "exchange": "KRX",
+      "name": "LG전자",
+      "security_classification": "ticker_candidate",
+      "security_id": "066570",
+      "ticker": "066570"
+    },
+    {
+      "exchange": "KRX",
+      "name": "엘앤에프",
+      "security_classification": "ticker_candidate",
+      "security_id": "066970",
+      "ticker": "066970"
+    },
+    {
+      "exchange": "KRX",
+      "name": "셀트리온",
+      "security_classification": "ticker_candidate",
+      "security_id": "068270",
+      "ticker": "068270"
+    },
+    {
+      "exchange": "KRX",
+      "name": "한국금융지주",
+      "security_classification": "ticker_candidate",
+      "security_id": "071050",
+      "ticker": "071050"
+    },
+    {
+      "exchange": "KRX",
+      "name": "대주전자재료",
+      "security_classification": "ticker_candidate",
+      "security_id": "078600",
+      "ticker": "078600"
+    },
+    {
+      "exchange": "KRX",
+      "name": "GS",
+      "security_classification": "ticker_candidate",
+      "security_id": "078930",
+      "ticker": "078930"
+    },
+    {
+      "exchange": "KRX",
+      "name": "동양생명",
+      "security_classification": "ticker_candidate",
+      "security_id": "082640",
+      "ticker": "082640"
+    },
+    {
+      "exchange": "KRX",
+      "name": "아바코",
+      "security_classification": "ticker_candidate",
+      "security_id": "083930",
+      "ticker": "083930"
+    },
+    {
+      "exchange": "KRX",
+      "name": "현대글로비스",
+      "security_classification": "ticker_candidate",
+      "security_id": "086280",
+      "ticker": "086280"
+    },
+    {
+      "exchange": "KRX",
+      "name": "하나금융지주",
+      "security_classification": "ticker_candidate",
+      "security_id": "086790",
+      "ticker": "086790"
+    },
+    {
+      "exchange": "KRX",
+      "name": "이리츠코크렙",
+      "security_classification": "ticker_candidate",
+      "security_id": "088260",
+      "ticker": "088260"
+    },
+    {
+      "exchange": "KRX",
+      "name": "맥쿼리인프라",
+      "security_classification": "ticker_candidate",
+      "security_id": "088980",
+      "ticker": "088980"
+    },
+    {
+      "exchange": "KRX",
+      "name": "상아프론테크",
+      "security_classification": "ticker_candidate",
+      "security_id": "089980",
+      "ticker": "089980"
+    },
+    {
+      "exchange": "KRX",
+      "name": "상신이디피",
+      "security_classification": "ticker_candidate",
+      "security_id": "091580",
+      "ticker": "091580"
+    },
+    {
+      "exchange": "KRX",
+      "name": "빅솔론",
+      "security_classification": "ticker_candidate",
+      "security_id": "093190",
+      "ticker": "093190"
+    },
+    {
+      "exchange": "KRX",
+      "name": "SK이노베이션",
+      "security_classification": "ticker_candidate",
+      "security_id": "096770",
+      "ticker": "096770"
+    },
+    {
+      "exchange": "HK",
+      "name": "Minimax Group Inc",
+      "security_classification": "ticker_candidate",
+      "security_id": "100 HK",
+      "ticker": "100"
+    },
+    {
+      "exchange": "KRX",
+      "name": "에코앤드림",
+      "security_classification": "ticker_candidate",
+      "security_id": "101360",
+      "ticker": "101360"
+    },
+    {
+      "exchange": "KRX",
+      "name": "KB금융",
+      "security_classification": "ticker_candidate",
+      "security_id": "105560",
+      "ticker": "105560"
+    },
+    {
+      "exchange": "KRX",
+      "name": "한중엔시에스",
+      "security_classification": "ticker_candidate",
+      "security_id": "107640",
+      "ticker": "107640"
+    },
+    {
+      "exchange": "KRX",
+      "name": "대양전기공업",
+      "security_classification": "ticker_candidate",
+      "security_id": "108380",
+      "ticker": "108380"
+    },
+    {
+      "exchange": "KRX",
+      "name": "강원에너지",
+      "security_classification": "ticker_candidate",
+      "security_id": "114190",
+      "ticker": "114190"
+    },
+    {
+      "exchange": "KRX",
+      "name": "코오롱인더",
+      "security_classification": "ticker_candidate",
+      "security_id": "120110",
+      "ticker": "120110"
+    },
+    {
+      "exchange": "HK",
+      "name": "BYD",
+      "security_classification": "ticker_candidate",
+      "security_id": "1211 HK",
+      "ticker": "1211"
+    },
+    {
+      "exchange": "KRX",
+      "name": "나노신소재",
+      "security_classification": "ticker_candidate",
+      "security_id": "121600",
+      "ticker": "121600"
+    },
+    {
+      "exchange": "KRX",
+      "name": "하이비젼시스템",
+      "security_classification": "ticker_candidate",
+      "security_id": "126700",
+      "ticker": "126700"
+    },
+    {
+      "exchange": "KRX",
+      "name": "피엔티",
+      "security_classification": "ticker_candidate",
+      "security_id": "137400",
+      "ticker": "137400"
+    },
+    {
+      "exchange": "KRX",
+      "name": "BNK금융지주",
+      "security_classification": "ticker_candidate",
+      "security_id": "138930",
+      "ticker": "138930"
+    },
+    {
+      "exchange": "KRX",
+      "name": "삼양사",
+      "security_classification": "ticker_candidate",
+      "security_id": "145990",
+      "ticker": "145990"
+    },
+    {
+      "exchange": "HK",
+      "name": "YADEA GROUP HOLDINGS LTD",
+      "security_classification": "ticker_candidate",
+      "security_id": "1585 HK",
+      "ticker": "1585"
+    },
+    {
+      "exchange": "KRX",
+      "name": "한국타이어앤테크놀로지",
+      "security_classification": "ticker_candidate",
+      "security_id": "161390",
+      "ticker": "161390"
+    },
+    {
+      "exchange": "HK",
+      "name": "Geely Automobile Holdings Limited",
+      "security_classification": "ticker_candidate",
+      "security_id": "175 HK",
+      "ticker": "175"
+    },
+    {
+      "exchange": "HK",
+      "name": "GANFENG LITHIUM GROUP CO L-H",
+      "security_classification": "ticker_candidate",
+      "security_id": "1772 HK",
+      "ticker": "1772"
+    },
+    {
+      "exchange": "KRX",
+      "name": "서진시스템",
+      "security_classification": "ticker_candidate",
+      "security_id": "178320",
+      "ticker": "178320"
+    },
+    {
+      "exchange": "KRX",
+      "name": "PI첨단소재",
+      "security_classification": "ticker_candidate",
+      "security_id": "178920",
+      "ticker": "178920"
+    },
+    {
+      "exchange": "HK",
+      "name": "XIAOMI CORP-CLASS B",
+      "security_classification": "ticker_candidate",
+      "security_id": "1810 HK",
+      "ticker": "1810"
+    },
+    {
+      "exchange": "KRX",
+      "name": "종근당",
+      "security_classification": "ticker_candidate",
+      "security_id": "185750",
+      "ticker": "185750"
+    },
+    {
+      "exchange": "KRX",
+      "name": "더블유게임즈",
+      "security_classification": "ticker_candidate",
+      "security_id": "192080",
+      "ticker": "192080"
+    },
+    {
+      "exchange": "KRX",
+      "name": "쿠쿠홀딩스",
+      "security_classification": "ticker_candidate",
+      "security_id": "192400",
+      "ticker": "192400"
+    },
+    {
+      "exchange": "KRX",
+      "name": "해성디에스",
+      "security_classification": "ticker_candidate",
+      "security_id": "195870",
+      "ticker": "195870"
+    },
+    {
+      "exchange": "HK",
+      "name": "LI AUTO",
+      "security_classification": "ticker_candidate",
+      "security_id": "2015 HK",
+      "ticker": "2015"
+    },
+    {
+      "exchange": "HK",
+      "name": "AAC TECH",
+      "security_classification": "ticker_candidate",
+      "security_id": "2018 HK",
+      "ticker": "2018"
+    },
+    {
+      "exchange": "HK",
+      "name": "Pony AI Inc",
+      "security_classification": "ticker_candidate",
+      "security_id": "2026 HK",
+      "ticker": "2026"
+    },
+    {
+      "exchange": "KRX",
+      "name": "HL만도",
+      "security_classification": "ticker_candidate",
+      "security_id": "204320",
+      "ticker": "204320"
+    },
+    {
+      "exchange": "KRX",
+      "name": "삼성바이오로직스",
+      "security_classification": "ticker_candidate",
+      "security_id": "207940",
+      "ticker": "207940"
+    },
+    {
+      "exchange": "KRX",
+      "name": "메가스터디교육",
+      "security_classification": "ticker_candidate",
+      "security_id": "215200",
+      "ticker": "215200"
+    },
+    {
+      "exchange": "HK",
+      "name": "GREAT WALL MOTOR COMPANY-H",
+      "security_classification": "ticker_candidate",
+      "security_id": "2333 HK",
+      "ticker": "2333"
+    },
+    {
+      "exchange": "HK",
+      "name": "Weichai Power Co Ltd",
+      "security_classification": "ticker_candidate",
+      "security_id": "2338 HK",
+      "ticker": "2338"
+    },
+    {
+      "exchange": "KRX",
+      "name": "원익IPS",
+      "security_classification": "ticker_candidate",
+      "security_id": "240810",
+      "ticker": "240810"
+    },
+    {
+      "exchange": "KRX",
+      "name": "신흥에스이씨",
+      "security_classification": "ticker_candidate",
+      "security_id": "243840",
+      "ticker": "243840"
+    },
+    {
+      "exchange": "KRX",
+      "name": "에코프로비엠",
+      "security_classification": "ticker_candidate",
+      "security_id": "247540",
+      "ticker": "247540"
+    },
+    {
+      "exchange": "HK",
+      "name": "Victory Giant Technology Huizhou Co Ltd",
+      "security_classification": "ticker_candidate",
+      "security_id": "2476 HK",
+      "ticker": "2476"
+    },
+    {
+      "exchange": "HK",
+      "name": "Knowledge Atlas Technology JSC Ltd",
+      "security_classification": "ticker_candidate",
+      "security_id": "2513 HK",
+      "ticker": "2513"
+    },
+    {
+      "exchange": "KRX",
+      "name": "HD현대",
+      "security_classification": "ticker_candidate",
+      "security_id": "267250",
+      "ticker": "267250"
+    },
+    {
+      "exchange": "KRX",
+      "name": "HD현대일렉트릭",
+      "security_classification": "ticker_candidate",
+      "security_id": "267260",
+      "ticker": "267260"
+    },
+    {
+      "exchange": "KRX",
+      "name": "HD건설기계",
+      "security_classification": "ticker_candidate",
+      "security_id": "267270",
+      "ticker": "267270"
+    },
+    {
+      "exchange": "KRX",
+      "name": "나인테크",
+      "security_classification": "ticker_candidate",
+      "security_id": "267320",
+      "ticker": "267320"
+    },
+    {
+      "exchange": "KRX",
+      "name": "에이피알",
+      "security_classification": "ticker_candidate",
+      "security_id": "278470",
+      "ticker": "278470"
+    },
+    {
+      "exchange": "HK",
+      "name": "BYD ELECTRONIC INTL CO LTD",
+      "security_classification": "ticker_candidate",
+      "security_id": "285 HK",
+      "ticker": "285"
+    },
+    {
+      "exchange": "JP",
+      "name": "Kioxia Holdings Corp",
+      "security_classification": "ticker_candidate",
+      "security_id": "285A JP",
+      "ticker": "285A"
+    },
+    {
+      "exchange": "KRX",
+      "name": "신한알파리츠",
+      "security_classification": "ticker_candidate",
+      "security_id": "293940",
+      "ticker": "293940"
+    },
+    {
+      "exchange": "KRX",
+      "name": "효성중공업",
+      "security_classification": "ticker_candidate",
+      "security_id": "298040",
+      "ticker": "298040"
+    },
+    {
+      "exchange": "KRX",
+      "name": "HS효성첨단소재",
+      "security_classification": "ticker_candidate",
+      "security_id": "298050",
+      "ticker": "298050"
+    },
+    {
+      "exchange": "KRX",
+      "name": "세아제강",
+      "security_classification": "ticker_candidate",
+      "security_id": "306200",
+      "ticker": "306200"
+    },
+    {
+      "exchange": "KRX",
+      "name": "우리금융지주",
+      "security_classification": "ticker_candidate",
+      "security_id": "316140",
+      "ticker": "316140"
+    },
+    {
+      "exchange": "KRX",
+      "name": "태성",
+      "security_classification": "ticker_candidate",
+      "security_id": "323280",
+      "ticker": "323280"
+    },
+    {
+      "exchange": "KRX",
+      "name": "HD현대중공업",
+      "security_classification": "ticker_candidate",
+      "security_id": "329180",
+      "ticker": "329180"
+    },
+    {
+      "exchange": "KRX",
+      "name": "롯데리츠",
+      "security_classification": "ticker_candidate",
+      "security_id": "330590",
+      "ticker": "330590"
+    },
+    {
+      "exchange": "KRX",
+      "name": "솔루스첨단소재",
+      "security_classification": "ticker_candidate",
+      "security_id": "336370",
+      "ticker": "336370"
+    },
+    {
+      "exchange": "HK",
+      "name": "Chinasoft International Ltd",
+      "security_classification": "ticker_candidate",
+      "security_id": "354 HK",
+      "ticker": "354"
+    },
+    {
+      "exchange": "KRX",
+      "name": "코람코라이프인프라리츠",
+      "security_classification": "ticker_candidate",
+      "security_id": "357120",
+      "ticker": "357120"
+    },
+    {
+      "exchange": "KRX",
+      "name": "솔브레인",
+      "security_classification": "ticker_candidate",
+      "security_id": "357780",
+      "ticker": "357780"
+    },
+    {
+      "exchange": "KRX",
+      "name": "SK아이이테크놀로지",
+      "security_classification": "ticker_candidate",
+      "security_id": "361610",
+      "ticker": "361610"
+    },
+    {
+      "exchange": "KRX",
+      "name": "성일하이텍",
+      "security_classification": "ticker_candidate",
+      "security_id": "365340",
+      "ticker": "365340"
+    },
+    {
+      "exchange": "KRX",
+      "name": "ESR켄달스퀘어리츠",
+      "security_classification": "ticker_candidate",
+      "security_id": "365550",
+      "ticker": "365550"
+    },
+    {
+      "exchange": "KRX",
+      "name": "LG에너지솔루션",
+      "security_classification": "ticker_candidate",
+      "security_id": "373220",
+      "ticker": "373220"
+    },
+    {
+      "exchange": "KRX",
+      "name": "디앤디플랫폼리츠",
+      "security_classification": "ticker_candidate",
+      "security_id": "377190",
+      "ticker": "377190"
+    },
+    {
+      "exchange": "KRX",
+      "name": "필에너지",
+      "security_classification": "ticker_candidate",
+      "security_id": "378340",
+      "ticker": "378340"
+    },
+    {
+      "exchange": "KRX",
+      "name": "더블유씨피",
+      "security_classification": "ticker_candidate",
+      "security_id": "393890",
+      "ticker": "393890"
+    },
+    {
+      "exchange": "KRX",
+      "name": "SK리츠",
+      "security_classification": "ticker_candidate",
+      "security_id": "395400",
+      "ticker": "395400"
+    },
+    {
+      "exchange": "HK",
+      "name": "GigaDevice Semiconductor Inc",
+      "security_classification": "ticker_candidate",
+      "security_id": "3986 HK",
+      "ticker": "3986"
+    },
+    {
+      "exchange": "HK",
+      "name": "CMOC GROUP LTD-H",
+      "security_classification": "ticker_candidate",
+      "security_id": "3993 HK",
+      "ticker": "3993"
+    },
+    {
+      "exchange": "KRX",
+      "name": "SK스퀘어",
+      "security_classification": "ticker_candidate",
+      "security_id": "402340",
+      "ticker": "402340"
+    },
+    {
+      "exchange": "KRX",
+      "name": "신한서부티엔디리츠",
+      "security_classification": "ticker_candidate",
+      "security_id": "404990",
+      "ticker": "404990"
+    },
+    {
+      "exchange": "KRX",
+      "name": "KB발해인프라",
+      "security_classification": "ticker_candidate",
+      "security_id": "415640",
+      "ticker": "415640"
+    },
+    {
+      "exchange": "KRX",
+      "name": "신성에스티",
+      "security_classification": "ticker_candidate",
+      "security_id": "416180",
+      "ticker": "416180"
+    },
+    {
+      "exchange": "KRX",
+      "name": "나노팀",
+      "security_classification": "ticker_candidate",
+      "security_id": "417010",
+      "ticker": "417010"
+    },
+    {
+      "exchange": "KRX",
+      "name": "코람코더원리츠",
+      "security_classification": "ticker_candidate",
+      "security_id": "417310",
+      "ticker": "417310"
+    },
+    {
+      "exchange": "HK",
+      "name": "Minth Group Ltd",
+      "security_classification": "ticker_candidate",
+      "security_id": "425 HK",
+      "ticker": "425"
+    },
+    {
+      "exchange": "KRX",
+      "name": "삼성FN리츠",
+      "security_classification": "ticker_candidate",
+      "security_id": "448730",
+      "ticker": "448730"
+    },
+    {
+      "exchange": "KRX",
+      "name": "한화리츠",
+      "security_classification": "ticker_candidate",
+      "security_id": "451800",
+      "ticker": "451800"
+    },
+    {
+      "exchange": "KRX",
+      "name": "아이스크림미디어",
+      "security_classification": "ticker_candidate",
+      "security_id": "461300",
+      "ticker": "461300"
+    },
+    {
+      "exchange": "KRX",
+      "name": "블랙야크아이앤씨",
+      "security_classification": "ticker_candidate",
+      "security_id": "478560",
+      "ticker": "478560"
+    },
+    {
+      "exchange": "KRX",
+      "name": "세미파이브",
+      "security_classification": "ticker_candidate",
+      "security_id": "490470",
+      "ticker": "490470"
+    },
+    {
+      "exchange": "HK",
+      "name": "Shanghai Biren Technology Co Ltd",
+      "security_classification": "ticker_candidate",
+      "security_id": "6082 HK",
+      "ticker": "6082"
+    },
+    {
+      "exchange": "JP",
+      "name": "MINEBEA MITSUMI",
+      "security_classification": "ticker_candidate",
+      "security_id": "6479 JP",
+      "ticker": "6479"
+    },
+    {
+      "exchange": "JP",
+      "name": "NIDEC CORP",
+      "security_classification": "ticker_candidate",
+      "security_id": "6594 JP",
+      "ticker": "6594"
+    },
+    {
+      "exchange": "JP",
+      "name": "PANASONIC HOLDINGS CORP",
+      "security_classification": "ticker_candidate",
+      "security_id": "6752 JP",
+      "ticker": "6752"
+    },
+    {
+      "exchange": "JP",
+      "name": "Sony Group Corp",
+      "security_classification": "ticker_candidate",
+      "security_id": "6758 JP",
+      "ticker": "6758"
+    },
+    {
+      "exchange": "JP",
+      "name": "TDK Corp",
+      "security_classification": "ticker_candidate",
+      "security_id": "6762 JP",
+      "ticker": "6762"
+    },
+    {
+      "exchange": "JP",
+      "name": "ALPS ELECTRIC CO LTD",
+      "security_classification": "ticker_candidate",
+      "security_id": "6770 JP",
+      "ticker": "6770"
+    },
+    {
+      "exchange": "HK",
+      "name": "Yangtze Optical Fibre & Cable Joint Stoc",
+      "security_classification": "ticker_candidate",
+      "security_id": "6869 HK",
+      "ticker": "6869"
+    },
+    {
+      "exchange": "HK",
+      "name": "TENCENT HOLD",
+      "security_classification": "ticker_candidate",
+      "security_id": "700 HK",
+      "ticker": "700"
+    },
+    {
+      "exchange": "JP",
+      "name": "NOK Corp",
+      "security_classification": "ticker_candidate",
+      "security_id": "7240 JP",
+      "ticker": "7240"
+    },
+    {
+      "exchange": "HK",
+      "name": "WeRide Inc",
+      "security_classification": "ticker_candidate",
+      "security_id": "800 HK",
+      "ticker": "800"
+    },
+    {
+      "exchange": "HK",
+      "name": "BILIBILI",
+      "security_classification": "ticker_candidate",
+      "security_id": "9626 HK",
+      "ticker": "9626"
+    },
+    {
+      "exchange": "HK",
+      "name": "Horizon Robotics Inc",
+      "security_classification": "ticker_candidate",
+      "security_id": "9660 HK",
+      "ticker": "9660"
+    },
+    {
+      "exchange": "HK",
+      "name": "SMIC Equity",
+      "security_classification": "ticker_candidate",
+      "security_id": "981 HK",
+      "ticker": "981"
+    },
+    {
+      "exchange": "HK",
+      "name": "Zhejiang Leapmotor Technology Co Ltd",
+      "security_classification": "ticker_candidate",
+      "security_id": "9863 HK",
+      "ticker": "9863"
+    },
+    {
+      "exchange": "HK",
+      "name": "NIO INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "9866 HK",
+      "ticker": "9866"
+    },
+    {
+      "exchange": "HK",
+      "name": "Xpeng inc",
+      "security_classification": "ticker_candidate",
+      "security_id": "9868 HK",
+      "ticker": "9868"
+    },
+    {
+      "exchange": "HK",
+      "name": "BIDU",
+      "security_classification": "ticker_candidate",
+      "security_id": "9888 HK",
+      "ticker": "9888"
+    },
+    {
+      "exchange": "HK",
+      "name": "Shanghai Iluvatar CoreX Semiconductor Co",
+      "security_classification": "ticker_candidate",
+      "security_id": "9903 HK",
+      "ticker": "9903"
+    },
+    {
+      "exchange": "HK",
+      "name": "Chery Automobile Co Ltd",
+      "security_classification": "ticker_candidate",
+      "security_id": "9973 HK",
+      "ticker": "9973"
+    },
+    {
+      "exchange": "JP",
+      "name": "SOFTBANK GROUP",
+      "security_classification": "ticker_candidate",
+      "security_id": "9984 JP",
+      "ticker": "9984"
+    },
+    {
+      "exchange": "HK",
+      "name": "Alibaba group holding ltd",
+      "security_classification": "ticker_candidate",
+      "security_id": "9988 HK",
+      "ticker": "9988"
+    },
+    {
+      "exchange": "US",
+      "name": "AGILENT TECHNOLOGIES INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "A US",
+      "ticker": "A"
+    },
+    {
+      "exchange": "US",
+      "name": "APPLE Inc",
+      "security_classification": "ticker_candidate",
+      "security_id": "AAPL US",
+      "ticker": "AAPL"
+    },
+    {
+      "exchange": "US",
+      "name": "ABBVIE INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "ABBV US",
+      "ticker": "ABBV"
+    },
+    {
+      "exchange": "US",
+      "name": "AIRBNB INC-CLASS A",
+      "security_classification": "ticker_candidate",
+      "security_id": "ABNB US",
+      "ticker": "ABNB"
+    },
+    {
+      "exchange": "US",
+      "name": "ABBOTT LABORATORIES",
+      "security_classification": "ticker_candidate",
+      "security_id": "ABT US",
+      "ticker": "ABT"
+    },
+    {
+      "exchange": "IN",
+      "name": "Ambuja Cements Ltd",
+      "security_classification": "ticker_candidate",
+      "security_id": "ACEM IN",
+      "ticker": "ACEM"
+    },
+    {
+      "exchange": "US",
+      "name": "Arch Capital Group Ltd",
+      "security_classification": "ticker_candidate",
+      "security_id": "ACGL US",
+      "ticker": "ACGL"
+    },
+    {
+      "exchange": "US",
+      "name": "ACCENTURE PLC-CL A",
+      "security_classification": "ticker_candidate",
+      "security_id": "ACN US",
+      "ticker": "ACN"
+    },
+    {
+      "exchange": "US",
+      "name": "Adobe Inc",
+      "security_classification": "ticker_candidate",
+      "security_id": "ADBE US",
+      "ticker": "ADBE"
+    },
+    {
+      "exchange": "IN",
+      "name": "Adani Enterprises Ltd",
+      "security_classification": "ticker_candidate",
+      "security_id": "ADE IN",
+      "ticker": "ADE"
+    },
+    {
+      "exchange": "US",
+      "name": "ANALOG DEVICES",
+      "security_classification": "ticker_candidate",
+      "security_id": "ADI US",
+      "ticker": "ADI"
+    },
+    {
+      "exchange": "IN",
+      "name": "Adani Ports & Special Economic Zone Ltd",
+      "security_classification": "ticker_candidate",
+      "security_id": "ADSEZ IN",
+      "ticker": "ADSEZ"
+    },
+    {
+      "exchange": "US",
+      "name": "AUTODESK Inc",
+      "security_classification": "ticker_candidate",
+      "security_id": "ADSK US",
+      "ticker": "ADSK"
+    },
+    {
+      "exchange": "US",
+      "name": "AMEREN CORPORATION",
+      "security_classification": "ticker_candidate",
+      "security_id": "AEE US",
+      "ticker": "AEE"
+    },
+    {
+      "exchange": "US",
+      "name": "AMERICAN ELECTRIC POWER",
+      "security_classification": "ticker_candidate",
+      "security_id": "AEP US",
+      "ticker": "AEP"
+    },
+    {
+      "exchange": "US",
+      "name": "AFLAC INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "AFL US",
+      "ticker": "AFL"
+    },
+    {
+      "exchange": "US",
+      "name": "AMERICAN INTERNATIONAL GROUP",
+      "security_classification": "ticker_candidate",
+      "security_id": "AIG US",
+      "ticker": "AIG"
+    },
+    {
+      "exchange": "US",
+      "name": "ARTHUR J GALLAGHER & CO",
+      "security_classification": "ticker_candidate",
+      "security_id": "AJG US",
+      "ticker": "AJG"
+    },
+    {
+      "exchange": "US",
+      "name": "Akamai Technologies Inc",
+      "security_classification": "ticker_candidate",
+      "security_id": "AKAM US",
+      "ticker": "AKAM"
+    },
+    {
+      "exchange": "US",
+      "name": "ALBEMARLE CORP",
+      "security_classification": "ticker_candidate",
+      "security_id": "ALB US",
+      "ticker": "ALB"
+    },
+    {
+      "exchange": "US",
+      "name": "ALLSTATE CORP",
+      "security_classification": "ticker_candidate",
+      "security_id": "ALL US",
+      "ticker": "ALL"
+    },
+    {
+      "exchange": "US",
+      "name": "Alnylam Pharmaceuticals Inc",
+      "security_classification": "ticker_candidate",
+      "security_id": "ALNY US",
+      "ticker": "ALNY"
+    },
+    {
+      "exchange": "US",
+      "name": "APPLIED MATERIALS INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "AMAT US",
+      "ticker": "AMAT"
+    },
+    {
+      "exchange": "IN",
+      "name": "Amber Enterprises India Ltd",
+      "security_classification": "ticker_candidate",
+      "security_id": "AMBER IN",
+      "ticker": "AMBER"
+    },
+    {
+      "exchange": "US",
+      "name": "ADVANCED MICRO DEVICES",
+      "security_classification": "ticker_candidate",
+      "security_id": "AMD US",
+      "ticker": "AMD"
+    },
+    {
+      "exchange": "US",
+      "name": "AMETEK INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "AME US",
+      "ticker": "AME"
+    },
+    {
+      "exchange": "US",
+      "name": "AMGEN INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "AMGN US",
+      "ticker": "AMGN"
+    },
+    {
+      "exchange": "US",
+      "name": "Amkor Technology Inc",
+      "security_classification": "ticker_candidate",
+      "security_id": "AMKR US",
+      "ticker": "AMKR"
+    },
+    {
+      "exchange": "US",
+      "name": "AMERIPRISE FINANCIAL INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "AMP US",
+      "ticker": "AMP"
+    },
+    {
+      "exchange": "US",
+      "name": "Amazon.com Inc",
+      "security_classification": "ticker_candidate",
+      "security_id": "AMZN US",
+      "ticker": "AMZN"
+    },
+    {
+      "exchange": "US",
+      "name": "ARISTA NETWORKS",
+      "security_classification": "ticker_candidate",
+      "security_id": "ANET US",
+      "ticker": "ANET"
+    },
+    {
+      "exchange": "US",
+      "name": "AON PLC",
+      "security_classification": "ticker_candidate",
+      "security_id": "AON US",
+      "ticker": "AON"
+    },
+    {
+      "exchange": "US",
+      "name": "AMPHENOL CORP-CL A",
+      "security_classification": "ticker_candidate",
+      "security_id": "APH US",
+      "ticker": "APH"
+    },
+    {
+      "exchange": "IN",
+      "name": "Apollo Hospitals Enterprise Ltd",
+      "security_classification": "ticker_candidate",
+      "security_id": "APHS IN",
+      "ticker": "APHS"
+    },
+    {
+      "exchange": "US",
+      "name": "AppLovin Corp",
+      "security_classification": "ticker_candidate",
+      "security_id": "APP US",
+      "ticker": "APP"
+    },
+    {
+      "exchange": "US",
+      "name": "Ares Management Corp",
+      "security_classification": "ticker_candidate",
+      "security_id": "ARES US",
+      "ticker": "ARES"
+    },
+    {
+      "exchange": "US",
+      "name": "ARM Holdings PLC",
+      "security_classification": "ticker_candidate",
+      "security_id": "ARM US",
+      "ticker": "ARM"
+    },
+    {
+      "exchange": "US",
+      "name": "AST SPACEMOBILE CL A ORD",
+      "security_classification": "ticker_candidate",
+      "security_id": "ASTS US",
+      "ticker": "ASTS"
+    },
+    {
+      "exchange": "US",
+      "name": "ASE Technology Holding Co Ltd",
+      "security_classification": "ticker_candidate",
+      "security_id": "ASX US",
+      "ticker": "ASX"
+    },
+    {
+      "exchange": "US",
+      "name": "AeroVironment Inc",
+      "security_classification": "ticker_candidate",
+      "security_id": "AVAV US",
+      "ticker": "AVAV"
+    },
+    {
+      "exchange": "US",
+      "name": "BROADCOM LTD",
+      "security_classification": "ticker_candidate",
+      "security_id": "AVGO US",
+      "ticker": "AVGO"
+    },
+    {
+      "exchange": "US",
+      "name": "AMERICAN WATER WORKS CO INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "AWK US",
+      "ticker": "AWK"
+    },
+    {
+      "exchange": "US",
+      "name": "AXON ENTERPRISE INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "AXON US",
+      "ticker": "AXON"
+    },
+    {
+      "exchange": "US",
+      "name": "AMERICAN EXPRESS CO",
+      "security_classification": "ticker_candidate",
+      "security_id": "AXP US",
+      "ticker": "AXP"
+    },
+    {
+      "exchange": "US",
+      "name": "BOEING CO/THE",
+      "security_classification": "ticker_candidate",
+      "security_id": "BA US",
+      "ticker": "BA"
+    },
+    {
+      "exchange": "US",
+      "name": "BANK OF AMERICA CORP",
+      "security_classification": "ticker_candidate",
+      "security_id": "BAC US",
+      "ticker": "BAC"
+    },
+    {
+      "exchange": "IN",
+      "name": "Bajaj Finance Ltd",
+      "security_classification": "ticker_candidate",
+      "security_id": "BAF IN",
+      "ticker": "BAF"
+    },
+    {
+      "exchange": "US",
+      "name": "BECTON DICKINSON AND CO",
+      "security_classification": "ticker_candidate",
+      "security_id": "BDX US",
+      "ticker": "BDX"
+    },
+    {
+      "exchange": "US",
+      "name": "BLOOM ENERGY CORPORATION",
+      "security_classification": "ticker_candidate",
+      "security_id": "BE US",
+      "ticker": "BE"
+    },
+    {
+      "exchange": "IN",
+      "name": "Bajaj Auto Ltd",
+      "security_classification": "ticker_candidate",
+      "security_id": "BJAUT IN",
+      "ticker": "BJAUT"
+    },
+    {
+      "exchange": "IN",
+      "name": "Bajaj Finserv Ltd",
+      "security_classification": "ticker_candidate",
+      "security_id": "BJFIN IN",
+      "ticker": "BJFIN"
+    },
+    {
+      "exchange": "US",
+      "name": "BANK OF NEW YORK MELLON CORP",
+      "security_classification": "ticker_candidate",
+      "security_id": "BK US",
+      "ticker": "BK"
+    },
+    {
+      "exchange": "US",
+      "name": "BOOKING HOLDINGS",
+      "security_classification": "ticker_candidate",
+      "security_id": "BKNG US",
+      "ticker": "BKNG"
+    },
+    {
+      "exchange": "US",
+      "name": "BAKER HUGHES A GE",
+      "security_classification": "ticker_candidate",
+      "security_id": "BKR US",
+      "ticker": "BKR"
+    },
+    {
+      "exchange": "US",
+      "name": "BlackSky Technology Inc",
+      "security_classification": "ticker_candidate",
+      "security_id": "BKSY US",
+      "ticker": "BKSY"
+    },
+    {
+      "exchange": "US",
+      "name": "Blue Bird Corp",
+      "security_classification": "ticker_candidate",
+      "security_id": "BLBD US",
+      "ticker": "BLBD"
+    },
+    {
+      "exchange": "US",
+      "name": "Blackrock Inc",
+      "security_classification": "ticker_candidate",
+      "security_id": "BLK US",
+      "ticker": "BLK"
+    },
+    {
+      "exchange": "IN",
+      "name": "Blue Star Ltd",
+      "security_classification": "ticker_candidate",
+      "security_id": "BLSTR IN",
+      "ticker": "BLSTR"
+    },
+    {
+      "exchange": "US",
+      "name": "BRISTOL-MYERS SQUIBB CO",
+      "security_classification": "ticker_candidate",
+      "security_id": "BMY US",
+      "ticker": "BMY"
+    },
+    {
+      "exchange": "US",
+      "name": "BERKSHIRE HATHWAY CL B ORD.",
+      "security_classification": "ticker_candidate",
+      "security_id": "BRK/B US",
+      "ticker": "BRK/B"
+    },
+    {
+      "exchange": "US",
+      "name": "BOSTON SCIENTIFIC CORP",
+      "security_classification": "ticker_candidate",
+      "security_id": "BSX US",
+      "ticker": "BSX"
+    },
+    {
+      "exchange": "US",
+      "name": "Burlington Stores Inc",
+      "security_classification": "ticker_candidate",
+      "security_id": "BURL US",
+      "ticker": "BURL"
+    },
+    {
+      "exchange": "US",
+      "name": "BORGWARNER INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "BWA US",
+      "ticker": "BWA"
+    },
+    {
+      "exchange": "US",
+      "name": "Blackstone Inc",
+      "security_classification": "ticker_candidate",
+      "security_id": "BX US",
+      "ticker": "BX"
+    },
+    {
+      "exchange": "US",
+      "name": "CITIGROUP INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "C US",
+      "ticker": "C"
+    },
+    {
+      "exchange": "US",
+      "name": "CARDINAL HEALTH INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "CAH US",
+      "ticker": "CAH"
+    },
+    {
+      "exchange": "US",
+      "name": "CARRIER GLOBAL CORP",
+      "security_classification": "ticker_candidate",
+      "security_id": "CARR US",
+      "ticker": "CARR"
+    },
+    {
+      "exchange": "US",
+      "name": "CATERPILLAR INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "CAT US",
+      "ticker": "CAT"
+    },
+    {
+      "exchange": "US",
+      "name": "CHUBB LTD",
+      "security_classification": "ticker_candidate",
+      "security_id": "CB US",
+      "ticker": "CB"
+    },
+    {
+      "exchange": "US",
+      "name": "CBOE Holdings Inc",
+      "security_classification": "ticker_candidate",
+      "security_id": "CBOE US",
+      "ticker": "CBOE"
+    },
+    {
+      "exchange": "US",
+      "name": "CBRE GROUP INC - A",
+      "security_classification": "ticker_candidate",
+      "security_id": "CBRE US",
+      "ticker": "CBRE"
+    },
+    {
+      "exchange": "US",
+      "name": "CARNIVAL CORP LTD",
+      "security_classification": "ticker_candidate",
+      "security_id": "CCL US",
+      "ticker": "CCL"
+    },
+    {
+      "exchange": "US",
+      "name": "Cadence Design Systems Inc",
+      "security_classification": "ticker_candidate",
+      "security_id": "CDNS US",
+      "ticker": "CDNS"
+    },
+    {
+      "exchange": "US",
+      "name": "CONSTELLATION ENERGY",
+      "security_classification": "ticker_candidate",
+      "security_id": "CEG US",
+      "ticker": "CEG"
+    },
+    {
+      "exchange": "US",
+      "name": "CITIZENS FINANCIAL GROUP",
+      "security_classification": "ticker_candidate",
+      "security_id": "CFG US",
+      "ticker": "CFG"
+    },
+    {
+      "exchange": "US",
+      "name": "CHURCH & DWIGHT CO INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "CHD US",
+      "ticker": "CHD"
+    },
+    {
+      "exchange": "US",
+      "name": "CHARTER COMMUNICATIONS INC-A",
+      "security_classification": "ticker_candidate",
+      "security_id": "CHTR US",
+      "ticker": "CHTR"
+    },
+    {
+      "exchange": "US",
+      "name": "CIGNA GROUP/THE",
+      "security_classification": "ticker_candidate",
+      "security_id": "CI US",
+      "ticker": "CI"
+    },
+    {
+      "exchange": "US",
+      "name": "Ciena Corp",
+      "security_classification": "ticker_candidate",
+      "security_id": "CIEN US",
+      "ticker": "CIEN"
+    },
+    {
+      "exchange": "US",
+      "name": "CINCINNATI FINANCIAL CORP",
+      "security_classification": "ticker_candidate",
+      "security_id": "CINF US",
+      "ticker": "CINF"
+    },
+    {
+      "exchange": "US",
+      "name": "COMCAST CORP",
+      "security_classification": "ticker_candidate",
+      "security_id": "CMCSA US",
+      "ticker": "CMCSA"
+    },
+    {
+      "exchange": "US",
+      "name": "CME GROUP INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "CME US",
+      "ticker": "CME"
+    },
+    {
+      "exchange": "US",
+      "name": "CUMMINS INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "CMI US",
+      "ticker": "CMI"
+    },
+    {
+      "exchange": "US",
+      "name": "CMS ENERGY CORP",
+      "security_classification": "ticker_candidate",
+      "security_id": "CMS US",
+      "ticker": "CMS"
+    },
+    {
+      "exchange": "US",
+      "name": "CENTENE CORP",
+      "security_classification": "ticker_candidate",
+      "security_id": "CNC US",
+      "ticker": "CNC"
+    },
+    {
+      "exchange": "US",
+      "name": "CENTERPOINT ENERGY INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "CNP US",
+      "ticker": "CNP"
+    },
+    {
+      "exchange": "US",
+      "name": "CAPITAL ONE FINANCIAL CORP",
+      "security_classification": "ticker_candidate",
+      "security_id": "COF US",
+      "ticker": "COF"
+    },
+    {
+      "exchange": "US",
+      "name": "Coherent Corp",
+      "security_classification": "ticker_candidate",
+      "security_id": "COHR US",
+      "ticker": "COHR"
+    },
+    {
+      "exchange": "US",
+      "name": "Coinbase Global Inc",
+      "security_classification": "ticker_candidate",
+      "security_id": "COIN US",
+      "ticker": "COIN"
+    },
+    {
+      "exchange": "US",
+      "name": "CONOCOPHILLIPS",
+      "security_classification": "ticker_candidate",
+      "security_id": "COP US",
+      "ticker": "COP"
+    },
+    {
+      "exchange": "US",
+      "name": "Cencora Inc",
+      "security_classification": "ticker_candidate",
+      "security_id": "COR US",
+      "ticker": "COR"
+    },
+    {
+      "exchange": "US",
+      "name": "CORPAY INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "CPAY US",
+      "ticker": "CPAY"
+    },
+    {
+      "exchange": "US",
+      "name": "COPART",
+      "security_classification": "ticker_candidate",
+      "security_id": "CPRT US",
+      "ticker": "CPRT"
+    },
+    {
+      "exchange": "US",
+      "name": "Credo Technology Holding Ltd",
+      "security_classification": "ticker_candidate",
+      "security_id": "CRDO US",
+      "ticker": "CRDO"
+    },
+    {
+      "exchange": "US",
+      "name": "SALESFORCE INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "CRM US",
+      "ticker": "CRM"
+    },
+    {
+      "exchange": "IN",
+      "name": "Crompton Greaves Consumer Electricals Lt",
+      "security_classification": "ticker_candidate",
+      "security_id": "CROMPTON IN",
+      "ticker": "CROMPTON"
+    },
+    {
+      "exchange": "US",
+      "name": "Cirrus Logic Inc",
+      "security_classification": "ticker_candidate",
+      "security_id": "CRUS US",
+      "ticker": "CRUS"
+    },
+    {
+      "exchange": "US",
+      "name": "CROWDSTRIKE HOLDINGS INC - A",
+      "security_classification": "ticker_candidate",
+      "security_id": "CRWD US",
+      "ticker": "CRWD"
+    },
+    {
+      "exchange": "US",
+      "name": "CoreWeave Inc",
+      "security_classification": "ticker_candidate",
+      "security_id": "CRWV US",
+      "ticker": "CRWV"
+    },
+    {
+      "exchange": "US",
+      "name": "CISCO SYSTEMS INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "CSCO US",
+      "ticker": "CSCO"
+    },
+    {
+      "exchange": "US",
+      "name": "COSTAR GROUP",
+      "security_classification": "ticker_candidate",
+      "security_id": "CSGP US",
+      "ticker": "CSGP"
+    },
+    {
+      "exchange": "US",
+      "name": "CSX CORP",
+      "security_classification": "ticker_candidate",
+      "security_id": "CSX US",
+      "ticker": "CSX"
+    },
+    {
+      "exchange": "US",
+      "name": "Cintas Corp",
+      "security_classification": "ticker_candidate",
+      "security_id": "CTAS US",
+      "ticker": "CTAS"
+    },
+    {
+      "exchange": "US",
+      "name": "COGNIZANT TECH SOLUTIONS-A",
+      "security_classification": "ticker_candidate",
+      "security_id": "CTSH US",
+      "ticker": "CTSH"
+    },
+    {
+      "exchange": "US",
+      "name": "CORTEVA",
+      "security_classification": "ticker_candidate",
+      "security_id": "CTVA US",
+      "ticker": "CTVA"
+    },
+    {
+      "exchange": "US",
+      "name": "Carvana Co",
+      "security_classification": "ticker_candidate",
+      "security_id": "CVNA US",
+      "ticker": "CVNA"
+    },
+    {
+      "exchange": "US",
+      "name": "CVS HEALTH CORP",
+      "security_classification": "ticker_candidate",
+      "security_id": "CVS US",
+      "ticker": "CVS"
+    },
+    {
+      "exchange": "US",
+      "name": "CHEVRON CORP",
+      "security_classification": "ticker_candidate",
+      "security_id": "CVX US",
+      "ticker": "CVX"
+    },
+    {
+      "exchange": "US",
+      "name": "DOMINION RESOURCES INC/VA",
+      "security_classification": "ticker_candidate",
+      "security_id": "D US",
+      "ticker": "D"
+    },
+    {
+      "exchange": "US",
+      "name": "DoorDash Inc",
+      "security_classification": "ticker_candidate",
+      "security_id": "DASH US",
+      "ticker": "DASH"
+    },
+    {
+      "exchange": "US",
+      "name": "DATADOG INC - CLASS A",
+      "security_classification": "ticker_candidate",
+      "security_id": "DDOG US",
+      "ticker": "DDOG"
+    },
+    {
+      "exchange": "US",
+      "name": "Dell Technologies Inc",
+      "security_classification": "ticker_candidate",
+      "security_id": "DELL US",
+      "ticker": "DELL"
+    },
+    {
+      "exchange": "US",
+      "name": "DOLLAR GENERAL CORP",
+      "security_classification": "ticker_candidate",
+      "security_id": "DG US",
+      "ticker": "DG"
+    },
+    {
+      "exchange": "US",
+      "name": "QUEST DIAGNOSTICS INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "DGX US",
+      "ticker": "DGX"
+    },
+    {
+      "exchange": "US",
+      "name": "DANAHER CORP",
+      "security_classification": "ticker_candidate",
+      "security_id": "DHR US",
+      "ticker": "DHR"
+    },
+    {
+      "exchange": "US",
+      "name": "WALT DISNEY CO/THE",
+      "security_classification": "ticker_candidate",
+      "security_id": "DIS US",
+      "ticker": "DIS"
+    },
+    {
+      "exchange": "IN",
+      "name": "Divi's Laboratories Ltd",
+      "security_classification": "ticker_candidate",
+      "security_id": "DIVI IN",
+      "ticker": "DIVI"
+    },
+    {
+      "exchange": "IN",
+      "name": "Dixon Technologies India Ltd",
+      "security_classification": "ticker_candidate",
+      "security_id": "DIXON IN",
+      "ticker": "DIXON"
+    },
+    {
+      "exchange": "US",
+      "name": "DOLLAR TREE INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "DLTR US",
+      "ticker": "DLTR"
+    },
+    {
+      "exchange": "US",
+      "name": "DigitalOcean Holdings Inc",
+      "security_classification": "ticker_candidate",
+      "security_id": "DOCN US",
+      "ticker": "DOCN"
+    },
+    {
+      "exchange": "US",
+      "name": "DOVER CORP",
+      "security_classification": "ticker_candidate",
+      "security_id": "DOV US",
+      "ticker": "DOV"
+    },
+    {
+      "exchange": "US",
+      "name": "DARDEN RESTAURANTS INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "DRI US",
+      "ticker": "DRI"
+    },
+    {
+      "exchange": "IN",
+      "name": "Dr Reddy's Laboratories Ltd",
+      "security_classification": "ticker_candidate",
+      "security_id": "DRRD IN",
+      "ticker": "DRRD"
+    },
+    {
+      "exchange": "US",
+      "name": "DTE ENERGY COMPANY",
+      "security_classification": "ticker_candidate",
+      "security_id": "DTE US",
+      "ticker": "DTE"
+    },
+    {
+      "exchange": "US",
+      "name": "DUKE ENERGY CORP",
+      "security_classification": "ticker_candidate",
+      "security_id": "DUK US",
+      "ticker": "DUK"
+    },
+    {
+      "exchange": "US",
+      "name": "DEVON ENERGY CORP",
+      "security_classification": "ticker_candidate",
+      "security_id": "DVN US",
+      "ticker": "DVN"
+    },
+    {
+      "exchange": "US",
+      "name": "DEXCOM",
+      "security_classification": "ticker_candidate",
+      "security_id": "DXCM US",
+      "ticker": "DXCM"
+    },
+    {
+      "exchange": "US",
+      "name": "Electronic Arts Inc",
+      "security_classification": "ticker_candidate",
+      "security_id": "EA US",
+      "ticker": "EA"
+    },
+    {
+      "exchange": "US",
+      "name": "EBAY INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "EBAY US",
+      "ticker": "EBAY"
+    },
+    {
+      "exchange": "US",
+      "name": "CONSOLIDATED EDISON INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "ED US",
+      "ticker": "ED"
+    },
+    {
+      "exchange": "IN",
+      "name": "Eicher Motors Ltd",
+      "security_classification": "ticker_candidate",
+      "security_id": "EIM IN",
+      "ticker": "EIM"
+    },
+    {
+      "exchange": "US",
+      "name": "EDISON INTERNATIONAL",
+      "security_classification": "ticker_candidate",
+      "security_id": "EIX US",
+      "ticker": "EIX"
+    },
+    {
+      "exchange": "US",
+      "name": "ESTEE LAUDER COMPANIES-CL A",
+      "security_classification": "ticker_candidate",
+      "security_id": "EL US",
+      "ticker": "EL"
+    },
+    {
+      "exchange": "US",
+      "name": "ELEVANCE HEALTH",
+      "security_classification": "ticker_candidate",
+      "security_id": "ELV US",
+      "ticker": "ELV"
+    },
+    {
+      "exchange": "US",
+      "name": "EMERSON ELECTRIC CO",
+      "security_classification": "ticker_candidate",
+      "security_id": "EMR US",
+      "ticker": "EMR"
+    },
+    {
+      "exchange": "US",
+      "name": "EQT CORP",
+      "security_classification": "ticker_candidate",
+      "security_id": "EQT US",
+      "ticker": "EQT"
+    },
+    {
+      "exchange": "US",
+      "name": "EVERSOURCE ENERGY",
+      "security_classification": "ticker_candidate",
+      "security_id": "ES US",
+      "ticker": "ES"
+    },
+    {
+      "exchange": "US",
+      "name": "ESSEX PROPERTY TRUST INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "ESS US",
+      "ticker": "ESS"
+    },
+    {
+      "exchange": "US",
+      "name": "EATON CORP PLC",
+      "security_classification": "ticker_candidate",
+      "security_id": "ETN US",
+      "ticker": "ETN"
+    },
+    {
+      "exchange": "US",
+      "name": "ENTERGY CORP",
+      "security_classification": "ticker_candidate",
+      "security_id": "ETR US",
+      "ticker": "ETR"
+    },
+    {
+      "exchange": "US",
+      "name": "EVERGY INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "EVRG US",
+      "ticker": "EVRG"
+    },
+    {
+      "exchange": "US",
+      "name": "EDWARDS LIFESCIENCES CORP",
+      "security_classification": "ticker_candidate",
+      "security_id": "EW US",
+      "ticker": "EW"
+    },
+    {
+      "exchange": "US",
+      "name": "EXELON CORP",
+      "security_classification": "ticker_candidate",
+      "security_id": "EXC US",
+      "ticker": "EXC"
+    },
+    {
+      "exchange": "US",
+      "name": "EXPEDITORS INTL WASH INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "EXPD US",
+      "ticker": "EXPD"
+    },
+    {
+      "exchange": "US",
+      "name": "EXPEDIA INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "EXPE US",
+      "ticker": "EXPE"
+    },
+    {
+      "exchange": "US",
+      "name": "FORD MOTOR CO",
+      "security_classification": "ticker_candidate",
+      "security_id": "F US",
+      "ticker": "F"
+    },
+    {
+      "exchange": "US",
+      "name": "DIAMONDBACK ENERGY INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "FANG US",
+      "ticker": "FANG"
+    },
+    {
+      "exchange": "US",
+      "name": "FASTENAL CO",
+      "security_classification": "ticker_candidate",
+      "security_id": "FAST US",
+      "ticker": "FAST"
+    },
+    {
+      "exchange": "US",
+      "name": "FREEPORT-MCMORAN INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "FCX US",
+      "ticker": "FCX"
+    },
+    {
+      "exchange": "US",
+      "name": "Ferguson Enterprises Inc",
+      "security_classification": "ticker_candidate",
+      "security_id": "FERG US",
+      "ticker": "FERG"
+    },
+    {
+      "exchange": "US",
+      "name": "Fair Isaac Corp",
+      "security_classification": "ticker_candidate",
+      "security_id": "FICO US",
+      "ticker": "FICO"
+    },
+    {
+      "exchange": "US",
+      "name": "FIDELITY NATIONAL INFO SERV",
+      "security_classification": "ticker_candidate",
+      "security_id": "FIS US",
+      "ticker": "FIS"
+    },
+    {
+      "exchange": "US",
+      "name": "Fiserv Inc",
+      "security_classification": "ticker_candidate",
+      "security_id": "FISV US",
+      "ticker": "FISV"
+    },
+    {
+      "exchange": "US",
+      "name": "FIFTH THIRD BANCORP",
+      "security_classification": "ticker_candidate",
+      "security_id": "FITB US",
+      "ticker": "FITB"
+    },
+    {
+      "exchange": "US",
+      "name": "Comfort Systems USA Inc",
+      "security_classification": "ticker_candidate",
+      "security_id": "FIX US",
+      "ticker": "FIX"
+    },
+    {
+      "exchange": "US",
+      "name": "Firefly Aerospace Inc",
+      "security_classification": "ticker_candidate",
+      "security_id": "FLY US",
+      "ticker": "FLY"
+    },
+    {
+      "exchange": "US",
+      "name": "FOX Corp Class B",
+      "security_classification": "ticker_candidate",
+      "security_id": "FOX US",
+      "ticker": "FOX"
+    },
+    {
+      "exchange": "US",
+      "name": "FOX Corp Class A",
+      "security_classification": "ticker_candidate",
+      "security_id": "FOXA US",
+      "ticker": "FOXA"
+    },
+    {
+      "exchange": "US",
+      "name": "FIRST SOLAR INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "FSLR US",
+      "ticker": "FSLR"
+    },
+    {
+      "exchange": "US",
+      "name": "FORTINET INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "FTNT US",
+      "ticker": "FTNT"
+    },
+    {
+      "exchange": "US",
+      "name": "GENERAL DYNAMICS CORP",
+      "security_classification": "ticker_candidate",
+      "security_id": "GD US",
+      "ticker": "GD"
+    },
+    {
+      "exchange": "US",
+      "name": "GENERAL AEROSPACE CO",
+      "security_classification": "ticker_candidate",
+      "security_id": "GE US",
+      "ticker": "GE"
+    },
+    {
+      "exchange": "US",
+      "name": "GE HealthCare Technologies Inc",
+      "security_classification": "ticker_candidate",
+      "security_id": "GEHC US",
+      "ticker": "GEHC"
+    },
+    {
+      "exchange": "US",
+      "name": "GE Vernova Inc",
+      "security_classification": "ticker_candidate",
+      "security_id": "GEV US",
+      "ticker": "GEV"
+    },
+    {
+      "exchange": "US",
+      "name": "GILEAD SCIENCES INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "GILD US",
+      "ticker": "GILD"
+    },
+    {
+      "exchange": "US",
+      "name": "CORNING INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "GLW US",
+      "ticker": "GLW"
+    },
+    {
+      "exchange": "US",
+      "name": "GENERAL MOTORS CO",
+      "security_classification": "ticker_candidate",
+      "security_id": "GM US",
+      "ticker": "GM"
+    },
+    {
+      "exchange": "US",
+      "name": "ALPHABET INC-CL C",
+      "security_classification": "ticker_candidate",
+      "security_id": "GOOG US",
+      "ticker": "GOOG"
+    },
+    {
+      "exchange": "US",
+      "name": "ALPHABET INC-CL A",
+      "security_classification": "ticker_candidate",
+      "security_id": "GOOGL US",
+      "ticker": "GOOGL"
+    },
+    {
+      "exchange": "US",
+      "name": "GLOBAL PAYMENTS INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "GPN US",
+      "ticker": "GPN"
+    },
+    {
+      "exchange": "IN",
+      "name": "Grasim Industries Ltd",
+      "security_classification": "ticker_candidate",
+      "security_id": "GRASIM IN",
+      "ticker": "GRASIM"
+    },
+    {
+      "exchange": "US",
+      "name": "GARMIN LTD",
+      "security_classification": "ticker_candidate",
+      "security_id": "GRMN US",
+      "ticker": "GRMN"
+    },
+    {
+      "exchange": "US",
+      "name": "GOLDMAN SACHS GP Equity",
+      "security_classification": "ticker_candidate",
+      "security_id": "GS US",
+      "ticker": "GS"
+    },
+    {
+      "exchange": "US",
+      "name": "Globalstar Inc",
+      "security_classification": "ticker_candidate",
+      "security_id": "GSAT US",
+      "ticker": "GSAT"
+    },
+    {
+      "exchange": "IN",
+      "name": "Havells India Ltd",
+      "security_classification": "ticker_candidate",
+      "security_id": "HAVL IN",
+      "ticker": "HAVL"
+    },
+    {
+      "exchange": "US",
+      "name": "Hawkeye 360 Inc",
+      "security_classification": "ticker_candidate",
+      "security_id": "HAWK US",
+      "ticker": "HAWK"
+    },
+    {
+      "exchange": "US",
+      "name": "HUNTINGTON BANCSHARES INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "HBAN US",
+      "ticker": "HBAN"
+    },
+    {
+      "exchange": "US",
+      "name": "HCA HOLDINGS INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "HCA US",
+      "ticker": "HCA"
+    },
+    {
+      "exchange": "US",
+      "name": "HOME DEPOT INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "HD US",
+      "ticker": "HD"
+    },
+    {
+      "exchange": "US",
+      "name": "HEICO Corp",
+      "security_classification": "ticker_candidate",
+      "security_id": "HEI US",
+      "ticker": "HEI"
+    },
+    {
+      "exchange": "US",
+      "name": "HEICO Corp",
+      "security_classification": "ticker_candidate",
+      "security_id": "HEI/A US",
+      "ticker": "HEI/A"
+    },
+    {
+      "exchange": "US",
+      "name": "Hartford Insurance Group Inc/The",
+      "security_classification": "ticker_candidate",
+      "security_id": "HIG US",
+      "ticker": "HIG"
+    },
+    {
+      "exchange": "IN",
+      "name": "Hindalco Industries Ltd",
+      "security_classification": "ticker_candidate",
+      "security_id": "HNDL IN",
+      "ticker": "HNDL"
+    },
+    {
+      "exchange": "US",
+      "name": "HONEYWELL INTERNATIONAL INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "HON US",
+      "ticker": "HON"
+    },
+    {
+      "exchange": "US",
+      "name": "Robinhood Markets Inc",
+      "security_classification": "ticker_candidate",
+      "security_id": "HOOD US",
+      "ticker": "HOOD"
+    },
+    {
+      "exchange": "US",
+      "name": "HEWLETT PACKARD ENTERPRIS",
+      "security_classification": "ticker_candidate",
+      "security_id": "HPE US",
+      "ticker": "HPE"
+    },
+    {
+      "exchange": "US",
+      "name": "HERSHEY CO/THE",
+      "security_classification": "ticker_candidate",
+      "security_id": "HSY US",
+      "ticker": "HSY"
+    },
+    {
+      "exchange": "US",
+      "name": "Hubbell Inc",
+      "security_classification": "ticker_candidate",
+      "security_id": "HUBB US",
+      "ticker": "HUBB"
+    },
+    {
+      "exchange": "US",
+      "name": "HubSpot Inc",
+      "security_classification": "ticker_candidate",
+      "security_id": "HUBS US",
+      "ticker": "HUBS"
+    },
+    {
+      "exchange": "US",
+      "name": "Hut 8 Corp",
+      "security_classification": "ticker_candidate",
+      "security_id": "HUT US",
+      "ticker": "HUT"
+    },
+    {
+      "exchange": "US",
+      "name": "HOWMET AEROSPACE INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "HWM US",
+      "ticker": "HWM"
+    },
+    {
+      "exchange": "IN",
+      "name": "Hyundai Motor India Ltd",
+      "security_classification": "ticker_candidate",
+      "security_id": "HYUNDAI IN",
+      "ticker": "HYUNDAI"
+    },
+    {
+      "exchange": "US",
+      "name": "Interactive Brokers Group Inc",
+      "security_classification": "ticker_candidate",
+      "security_id": "IBKR US",
+      "ticker": "IBKR"
+    },
+    {
+      "exchange": "US",
+      "name": "INTL BUSINESS MACHINES CORP",
+      "security_classification": "ticker_candidate",
+      "security_id": "IBM US",
+      "ticker": "IBM"
+    },
+    {
+      "exchange": "US",
+      "name": "INTERCONTINENTAL EXCHANGE IN",
+      "security_classification": "ticker_candidate",
+      "security_id": "ICE US",
+      "ticker": "ICE"
+    },
+    {
+      "exchange": "US",
+      "name": "IDEXX LABORATORIES INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "IDXX US",
+      "ticker": "IDXX"
+    },
+    {
+      "exchange": "US",
+      "name": "INTL FLAVORS & FRAGRANCES",
+      "security_classification": "ticker_candidate",
+      "security_id": "IFF US",
+      "ticker": "IFF"
+    },
+    {
+      "exchange": "IN",
+      "name": "Indian Hotels Co Ltd/The",
+      "security_classification": "ticker_candidate",
+      "security_id": "IH IN",
+      "ticker": "IH"
+    },
+    {
+      "exchange": "US",
+      "name": "INTEL Corp",
+      "security_classification": "ticker_candidate",
+      "security_id": "INTC US",
+      "ticker": "INTC"
+    },
+    {
+      "exchange": "US",
+      "name": "INTUIT INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "INTU US",
+      "ticker": "INTU"
+    },
+    {
+      "exchange": "US",
+      "name": "INTERNATIONAL PAPER CO",
+      "security_classification": "ticker_candidate",
+      "security_id": "IP US",
+      "ticker": "IP"
+    },
+    {
+      "exchange": "US",
+      "name": "IQVIA HOLDINGS",
+      "security_classification": "ticker_candidate",
+      "security_id": "IQV US",
+      "ticker": "IQV"
+    },
+    {
+      "exchange": "US",
+      "name": "IREN Ltd",
+      "security_classification": "ticker_candidate",
+      "security_id": "IREN US",
+      "ticker": "IREN"
+    },
+    {
+      "exchange": "US",
+      "name": "Intuitive Surgical Inc",
+      "security_classification": "ticker_candidate",
+      "security_id": "ISRG US",
+      "ticker": "ISRG"
+    },
+    {
+      "exchange": "US",
+      "name": "ILLINOIS TOOL WORKS",
+      "security_classification": "ticker_candidate",
+      "security_id": "ITW US",
+      "ticker": "ITW"
+    },
+    {
+      "exchange": "US",
+      "name": "JOHNSON CONTROLS INT",
+      "security_classification": "ticker_candidate",
+      "security_id": "JCI US",
+      "ticker": "JCI"
+    },
+    {
+      "exchange": "IN",
+      "name": "Jio Financial Services Ltd",
+      "security_classification": "ticker_candidate",
+      "security_id": "JIOFIN IN",
+      "ticker": "JIOFIN"
+    },
+    {
+      "exchange": "US",
+      "name": "JOHNSON & JOHNSON",
+      "security_classification": "ticker_candidate",
+      "security_id": "JNJ US",
+      "ticker": "JNJ"
+    },
+    {
+      "exchange": "US",
+      "name": "JPMORGAN CHASE & CO",
+      "security_classification": "ticker_candidate",
+      "security_id": "JPM US",
+      "ticker": "JPM"
+    },
+    {
+      "exchange": "US",
+      "name": "KEURIG DR PEPPER",
+      "security_classification": "ticker_candidate",
+      "security_id": "KDP US",
+      "ticker": "KDP"
+    },
+    {
+      "exchange": "US",
+      "name": "KEYCORP",
+      "security_classification": "ticker_candidate",
+      "security_id": "KEY US",
+      "ticker": "KEY"
+    },
+    {
+      "exchange": "US",
+      "name": "KEYSIGHT TECH",
+      "security_classification": "ticker_candidate",
+      "security_id": "KEYS US",
+      "ticker": "KEYS"
+    },
+    {
+      "exchange": "US",
+      "name": "KKR & Co Inc",
+      "security_classification": "ticker_candidate",
+      "security_id": "KKR US",
+      "ticker": "KKR"
+    },
+    {
+      "exchange": "US",
+      "name": "KLA Corp",
+      "security_classification": "ticker_candidate",
+      "security_id": "KLAC US",
+      "ticker": "KLAC"
+    },
+    {
+      "exchange": "US",
+      "name": "KIMBERLY-CLARK CORP",
+      "security_classification": "ticker_candidate",
+      "security_id": "KMB US",
+      "ticker": "KMB"
+    },
+    {
+      "exchange": "US",
+      "name": "KINDER MORGAN INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "KMI US",
+      "ticker": "KMI"
+    },
+    {
+      "exchange": "US",
+      "name": "COCA-COLA CO/THE",
+      "security_classification": "ticker_candidate",
+      "security_id": "KO US",
+      "ticker": "KO"
+    },
+    {
+      "exchange": "US",
+      "name": "KROGER CO",
+      "security_classification": "ticker_candidate",
+      "security_id": "KR US",
+      "ticker": "KR"
+    },
+    {
+      "exchange": "US",
+      "name": "LEIDOS HOLDINGS",
+      "security_classification": "ticker_candidate",
+      "security_id": "LDOS US",
+      "ticker": "LDOS"
+    },
+    {
+      "exchange": "IN",
+      "name": "LG Electronics India Ltd",
+      "security_classification": "ticker_candidate",
+      "security_id": "LGEL IN",
+      "ticker": "LGEL"
+    },
+    {
+      "exchange": "US",
+      "name": "LABCORP HOLDINGS INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "LH US",
+      "ticker": "LH"
+    },
+    {
+      "exchange": "US",
+      "name": "New Linde PLC",
+      "security_classification": "ticker_candidate",
+      "security_id": "LIN US",
+      "ticker": "LIN"
+    },
+    {
+      "exchange": "US",
+      "name": "Lumentum Holdings Inc",
+      "security_classification": "ticker_candidate",
+      "security_id": "LITE US",
+      "ticker": "LITE"
+    },
+    {
+      "exchange": "US",
+      "name": "ELI LILLY & CO",
+      "security_classification": "ticker_candidate",
+      "security_id": "LLY US",
+      "ticker": "LLY"
+    },
+    {
+      "exchange": "US",
+      "name": "LOCKHEED MARTIN CORP",
+      "security_classification": "ticker_candidate",
+      "security_id": "LMT US",
+      "ticker": "LMT"
+    },
+    {
+      "exchange": "US",
+      "name": "CHENIERE ENERGY INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "LNG US",
+      "ticker": "LNG"
+    },
+    {
+      "exchange": "US",
+      "name": "ALLIANT ENERGY CORP",
+      "security_classification": "ticker_candidate",
+      "security_id": "LNT US",
+      "ticker": "LNT"
+    },
+    {
+      "exchange": "US",
+      "name": "LOWE'S COS INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "LOW US",
+      "ticker": "LOW"
+    },
+    {
+      "exchange": "IN",
+      "name": "Lupin Ltd",
+      "security_classification": "ticker_candidate",
+      "security_id": "LPC IN",
+      "ticker": "LPC"
+    },
+    {
+      "exchange": "US",
+      "name": "LPL Financial Holdings Inc",
+      "security_classification": "ticker_candidate",
+      "security_id": "LPLA US",
+      "ticker": "LPLA"
+    },
+    {
+      "exchange": "US",
+      "name": "LAM RESEARCH",
+      "security_classification": "ticker_candidate",
+      "security_id": "LRCX US",
+      "ticker": "LRCX"
+    },
+    {
+      "exchange": "IN",
+      "name": "Larsen & Toubro Ltd",
+      "security_classification": "ticker_candidate",
+      "security_id": "LT IN",
+      "ticker": "LT"
+    },
+    {
+      "exchange": "US",
+      "name": "Intuitive Machines Inc",
+      "security_classification": "ticker_candidate",
+      "security_id": "LUNR US",
+      "ticker": "LUNR"
+    },
+    {
+      "exchange": "US",
+      "name": "SOUTHWEST AIRLINES CO",
+      "security_classification": "ticker_candidate",
+      "security_id": "LUV US",
+      "ticker": "LUV"
+    },
+    {
+      "exchange": "US",
+      "name": "LAS VEGAS SANDS CORP",
+      "security_classification": "ticker_candidate",
+      "security_id": "LVS US",
+      "ticker": "LVS"
+    },
+    {
+      "exchange": "US",
+      "name": "MASTERCARD INC-CLASS A",
+      "security_classification": "ticker_candidate",
+      "security_id": "MA US",
+      "ticker": "MA"
+    },
+    {
+      "exchange": "IN",
+      "name": "Max Healthcare Institute Ltd",
+      "security_classification": "ticker_candidate",
+      "security_id": "MAXHEALT IN",
+      "ticker": "MAXHEALT"
+    },
+    {
+      "exchange": "US",
+      "name": "MICROCHIP TECHNOLOGY INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "MCHP US",
+      "ticker": "MCHP"
+    },
+    {
+      "exchange": "US",
+      "name": "MCKESSON CORP",
+      "security_classification": "ticker_candidate",
+      "security_id": "MCK US",
+      "ticker": "MCK"
+    },
+    {
+      "exchange": "US",
+      "name": "MOODY'S CORP",
+      "security_classification": "ticker_candidate",
+      "security_id": "MCO US",
+      "ticker": "MCO"
+    },
+    {
+      "exchange": "US",
+      "name": "MongoDB Inc",
+      "security_classification": "ticker_candidate",
+      "security_id": "MDB US",
+      "ticker": "MDB"
+    },
+    {
+      "exchange": "US",
+      "name": "MONDELEZ INTERNATIONAL",
+      "security_classification": "ticker_candidate",
+      "security_id": "MDLZ US",
+      "ticker": "MDLZ"
+    },
+    {
+      "exchange": "US",
+      "name": "MEDTRONIC PLC",
+      "security_classification": "ticker_candidate",
+      "security_id": "MDT US",
+      "ticker": "MDT"
+    },
+    {
+      "exchange": "US",
+      "name": "METLIFE INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "MET US",
+      "ticker": "MET"
+    },
+    {
+      "exchange": "US",
+      "name": "Meta Platforms Inc-CL A",
+      "security_classification": "ticker_candidate",
+      "security_id": "META US",
+      "ticker": "META"
+    },
+    {
+      "exchange": "US",
+      "name": "MCCORMICK & CO-NON VTG SHRS",
+      "security_classification": "ticker_candidate",
+      "security_id": "MKC US",
+      "ticker": "MKC"
+    },
+    {
+      "exchange": "US",
+      "name": "Markel Group Inc",
+      "security_classification": "ticker_candidate",
+      "security_id": "MKL US",
+      "ticker": "MKL"
+    },
+    {
+      "exchange": "US",
+      "name": "MARTIN MARIETTA MATERIALS",
+      "security_classification": "ticker_candidate",
+      "security_id": "MLM US",
+      "ticker": "MLM"
+    },
+    {
+      "exchange": "IN",
+      "name": "Mahindra & Mahindra Ltd",
+      "security_classification": "ticker_candidate",
+      "security_id": "MM IN",
+      "ticker": "MM"
+    },
+    {
+      "exchange": "US",
+      "name": "3M CO",
+      "security_classification": "ticker_candidate",
+      "security_id": "MMM US",
+      "ticker": "MMM"
+    },
+    {
+      "exchange": "US",
+      "name": "MONSTER BEVERAGE CORP",
+      "security_classification": "ticker_candidate",
+      "security_id": "MNST US",
+      "ticker": "MNST"
+    },
+    {
+      "exchange": "US",
+      "name": "ALTRIA GROUP INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "MO US",
+      "ticker": "MO"
+    },
+    {
+      "exchange": "US",
+      "name": "MP MATERIALS CORP",
+      "security_classification": "ticker_candidate",
+      "security_id": "MP US",
+      "ticker": "MP"
+    },
+    {
+      "exchange": "US",
+      "name": "MARATHON PETROLEUM CORP",
+      "security_classification": "ticker_candidate",
+      "security_id": "MPC US",
+      "ticker": "MPC"
+    },
+    {
+      "exchange": "US",
+      "name": "MONOLITHIC POWER SYSTEMS INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "MPWR US",
+      "ticker": "MPWR"
+    },
+    {
+      "exchange": "US",
+      "name": "MARSH & MCLENNAN COS",
+      "security_classification": "ticker_candidate",
+      "security_id": "MRSH US",
+      "ticker": "MRSH"
+    },
+    {
+      "exchange": "US",
+      "name": "MARVELL TECHNOLOGY INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "MRVL US",
+      "ticker": "MRVL"
+    },
+    {
+      "exchange": "US",
+      "name": "MORGAN STANLEY",
+      "security_classification": "ticker_candidate",
+      "security_id": "MS US",
+      "ticker": "MS"
+    },
+    {
+      "exchange": "US",
+      "name": "MICROSOFT",
+      "security_classification": "ticker_candidate",
+      "security_id": "MSFT US",
+      "ticker": "MSFT"
+    },
+    {
+      "exchange": "IN",
+      "name": "Maruti Suzuki India Ltd",
+      "security_classification": "ticker_candidate",
+      "security_id": "MSIL IN",
+      "ticker": "MSIL"
+    },
+    {
+      "exchange": "US",
+      "name": "M & T BANK CORP",
+      "security_classification": "ticker_candidate",
+      "security_id": "MTB US",
+      "ticker": "MTB"
+    },
+    {
+      "exchange": "US",
+      "name": "MACOM TECHNOLOGY SOLUTIONS HOLDINGS",
+      "security_classification": "ticker_candidate",
+      "security_id": "MTSI US",
+      "ticker": "MTSI"
+    },
+    {
+      "exchange": "US",
+      "name": "MICRON TECHNOLOGY INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "MU US",
+      "ticker": "MU"
+    },
+    {
+      "exchange": "US",
+      "name": "Nebius Group NV",
+      "security_classification": "ticker_candidate",
+      "security_id": "NBIS US",
+      "ticker": "NBIS"
+    },
+    {
+      "exchange": "US",
+      "name": "NASDAQ INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "NDAQ US",
+      "ticker": "NDAQ"
+    },
+    {
+      "exchange": "US",
+      "name": "NEXTERA ENERGY INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "NEE US",
+      "ticker": "NEE"
+    },
+    {
+      "exchange": "US",
+      "name": "Newmont Corp",
+      "security_classification": "ticker_candidate",
+      "security_id": "NEM US",
+      "ticker": "NEM"
+    },
+    {
+      "exchange": "US",
+      "name": "Cloudflare Inc",
+      "security_classification": "ticker_candidate",
+      "security_id": "NET US",
+      "ticker": "NET"
+    },
+    {
+      "exchange": "US",
+      "name": "NETFLIX",
+      "security_classification": "ticker_candidate",
+      "security_id": "NFLX US",
+      "ticker": "NFLX"
+    },
+    {
+      "exchange": "US",
+      "name": "NISOURCE INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "NI US",
+      "ticker": "NI"
+    },
+    {
+      "exchange": "US",
+      "name": "NIKE INC -CL B",
+      "security_classification": "ticker_candidate",
+      "security_id": "NKE US",
+      "ticker": "NKE"
+    },
+    {
+      "exchange": "US",
+      "name": "NORTHROP GRUMMAN CORP",
+      "security_classification": "ticker_candidate",
+      "security_id": "NOC US",
+      "ticker": "NOC"
+    },
+    {
+      "exchange": "US",
+      "name": "SERVICENOW INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "NOW US",
+      "ticker": "NOW"
+    },
+    {
+      "exchange": "US",
+      "name": "NORFOLK SOUTHERN CORP",
+      "security_classification": "ticker_candidate",
+      "security_id": "NSC US",
+      "ticker": "NSC"
+    },
+    {
+      "exchange": "US",
+      "name": "NETAPP INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "NTAP US",
+      "ticker": "NTAP"
+    },
+    {
+      "exchange": "US",
+      "name": "NORTHERN TRUST CORP",
+      "security_classification": "ticker_candidate",
+      "security_id": "NTRS US",
+      "ticker": "NTRS"
+    },
+    {
+      "exchange": "US",
+      "name": "NUCOR",
+      "security_classification": "ticker_candidate",
+      "security_id": "NUE US",
+      "ticker": "NUE"
+    },
+    {
+      "exchange": "US",
+      "name": "NVIDIA Corp",
+      "security_classification": "ticker_candidate",
+      "security_id": "NVDA US",
+      "ticker": "NVDA"
+    },
+    {
+      "exchange": "US",
+      "name": "NXP SEMICONDUCTORS NV",
+      "security_classification": "ticker_candidate",
+      "security_id": "NXPI US",
+      "ticker": "NXPI"
+    },
+    {
+      "exchange": "US",
+      "name": "REALTY INCOME CORP",
+      "security_classification": "ticker_candidate",
+      "security_id": "O US",
+      "ticker": "O"
+    },
+    {
+      "exchange": "US",
+      "name": "ONEOK INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "OKE US",
+      "ticker": "OKE"
+    },
+    {
+      "exchange": "US",
+      "name": "Oklo Inc",
+      "security_classification": "ticker_candidate",
+      "security_id": "OKLO US",
+      "ticker": "OKLO"
+    },
+    {
+      "exchange": "US",
+      "name": "ON SEMICONDUCTOR",
+      "security_classification": "ticker_candidate",
+      "security_id": "ON US",
+      "ticker": "ON"
+    },
+    {
+      "exchange": "US",
+      "name": "Ondas Inc",
+      "security_classification": "ticker_candidate",
+      "security_id": "ONDS US",
+      "ticker": "ONDS"
+    },
+    {
+      "exchange": "US",
+      "name": "ORACLE",
+      "security_classification": "ticker_candidate",
+      "security_id": "ORCL US",
+      "ticker": "ORCL"
+    },
+    {
+      "exchange": "US",
+      "name": "O'REILLY AUTOMOTIVE",
+      "security_classification": "ticker_candidate",
+      "security_id": "ORLY US",
+      "ticker": "ORLY"
+    },
+    {
+      "exchange": "US",
+      "name": "OTIS WORLDWIDE CORP",
+      "security_classification": "ticker_candidate",
+      "security_id": "OTIS US",
+      "ticker": "OTIS"
+    },
+    {
+      "exchange": "US",
+      "name": "BLUE OWL CAPITAL CL A ORD",
+      "security_classification": "ticker_candidate",
+      "security_id": "OWL US",
+      "ticker": "OWL"
+    },
+    {
+      "exchange": "US",
+      "name": "OCCIDENTAL PETROLEUM CORP",
+      "security_classification": "ticker_candidate",
+      "security_id": "OXY US",
+      "ticker": "OXY"
+    },
+    {
+      "exchange": "US",
+      "name": "PALO ALTO NETWORKS INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "PANW US",
+      "ticker": "PANW"
+    },
+    {
+      "exchange": "US",
+      "name": "UiPath Inc",
+      "security_classification": "ticker_candidate",
+      "security_id": "PATH US",
+      "ticker": "PATH"
+    },
+    {
+      "exchange": "US",
+      "name": "P G & E CORP",
+      "security_classification": "ticker_candidate",
+      "security_id": "PCG US",
+      "ticker": "PCG"
+    },
+    {
+      "exchange": "US",
+      "name": "PUBLIC SERVICE ENTERPRISE GP",
+      "security_classification": "ticker_candidate",
+      "security_id": "PEG US",
+      "ticker": "PEG"
+    },
+    {
+      "exchange": "US",
+      "name": "PEPSICO INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "PEP US",
+      "ticker": "PEP"
+    },
+    {
+      "exchange": "US",
+      "name": "PFIZER INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "PFE US",
+      "ticker": "PFE"
+    },
+    {
+      "exchange": "US",
+      "name": "PRINCIPAL FINANCIAL GROUP",
+      "security_classification": "ticker_candidate",
+      "security_id": "PFG US",
+      "ticker": "PFG"
+    },
+    {
+      "exchange": "US",
+      "name": "PROCTER & GAMBLE CO/THE",
+      "security_classification": "ticker_candidate",
+      "security_id": "PG US",
+      "ticker": "PG"
+    },
+    {
+      "exchange": "US",
+      "name": "PROGRESSIVE CORP",
+      "security_classification": "ticker_candidate",
+      "security_id": "PGR US",
+      "ticker": "PGR"
+    },
+    {
+      "exchange": "US",
+      "name": "PARKER HANNIFIN CORP",
+      "security_classification": "ticker_candidate",
+      "security_id": "PH US",
+      "ticker": "PH"
+    },
+    {
+      "exchange": "US",
+      "name": "Pinterest Inc",
+      "security_classification": "ticker_candidate",
+      "security_id": "PINS US",
+      "ticker": "PINS"
+    },
+    {
+      "exchange": "US",
+      "name": "PACKAGING CORP OF AMERICA",
+      "security_classification": "ticker_candidate",
+      "security_id": "PKG US",
+      "ticker": "PKG"
+    },
+    {
+      "exchange": "US",
+      "name": "Planet Labs PBC",
+      "security_classification": "ticker_candidate",
+      "security_id": "PL US",
+      "ticker": "PL"
+    },
+    {
+      "exchange": "US",
+      "name": "Palantir Technologies Inc",
+      "security_classification": "ticker_candidate",
+      "security_id": "PLTR US",
+      "ticker": "PLTR"
+    },
+    {
+      "exchange": "US",
+      "name": "Plug Power Inc",
+      "security_classification": "ticker_candidate",
+      "security_id": "PLUG US",
+      "ticker": "PLUG"
+    },
+    {
+      "exchange": "US",
+      "name": "PHILIP MORRIS INTERNATIONAL",
+      "security_classification": "ticker_candidate",
+      "security_id": "PM US",
+      "ticker": "PM"
+    },
+    {
+      "exchange": "US",
+      "name": "PNC FINANCIAL SERVICES GROUP",
+      "security_classification": "ticker_candidate",
+      "security_id": "PNC US",
+      "ticker": "PNC"
+    },
+    {
+      "exchange": "US",
+      "name": "Insulet Corp",
+      "security_classification": "ticker_candidate",
+      "security_id": "PODD US",
+      "ticker": "PODD"
+    },
+    {
+      "exchange": "US",
+      "name": "PPL CORP",
+      "security_classification": "ticker_candidate",
+      "security_id": "PPL US",
+      "ticker": "PPL"
+    },
+    {
+      "exchange": "US",
+      "name": "PRUDENTIAL FINANCIAL INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "PRU US",
+      "ticker": "PRU"
+    },
+    {
+      "exchange": "US",
+      "name": "PHILLIPS 66",
+      "security_classification": "ticker_candidate",
+      "security_id": "PSX US",
+      "ticker": "PSX"
+    },
+    {
+      "exchange": "US",
+      "name": "Quanta Services Inc",
+      "security_classification": "ticker_candidate",
+      "security_id": "PWR US",
+      "ticker": "PWR"
+    },
+    {
+      "exchange": "US",
+      "name": "PAYPAL HOLDINGS INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "PYPL US",
+      "ticker": "PYPL"
+    },
+    {
+      "exchange": "US",
+      "name": "QUALCOMM Inc",
+      "security_classification": "ticker_candidate",
+      "security_id": "QCOM US",
+      "ticker": "QCOM"
+    },
+    {
+      "exchange": "US",
+      "name": "QORVO INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "QRVO US",
+      "ticker": "QRVO"
+    },
+    {
+      "exchange": "US",
+      "name": "Roblox Coperation",
+      "security_classification": "ticker_candidate",
+      "security_id": "RBLX US",
+      "ticker": "RBLX"
+    },
+    {
+      "exchange": "US",
+      "name": "ROYAL CARIBBEAN CRUISES LTD",
+      "security_classification": "ticker_candidate",
+      "security_id": "RCL US",
+      "ticker": "RCL"
+    },
+    {
+      "exchange": "US",
+      "name": "Reddit Inc",
+      "security_classification": "ticker_candidate",
+      "security_id": "RDDT US",
+      "ticker": "RDDT"
+    },
+    {
+      "exchange": "US",
+      "name": "Redwire Corp",
+      "security_classification": "ticker_candidate",
+      "security_id": "RDW US",
+      "ticker": "RDW"
+    },
+    {
+      "exchange": "US",
+      "name": "REGENERON PHARM",
+      "security_classification": "ticker_candidate",
+      "security_id": "REGN US",
+      "ticker": "REGN"
+    },
+    {
+      "exchange": "US",
+      "name": "REGIONS FINANCIAL CORP",
+      "security_classification": "ticker_candidate",
+      "security_id": "RF US",
+      "ticker": "RF"
+    },
+    {
+      "exchange": "IN",
+      "name": "Reliance Industries Ltd",
+      "security_classification": "ticker_candidate",
+      "security_id": "RIL IN",
+      "ticker": "RIL"
+    },
+    {
+      "exchange": "US",
+      "name": "RIVIAN AUTOMOTIVE INC-A",
+      "security_classification": "ticker_candidate",
+      "security_id": "RIVN US",
+      "ticker": "RIVN"
+    },
+    {
+      "exchange": "US",
+      "name": "RAYMOND JAMES FINANCIAL INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "RJF US",
+      "ticker": "RJF"
+    },
+    {
+      "exchange": "US",
+      "name": "ROCKET LAB USA",
+      "security_classification": "ticker_candidate",
+      "security_id": "RKLB US",
+      "ticker": "RKLB"
+    },
+    {
+      "exchange": "US",
+      "name": "Rocket Cos Inc",
+      "security_classification": "ticker_candidate",
+      "security_id": "RKT US",
+      "ticker": "RKT"
+    },
+    {
+      "exchange": "US",
+      "name": "RESMED INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "RMD US",
+      "ticker": "RMD"
+    },
+    {
+      "exchange": "US",
+      "name": "ROCKWELL AUTOMATION INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "ROK US",
+      "ticker": "ROK"
+    },
+    {
+      "exchange": "US",
+      "name": "ROLLINS",
+      "security_classification": "ticker_candidate",
+      "security_id": "ROL US",
+      "ticker": "ROL"
+    },
+    {
+      "exchange": "US",
+      "name": "ROPER TECHNOLOGIES INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "ROP US",
+      "ticker": "ROP"
+    },
+    {
+      "exchange": "US",
+      "name": "ROSS STORES INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "ROST US",
+      "ticker": "ROST"
+    },
+    {
+      "exchange": "US",
+      "name": "REPUBLIC SERVICES INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "RSG US",
+      "ticker": "RSG"
+    },
+    {
+      "exchange": "US",
+      "name": "RTX Corp",
+      "security_classification": "ticker_candidate",
+      "security_id": "RTX US",
+      "ticker": "RTX"
+    },
+    {
+      "exchange": "US",
+      "name": "SAP SE",
+      "security_classification": "ticker_candidate",
+      "security_id": "SAP US",
+      "ticker": "SAP"
+    },
+    {
+      "exchange": "US",
+      "name": "SATELLOGIC INC-A",
+      "security_classification": "ticker_candidate",
+      "security_id": "SATL US",
+      "ticker": "SATL"
+    },
+    {
+      "exchange": "US",
+      "name": "EchoStar Corp",
+      "security_classification": "ticker_candidate",
+      "security_id": "SATS US",
+      "ticker": "SATS"
+    },
+    {
+      "exchange": "US",
+      "name": "SCHWAB (CHARLES) CORP",
+      "security_classification": "ticker_candidate",
+      "security_id": "SCHW US",
+      "ticker": "SCHW"
+    },
+    {
+      "exchange": "US",
+      "name": "SNAP INC A",
+      "security_classification": "ticker_candidate",
+      "security_id": "SNAP US",
+      "ticker": "SNAP"
+    },
+    {
+      "exchange": "US",
+      "name": "Sandisk Corp/DE",
+      "security_classification": "ticker_candidate",
+      "security_id": "SNDK US",
+      "ticker": "SNDK"
+    },
+    {
+      "exchange": "US",
+      "name": "Snowflake Inc   - CL A",
+      "security_classification": "ticker_candidate",
+      "security_id": "SNOW US",
+      "ticker": "SNOW"
+    },
+    {
+      "exchange": "US",
+      "name": "SYNOPSYS INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "SNPS US",
+      "ticker": "SNPS"
+    },
+    {
+      "exchange": "US",
+      "name": "SOUTHERN CO/THE",
+      "security_classification": "ticker_candidate",
+      "security_id": "SO US",
+      "ticker": "SO"
+    },
+    {
+      "exchange": "US",
+      "name": "S&P GLOBAL INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "SPGI US",
+      "ticker": "SPGI"
+    },
+    {
+      "exchange": "US",
+      "name": "SEMPRA ENERGY",
+      "security_classification": "ticker_candidate",
+      "security_id": "SRE US",
+      "ticker": "SRE"
+    },
+    {
+      "exchange": "US",
+      "name": "SS&C Technologies Holdings Inc",
+      "security_classification": "ticker_candidate",
+      "security_id": "SSNC US",
+      "ticker": "SSNC"
+    },
+    {
+      "exchange": "US",
+      "name": "STERIS PLC",
+      "security_classification": "ticker_candidate",
+      "security_id": "STE US",
+      "ticker": "STE"
+    },
+    {
+      "exchange": "US",
+      "name": "STEEL DYNAMICS INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "STLD US",
+      "ticker": "STLD"
+    },
+    {
+      "exchange": "US",
+      "name": "STMicroelectronics NV",
+      "security_classification": "ticker_candidate",
+      "security_id": "STM US",
+      "ticker": "STM"
+    },
+    {
+      "exchange": "US",
+      "name": "STATE STREET CORP",
+      "security_classification": "ticker_candidate",
+      "security_id": "STT US",
+      "ticker": "STT"
+    },
+    {
+      "exchange": "US",
+      "name": "SEAGATE TECHNOLOGY",
+      "security_classification": "ticker_candidate",
+      "security_id": "STX US",
+      "ticker": "STX"
+    },
+    {
+      "exchange": "US",
+      "name": "Sunbelt Rentals Holdings Inc",
+      "security_classification": "ticker_candidate",
+      "security_id": "SUNB US",
+      "ticker": "SUNB"
+    },
+    {
+      "exchange": "IN",
+      "name": "Sun Pharmaceutical Industries Ltd",
+      "security_classification": "ticker_candidate",
+      "security_id": "SUNP IN",
+      "ticker": "SUNP"
+    },
+    {
+      "exchange": "US",
+      "name": "SKYWORKS SOLUTIONS INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "SWKS US",
+      "ticker": "SWKS"
+    },
+    {
+      "exchange": "US",
+      "name": "SYNCHRONY FINANCIAL",
+      "security_classification": "ticker_candidate",
+      "security_id": "SYF US",
+      "ticker": "SYF"
+    },
+    {
+      "exchange": "US",
+      "name": "SYMBOTIC",
+      "security_classification": "ticker_candidate",
+      "security_id": "SYM US",
+      "ticker": "SYM"
+    },
+    {
+      "exchange": "US",
+      "name": "AT&T INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "T US",
+      "ticker": "T"
+    },
+    {
+      "exchange": "IN",
+      "name": "Tata Steel Ltd",
+      "security_classification": "ticker_candidate",
+      "security_id": "TATA IN",
+      "ticker": "TATA"
+    },
+    {
+      "exchange": "IN",
+      "name": "Tata Consumer Products Ltd",
+      "security_classification": "ticker_candidate",
+      "security_id": "TATACONS IN",
+      "ticker": "TATACONS"
+    },
+    {
+      "exchange": "IN",
+      "name": "Tata Consultancy Services Ltd",
+      "security_classification": "ticker_candidate",
+      "security_id": "TCS IN",
+      "ticker": "TCS"
+    },
+    {
+      "exchange": "US",
+      "name": "TRANSDIGM GROUP INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "TDG US",
+      "ticker": "TDG"
+    },
+    {
+      "exchange": "US",
+      "name": "TELEDYNE TECHNOLOGIES INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "TDY US",
+      "ticker": "TDY"
+    },
+    {
+      "exchange": "US",
+      "name": "ATLASSIAN CORP PLC-CLASS A",
+      "security_classification": "ticker_candidate",
+      "security_id": "TEAM US",
+      "ticker": "TEAM"
+    },
+    {
+      "exchange": "US",
+      "name": "TE Connectivity Lt",
+      "security_classification": "ticker_candidate",
+      "security_id": "TEL US",
+      "ticker": "TEL"
+    },
+    {
+      "exchange": "US",
+      "name": "TERADYNE INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "TER US",
+      "ticker": "TER"
+    },
+    {
+      "exchange": "US",
+      "name": "TRUIST FINANCIAL CORP",
+      "security_classification": "ticker_candidate",
+      "security_id": "TFC US",
+      "ticker": "TFC"
+    },
+    {
+      "exchange": "US",
+      "name": "TJX COMPANIES INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "TJX US",
+      "ticker": "TJX"
+    },
+    {
+      "exchange": "US",
+      "name": "TKO Group Holdings Inc",
+      "security_classification": "ticker_candidate",
+      "security_id": "TKO US",
+      "ticker": "TKO"
+    },
+    {
+      "exchange": "US",
+      "name": "THERMO FISHER SCIENTIFIC INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "TMO US",
+      "ticker": "TMO"
+    },
+    {
+      "exchange": "IN",
+      "name": "Tata Motors Passenger Vehicles Limited",
+      "security_classification": "ticker_candidate",
+      "security_id": "TMPV IN",
+      "ticker": "TMPV"
+    },
+    {
+      "exchange": "US",
+      "name": "T-MOBILE US INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "TMUS US",
+      "ticker": "TMUS"
+    },
+    {
+      "exchange": "IN",
+      "name": "Tata Power Co Ltd/The",
+      "security_classification": "ticker_candidate",
+      "security_id": "TPWR IN",
+      "ticker": "TPWR"
+    },
+    {
+      "exchange": "US",
+      "name": "TARGA RESOURCES CORP",
+      "security_classification": "ticker_candidate",
+      "security_id": "TRGP US",
+      "ticker": "TRGP"
+    },
+    {
+      "exchange": "US",
+      "name": "TRIMBLE NAVIGATION LTD",
+      "security_classification": "ticker_candidate",
+      "security_id": "TRMB US",
+      "ticker": "TRMB"
+    },
+    {
+      "exchange": "US",
+      "name": "T ROWE PRICE GROUP INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "TROW US",
+      "ticker": "TROW"
+    },
+    {
+      "exchange": "US",
+      "name": "TRAVELERS COS INC/THE",
+      "security_classification": "ticker_candidate",
+      "security_id": "TRV US",
+      "ticker": "TRV"
+    },
+    {
+      "exchange": "US",
+      "name": "TRACTOR SUPPLY COMPANY",
+      "security_classification": "ticker_candidate",
+      "security_id": "TSCO US",
+      "ticker": "TSCO"
+    },
+    {
+      "exchange": "US",
+      "name": "TESLA MOTORS",
+      "security_classification": "ticker_candidate",
+      "security_id": "TSLA US",
+      "ticker": "TSLA"
+    },
+    {
+      "exchange": "US",
+      "name": "TAIWAN SEMICONDUCTOR-SP ADR",
+      "security_classification": "ticker_candidate",
+      "security_id": "TSM US",
+      "ticker": "TSM"
+    },
+    {
+      "exchange": "US",
+      "name": "TYSON FOODS INC-CL A",
+      "security_classification": "ticker_candidate",
+      "security_id": "TSN US",
+      "ticker": "TSN"
+    },
+    {
+      "exchange": "US",
+      "name": "Trane Technologies plc",
+      "security_classification": "ticker_candidate",
+      "security_id": "TT US",
+      "ticker": "TT"
+    },
+    {
+      "exchange": "IN",
+      "name": "Titan Co Ltd",
+      "security_classification": "ticker_candidate",
+      "security_id": "TTAN IN",
+      "ticker": "TTAN"
+    },
+    {
+      "exchange": "US",
+      "name": "Trade Desk Inc/The",
+      "security_classification": "ticker_candidate",
+      "security_id": "TTD US",
+      "ticker": "TTD"
+    },
+    {
+      "exchange": "US",
+      "name": "TTM Technologies Inc",
+      "security_classification": "ticker_candidate",
+      "security_id": "TTMI US",
+      "ticker": "TTMI"
+    },
+    {
+      "exchange": "US",
+      "name": "TAKE-TWO INTERACTIVE SOFTWRE",
+      "security_classification": "ticker_candidate",
+      "security_id": "TTWO US",
+      "ticker": "TTWO"
+    },
+    {
+      "exchange": "IN",
+      "name": "TVS Motor Co Ltd",
+      "security_classification": "ticker_candidate",
+      "security_id": "TVSL IN",
+      "ticker": "TVSL"
+    },
+    {
+      "exchange": "US",
+      "name": "TEXAS INSTRUMENTS",
+      "security_classification": "ticker_candidate",
+      "security_id": "TXN US",
+      "ticker": "TXN"
+    },
+    {
+      "exchange": "US",
+      "name": "TYLER TECHNOLOGIES INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "TYL US",
+      "ticker": "TYL"
+    },
+    {
+      "exchange": "US",
+      "name": "United Airlines Holdings Inc",
+      "security_classification": "ticker_candidate",
+      "security_id": "UAL US",
+      "ticker": "UAL"
+    },
+    {
+      "exchange": "US",
+      "name": "UBER TECHNOLOGIE",
+      "security_classification": "ticker_candidate",
+      "security_id": "UBER US",
+      "ticker": "UBER"
+    },
+    {
+      "exchange": "US",
+      "name": "ULTA SALON COSMETICS & FRAGR",
+      "security_classification": "ticker_candidate",
+      "security_id": "ULTA US",
+      "ticker": "ULTA"
+    },
+    {
+      "exchange": "US",
+      "name": "UNITEDHEALTH GROUP INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "UNH US",
+      "ticker": "UNH"
+    },
+    {
+      "exchange": "IN",
+      "name": "UNO Minda Ltd",
+      "security_classification": "ticker_candidate",
+      "security_id": "UNOMINDA IN",
+      "ticker": "UNOMINDA"
+    },
+    {
+      "exchange": "US",
+      "name": "UNION PACIFIC CORP",
+      "security_classification": "ticker_candidate",
+      "security_id": "UNP US",
+      "ticker": "UNP"
+    },
+    {
+      "exchange": "US",
+      "name": "UNITED RENTALS INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "URI US",
+      "ticker": "URI"
+    },
+    {
+      "exchange": "US",
+      "name": "US BANCORP",
+      "security_classification": "ticker_candidate",
+      "security_id": "USB US",
+      "ticker": "USB"
+    },
+    {
+      "exchange": "IN",
+      "name": "UltraTech Cement Ltd",
+      "security_classification": "ticker_candidate",
+      "security_id": "UTCEM IN",
+      "ticker": "UTCEM"
+    },
+    {
+      "exchange": "US",
+      "name": "VISA INC-CLASS A SHARES",
+      "security_classification": "ticker_candidate",
+      "security_id": "V US",
+      "ticker": "V"
+    },
+    {
+      "exchange": "US",
+      "name": "VEEVA SYSTEM-A",
+      "security_classification": "ticker_candidate",
+      "security_id": "VEEV US",
+      "ticker": "VEEV"
+    },
+    {
+      "exchange": "US",
+      "name": "Venture Global Inc",
+      "security_classification": "ticker_candidate",
+      "security_id": "VG US",
+      "ticker": "VG"
+    },
+    {
+      "exchange": "US",
+      "name": "VICI PROPERTIES INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "VICI US",
+      "ticker": "VICI"
+    },
+    {
+      "exchange": "US",
+      "name": "VALERO ENERGY CORP",
+      "security_classification": "ticker_candidate",
+      "security_id": "VLO US",
+      "ticker": "VLO"
+    },
+    {
+      "exchange": "US",
+      "name": "Veralto Corp",
+      "security_classification": "ticker_candidate",
+      "security_id": "VLTO US",
+      "ticker": "VLTO"
+    },
+    {
+      "exchange": "IN",
+      "name": "Voltas Ltd",
+      "security_classification": "ticker_candidate",
+      "security_id": "VOLT IN",
+      "ticker": "VOLT"
+    },
+    {
+      "exchange": "US",
+      "name": "Voyager Technologies Inc",
+      "security_classification": "ticker_candidate",
+      "security_id": "VOYG US",
+      "ticker": "VOYG"
+    },
+    {
+      "exchange": "US",
+      "name": "VeriSign Inc",
+      "security_classification": "ticker_candidate",
+      "security_id": "VRSN US",
+      "ticker": "VRSN"
+    },
+    {
+      "exchange": "US",
+      "name": "VERTIV HOLDINGS CL A ORD",
+      "security_classification": "ticker_candidate",
+      "security_id": "VRT US",
+      "ticker": "VRT"
+    },
+    {
+      "exchange": "US",
+      "name": "VISTRA ENERGY CORP",
+      "security_classification": "ticker_candidate",
+      "security_id": "VST US",
+      "ticker": "VST"
+    },
+    {
+      "exchange": "US",
+      "name": "VERIZON COMMUNICATIONS INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "VZ US",
+      "ticker": "VZ"
+    },
+    {
+      "exchange": "US",
+      "name": "WABTEC CORP",
+      "security_classification": "ticker_candidate",
+      "security_id": "WAB US",
+      "ticker": "WAB"
+    },
+    {
+      "exchange": "US",
+      "name": "WATERS CORP",
+      "security_classification": "ticker_candidate",
+      "security_id": "WAT US",
+      "ticker": "WAT"
+    },
+    {
+      "exchange": "US",
+      "name": "WARNER BROS DISCOVERY INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "WBD US",
+      "ticker": "WBD"
+    },
+    {
+      "exchange": "US",
+      "name": "WORKDAY INC-CLASS A",
+      "security_classification": "ticker_candidate",
+      "security_id": "WDAY US",
+      "ticker": "WDAY"
+    },
+    {
+      "exchange": "US",
+      "name": "WESTERN DIGITAL",
+      "security_classification": "ticker_candidate",
+      "security_id": "WDC US",
+      "ticker": "WDC"
+    },
+    {
+      "exchange": "US",
+      "name": "WEC ENERGY GROUP INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "WEC US",
+      "ticker": "WEC"
+    },
+    {
+      "exchange": "US",
+      "name": "WELLS FARGO & CO",
+      "security_classification": "ticker_candidate",
+      "security_id": "WFC US",
+      "ticker": "WFC"
+    },
+    {
+      "exchange": "US",
+      "name": "WASTE MANAGEMENT INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "WM US",
+      "ticker": "WM"
+    },
+    {
+      "exchange": "US",
+      "name": "WILLIAMS COS INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "WMB US",
+      "ticker": "WMB"
+    },
+    {
+      "exchange": "US",
+      "name": "WAL-MART STORES INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "WMT US",
+      "ticker": "WMT"
+    },
+    {
+      "exchange": "US",
+      "name": "WR BERKLEY CORP",
+      "security_classification": "ticker_candidate",
+      "security_id": "WRB US",
+      "ticker": "WRB"
+    },
+    {
+      "exchange": "US",
+      "name": "WEST PHARMACEUTICAL SERVICES",
+      "security_classification": "ticker_candidate",
+      "security_id": "WST US",
+      "ticker": "WST"
+    },
+    {
+      "exchange": "US",
+      "name": "WILLIS TOWERS WATSON PLC",
+      "security_classification": "ticker_candidate",
+      "security_id": "WTW US",
+      "ticker": "WTW"
+    },
+    {
+      "exchange": "US",
+      "name": "XCEL ENERGY INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "XEL US",
+      "ticker": "XEL"
+    },
+    {
+      "exchange": "US",
+      "name": "EXXON MOBIL CORP",
+      "security_classification": "ticker_candidate",
+      "security_id": "XOM US",
+      "ticker": "XOM"
+    },
+    {
+      "exchange": "US",
+      "name": "XYLEM INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "XYL US",
+      "ticker": "XYL"
+    },
+    {
+      "exchange": "US",
+      "name": "Block Inc",
+      "security_classification": "ticker_candidate",
+      "security_id": "XYZ US",
+      "ticker": "XYZ"
+    },
+    {
+      "exchange": "US",
+      "name": "York Space Systems Inc",
+      "security_classification": "ticker_candidate",
+      "security_id": "YSS US",
+      "ticker": "YSS"
+    },
+    {
+      "exchange": "US",
+      "name": "ZOOM VIDEO COMMUNICATIONS-A",
+      "security_classification": "ticker_candidate",
+      "security_id": "ZM US",
+      "ticker": "ZM"
+    },
+    {
+      "exchange": "US",
+      "name": "ZSCALER INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "ZS US",
+      "ticker": "ZS"
+    },
+    {
+      "exchange": "US",
+      "name": "ZOETIS INC",
+      "security_classification": "ticker_candidate",
+      "security_id": "ZTS US",
+      "ticker": "ZTS"
+    }
+  ],
+  "schema_version": "agent_treport.security_resolution_export.v1"
+}

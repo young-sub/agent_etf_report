@@ -1,0 +1,31 @@
+{
+  "canonical_holdings_history_unchanged": true,
+  "full_live_pre_publish_artifact_closure": "met",
+  "full_user_ready_closure": "blocked",
+  "known_unvalidated_provider_exceptions": [
+    {
+      "category": "disclosure",
+      "exception_type": "known_unvalidated_provider_exception",
+      "execution_status": "not_requested",
+      "non_call_rule": "SEC EDGAR must not be called for this goal.",
+      "promotion_condition": "Promote only after a separate SEC-policy-compliant live smoke returns success or normal no_data with path-safe evidence and no active cooldown.",
+      "provider_id": "sec_edgar",
+      "required_for_user_ready_closure": false,
+      "safe_reason": "SEC EDGAR remains disclosed but outside the validated provider denominator for this pre-publish closure."
+    }
+  ],
+  "pre_publish_preview_status": "operator_review_only",
+  "result_package_path": "data\\agent_treport\\live-source\\daily-smoke-summaries\\run_20260531_live_api_env_probe_001",
+  "run_id": "run_20260531_live_api_env_probe_001",
+  "schema_version": "agent_treport.full_live_pre_publish_smoke_summary.v1",
+  "telegram_delivery_status": "not_sent",
+  "telegram_message_body_in_handoff": true,
+  "validated_provider_outcomes": {
+    "alpha_vantage": "no_data",
+    "dart": "no_data",
+    "finnhub": "no_data",
+    "naver": "no_data",
+    "newsapi": "no_data",
+    "yfinance": "no_data"
+  }
+}

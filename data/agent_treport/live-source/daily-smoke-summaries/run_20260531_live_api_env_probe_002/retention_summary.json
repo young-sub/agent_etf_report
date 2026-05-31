@@ -1,0 +1,13 @@
+{
+  "keep_latest": 10,
+  "retention_roots": [
+    {
+      "after_count": 4,
+      "before_count": 4,
+      "name": "daily-smoke-summaries",
+      "protected_count": 1,
+      "pruned_count": 0
+    }
+  ],
+  "schema_version": "agent_treport.live_source.retention.v1"
+}

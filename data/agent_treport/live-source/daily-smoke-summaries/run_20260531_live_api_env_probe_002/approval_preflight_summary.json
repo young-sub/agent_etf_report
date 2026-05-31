@@ -1,0 +1,22 @@
+{
+  "approval": {
+    "approved_boundary_fingerprint": "1253c2e5fcbd40d35393f417e29328196edcb9a16b4bfc5f8ce0d2d2e238a12c",
+    "missing_scopes": [],
+    "outside_approved_bounds": [],
+    "requested_boundary_fingerprint": "640833fa57c0bdd2d7548e702c346fbdd70b2403798853af90f65f09ba5c956e",
+    "required_scopes": [
+      "live_external_evidence",
+      "model_export"
+    ],
+    "status": "approved",
+    "unapproved_scopes": [],
+    "valid": true
+  },
+  "approval_preflight_artifact": {
+    "artifact_id": "artifact_treport_daily_approval_preflight",
+    "media_type": "application/json",
+    "name": "daily_operational_external_data_preflight.json",
+    "path": ".scratch\\live_api_env_probe_20260531_002\\preview\\daily_operational_external_data_preflight.json"
+  },
+  "schema_version": "agent_treport.pre_publish.approval_preflight_summary.v1"
+}

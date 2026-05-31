@@ -1,0 +1,963 @@
+{
+  "active_strategy_classification_counts": {
+    "active_strategy": 21,
+    "passive_strategy": 42,
+    "unknown_strategy": 47
+  },
+  "active_strategy_evidence": {
+    "confidence_counts": {
+      "high": 42,
+      "low": 68,
+      "medium": 0
+    },
+    "seed_override_count": 0,
+    "source_counts": {
+      "name_token": 21,
+      "passive_keyword": 42,
+      "reference_seed": 0,
+      "source_metadata": 0,
+      "timefolio_provider_default": 0,
+      "unknown": 47
+    }
+  },
+  "active_strategy_review_samples": [
+    {
+      "active_strategy_confidence": "low",
+      "active_strategy_source": "unknown",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_kr5101877748",
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "low",
+      "active_strategy_source": "unknown",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101ct6711",
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "low",
+      "active_strategy_source": "unknown",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101e67600",
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "low",
+      "active_strategy_source": "unknown",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101b54539",
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "low",
+      "active_strategy_source": "unknown",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101e79688",
+      "source_provider_id": "ace"
+    }
+  ],
+  "aggregate_counts": {
+    "active_strategy": 21,
+    "brand_count": 1,
+    "catalog_entry_count": 110,
+    "etf_count": 110,
+    "passive_strategy": 42,
+    "unknown_strategy": 47
+  },
+  "brand_count": 1,
+  "catalog_entries": [
+    {
+      "active_strategy_confidence": "high",
+      "active_strategy_source": "passive_keyword",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101e75520",
+      "is_active_strategy_etf": false,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "low",
+      "active_strategy_source": "unknown",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_kr5101877748",
+      "is_active_strategy_etf": null,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "low",
+      "active_strategy_source": "unknown",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101ct6711",
+      "is_active_strategy_etf": null,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "high",
+      "active_strategy_source": "passive_keyword",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101e34386",
+      "is_active_strategy_etf": false,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "high",
+      "active_strategy_source": "passive_keyword",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101e80470",
+      "is_active_strategy_etf": false,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "low",
+      "active_strategy_source": "name_token",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101dh7878",
+      "is_active_strategy_etf": true,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "high",
+      "active_strategy_source": "passive_keyword",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101e80488",
+      "is_active_strategy_etf": false,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "high",
+      "active_strategy_source": "passive_keyword",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101e80496",
+      "is_active_strategy_etf": false,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "low",
+      "active_strategy_source": "unknown",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101e67600",
+      "is_active_strategy_etf": null,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "low",
+      "active_strategy_source": "name_token",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101ej7669",
+      "is_active_strategy_etf": true,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "low",
+      "active_strategy_source": "name_token",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101di3603",
+      "is_active_strategy_etf": true,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "low",
+      "active_strategy_source": "unknown",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101b54539",
+      "is_active_strategy_etf": null,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "low",
+      "active_strategy_source": "unknown",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101e79688",
+      "is_active_strategy_etf": null,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "low",
+      "active_strategy_source": "unknown",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101dn7441",
+      "is_active_strategy_etf": null,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "low",
+      "active_strategy_source": "name_token",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101es8039",
+      "is_active_strategy_etf": true,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "low",
+      "active_strategy_source": "unknown",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101eu0214",
+      "is_active_strategy_etf": null,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "low",
+      "active_strategy_source": "unknown",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101c31949",
+      "is_active_strategy_etf": null,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "low",
+      "active_strategy_source": "unknown",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101bi4108",
+      "is_active_strategy_etf": null,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "low",
+      "active_strategy_source": "unknown",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101bj5096",
+      "is_active_strategy_etf": null,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "high",
+      "active_strategy_source": "passive_keyword",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101ev7101",
+      "is_active_strategy_etf": false,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "high",
+      "active_strategy_source": "passive_keyword",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101ei1622",
+      "is_active_strategy_etf": false,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "high",
+      "active_strategy_source": "passive_keyword",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101ei1630",
+      "is_active_strategy_etf": false,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "high",
+      "active_strategy_source": "passive_keyword",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101ei1648",
+      "is_active_strategy_etf": false,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "low",
+      "active_strategy_source": "unknown",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101eq7660",
+      "is_active_strategy_etf": null,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "high",
+      "active_strategy_source": "passive_keyword",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101b44423",
+      "is_active_strategy_etf": false,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "low",
+      "active_strategy_source": "name_token",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101eb6099",
+      "is_active_strategy_etf": true,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "high",
+      "active_strategy_source": "passive_keyword",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101d95314",
+      "is_active_strategy_etf": false,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "high",
+      "active_strategy_source": "passive_keyword",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_kr5101148215",
+      "is_active_strategy_etf": false,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "low",
+      "active_strategy_source": "unknown",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101ee6187",
+      "is_active_strategy_etf": null,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "low",
+      "active_strategy_source": "unknown",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101dy2753",
+      "is_active_strategy_etf": null,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "low",
+      "active_strategy_source": "unknown",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101du3912",
+      "is_active_strategy_etf": null,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "low",
+      "active_strategy_source": "unknown",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101ef6160",
+      "is_active_strategy_etf": null,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "low",
+      "active_strategy_source": "unknown",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101e30004",
+      "is_active_strategy_etf": null,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "low",
+      "active_strategy_source": "name_token",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101dp1319",
+      "is_active_strategy_etf": true,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "high",
+      "active_strategy_source": "passive_keyword",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101dw2771",
+      "is_active_strategy_etf": false,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "high",
+      "active_strategy_source": "passive_keyword",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_kr5101an3254",
+      "is_active_strategy_etf": false,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "low",
+      "active_strategy_source": "name_token",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101ee7904",
+      "is_active_strategy_etf": true,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "low",
+      "active_strategy_source": "unknown",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101bm2890",
+      "is_active_strategy_etf": null,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "high",
+      "active_strategy_source": "passive_keyword",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_kr5101a62068",
+      "is_active_strategy_etf": false,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "low",
+      "active_strategy_source": "name_token",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101ep9774",
+      "is_active_strategy_etf": true,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "low",
+      "active_strategy_source": "name_token",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101eb6081",
+      "is_active_strategy_etf": true,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "high",
+      "active_strategy_source": "passive_keyword",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101ec8482",
+      "is_active_strategy_etf": false,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "high",
+      "active_strategy_source": "passive_keyword",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101el9166",
+      "is_active_strategy_etf": false,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "high",
+      "active_strategy_source": "passive_keyword",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101el9174",
+      "is_active_strategy_etf": false,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "high",
+      "active_strategy_source": "passive_keyword",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101dz9039",
+      "is_active_strategy_etf": false,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "high",
+      "active_strategy_source": "passive_keyword",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101e91865",
+      "is_active_strategy_etf": false,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "high",
+      "active_strategy_source": "passive_keyword",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101e03860",
+      "is_active_strategy_etf": false,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "high",
+      "active_strategy_source": "passive_keyword",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101e91790",
+      "is_active_strategy_etf": false,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "high",
+      "active_strategy_source": "passive_keyword",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101e97755",
+      "is_active_strategy_etf": false,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "low",
+      "active_strategy_source": "name_token",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101eo4453",
+      "is_active_strategy_etf": true,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "low",
+      "active_strategy_source": "unknown",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101bw5925",
+      "is_active_strategy_etf": null,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "low",
+      "active_strategy_source": "unknown",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101d78195",
+      "is_active_strategy_etf": null,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "high",
+      "active_strategy_source": "passive_keyword",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101du8887",
+      "is_active_strategy_etf": false,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "low",
+      "active_strategy_source": "unknown",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101er4245",
+      "is_active_strategy_etf": null,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "low",
+      "active_strategy_source": "unknown",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101cf3110",
+      "is_active_strategy_etf": null,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "low",
+      "active_strategy_source": "unknown",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101db1182",
+      "is_active_strategy_etf": null,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "high",
+      "active_strategy_source": "passive_keyword",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101du8879",
+      "is_active_strategy_etf": false,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "high",
+      "active_strategy_source": "passive_keyword",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101e19692",
+      "is_active_strategy_etf": false,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "high",
+      "active_strategy_source": "passive_keyword",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101dw3258",
+      "is_active_strategy_etf": false,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "low",
+      "active_strategy_source": "name_token",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101ep9626",
+      "is_active_strategy_etf": true,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "low",
+      "active_strategy_source": "name_token",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101ep9634",
+      "is_active_strategy_etf": true,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "high",
+      "active_strategy_source": "passive_keyword",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101e96450",
+      "is_active_strategy_etf": false,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "low",
+      "active_strategy_source": "unknown",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101dn4471",
+      "is_active_strategy_etf": null,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "low",
+      "active_strategy_source": "unknown",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101ek7278",
+      "is_active_strategy_etf": null,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "high",
+      "active_strategy_source": "passive_keyword",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101ek7344",
+      "is_active_strategy_etf": false,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "high",
+      "active_strategy_source": "passive_keyword",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101ek7294",
+      "is_active_strategy_etf": false,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "low",
+      "active_strategy_source": "unknown",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_kr5101aj9786",
+      "is_active_strategy_etf": null,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "high",
+      "active_strategy_source": "passive_keyword",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101e97763",
+      "is_active_strategy_etf": false,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "low",
+      "active_strategy_source": "unknown",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101e52479",
+      "is_active_strategy_etf": null,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "high",
+      "active_strategy_source": "passive_keyword",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101e52487",
+      "is_active_strategy_etf": false,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "high",
+      "active_strategy_source": "passive_keyword",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101e52495",
+      "is_active_strategy_etf": false,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "low",
+      "active_strategy_source": "name_token",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101et7451",
+      "is_active_strategy_etf": true,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "low",
+      "active_strategy_source": "unknown",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101e54012",
+      "is_active_strategy_etf": null,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "low",
+      "active_strategy_source": "unknown",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101eh5038",
+      "is_active_strategy_etf": null,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "low",
+      "active_strategy_source": "unknown",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101dk6651",
+      "is_active_strategy_etf": null,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "high",
+      "active_strategy_source": "passive_keyword",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101e13018",
+      "is_active_strategy_etf": false,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "low",
+      "active_strategy_source": "unknown",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101be0852",
+      "is_active_strategy_etf": null,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "low",
+      "active_strategy_source": "unknown",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_kr5101299273",
+      "is_active_strategy_etf": null,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "low",
+      "active_strategy_source": "unknown",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_kr5101897761",
+      "is_active_strategy_etf": null,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "high",
+      "active_strategy_source": "passive_keyword",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101ev7093",
+      "is_active_strategy_etf": false,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "low",
+      "active_strategy_source": "unknown",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101cg5254",
+      "is_active_strategy_etf": null,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "low",
+      "active_strategy_source": "unknown",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101bu2759",
+      "is_active_strategy_etf": null,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "low",
+      "active_strategy_source": "name_token",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101e42918",
+      "is_active_strategy_etf": true,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "low",
+      "active_strategy_source": "name_token",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101eb6172",
+      "is_active_strategy_etf": true,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "high",
+      "active_strategy_source": "passive_keyword",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101dy6929",
+      "is_active_strategy_etf": false,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "high",
+      "active_strategy_source": "passive_keyword",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101en6525",
+      "is_active_strategy_etf": false,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "low",
+      "active_strategy_source": "unknown",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101du0363",
+      "is_active_strategy_etf": null,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "low",
+      "active_strategy_source": "unknown",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101en6293",
+      "is_active_strategy_etf": null,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "low",
+      "active_strategy_source": "name_token",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101ec1768",
+      "is_active_strategy_etf": true,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "low",
+      "active_strategy_source": "name_token",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101eb6453",
+      "is_active_strategy_etf": true,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "high",
+      "active_strategy_source": "passive_keyword",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_kr5101a59767",
+      "is_active_strategy_etf": false,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "low",
+      "active_strategy_source": "unknown",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101eg1343",
+      "is_active_strategy_etf": null,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "low",
+      "active_strategy_source": "unknown",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101ba8230",
+      "is_active_strategy_etf": null,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "high",
+      "active_strategy_source": "passive_keyword",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_kr5101ar9802",
+      "is_active_strategy_etf": false,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "high",
+      "active_strategy_source": "passive_keyword",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_kr5101av1027",
+      "is_active_strategy_etf": false,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "low",
+      "active_strategy_source": "unknown",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101e66032",
+      "is_active_strategy_etf": null,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "high",
+      "active_strategy_source": "passive_keyword",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101d34156",
+      "is_active_strategy_etf": false,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "low",
+      "active_strategy_source": "name_token",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101dy4338",
+      "is_active_strategy_etf": true,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "low",
+      "active_strategy_source": "unknown",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101dp7530",
+      "is_active_strategy_etf": null,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "low",
+      "active_strategy_source": "unknown",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_kr5101ad5756",
+      "is_active_strategy_etf": null,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "high",
+      "active_strategy_source": "passive_keyword",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101b26297",
+      "is_active_strategy_etf": false,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "low",
+      "active_strategy_source": "name_token",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101bq9602",
+      "is_active_strategy_etf": true,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "low",
+      "active_strategy_source": "name_token",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101em0842",
+      "is_active_strategy_etf": true,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "low",
+      "active_strategy_source": "unknown",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101dc5406",
+      "is_active_strategy_etf": null,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "low",
+      "active_strategy_source": "unknown",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101dh2341",
+      "is_active_strategy_etf": null,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "low",
+      "active_strategy_source": "unknown",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101ef9826",
+      "is_active_strategy_etf": null,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "low",
+      "active_strategy_source": "unknown",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101d41516",
+      "is_active_strategy_etf": null,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "low",
+      "active_strategy_source": "unknown",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101cc3048",
+      "is_active_strategy_etf": null,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "low",
+      "active_strategy_source": "name_token",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101e19387",
+      "is_active_strategy_etf": true,
+      "source_provider_id": "ace"
+    },
+    {
+      "active_strategy_confidence": "low",
+      "active_strategy_source": "unknown",
+      "brand_id": "brand_korea_investment_asset_management",
+      "etf_id": "etf_ace_k55101e67568",
+      "is_active_strategy_etf": null,
+      "source_provider_id": "ace"
+    }
+  ],
+  "catalog_entry_count": 110,
+  "catalog_output": {
+    "catalog_path": "source_catalog.json"
+  },
+  "collected_at": "2026-05-31T09:32:30.567873+00:00",
+  "etf_count": 110,
+  "run_outcome": "succeeded",
+  "schema_version": "agent_treport.source_acquisition.summary.v1",
+  "source_provider_id": "ace",
+  "universe_state_output": {
+    "state_path": "universe_state.json"
+  }
+}
