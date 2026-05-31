@@ -1500,8 +1500,28 @@ def test_update_holdings_history_source_skips_matching_existing_snapshot(
         "agent_treport.signal_report.adapters.source_acquisition",
         fromlist=[""],
     )
-    provider = source_module.FakeSourceProvider.from_fixture_path(
-        _write_fake_source_provider_fixture(tmp_path)
+    class CountingProvider(source_module.FakeSourceProvider):
+        fetch_count = 0
+
+        def fetch_holdings(self, target):  # type: ignore[no-untyped-def]
+            self.fetch_count += 1
+            return super().fetch_holdings(target)
+
+    provider = CountingProvider.from_fixture_path(
+        _write_fake_source_provider_fixture(
+            tmp_path,
+            holdings_results=[
+                {
+                    "source_provider_id": "provider_kodex_fake",
+                    "provider_etf_id": "2ETF35",
+                    "requested_date": "2026-05-11",
+                    "observed_date": "2026-05-11",
+                    "outcome": "fetched",
+                    "retry_attempt_count": 0,
+                    "holdings": [_source_holding()],
+                }
+            ],
+        )
     )
     source_dir = tmp_path / "source_catalog"
     source_module.collect_source_catalog(
@@ -1518,6 +1538,7 @@ def test_update_holdings_history_source_skips_matching_existing_snapshot(
         requested_date="2026-05-11",
         now=lambda: datetime(2026, 5, 11, 1, 30, tzinfo=UTC),
     )
+    assert provider.fetch_count == 1
     history_before = (history_dir / "holdings_history.json").read_bytes()
 
     summary = source_module.update_holdings_history_source(
@@ -1529,9 +1550,10 @@ def test_update_holdings_history_source_skips_matching_existing_snapshot(
         now=lambda: datetime(2026, 5, 11, 2, 30, tzinfo=UTC),
     )
 
+    assert provider.fetch_count == 1
     assert summary["run_outcome"] == "succeeded"
     assert summary["provider_rollout_status"] == "supported"
-    assert summary["observed_dates"] == ["2026-05-10"]
+    assert summary["observed_dates"] == ["2026-05-11"]
     assert summary["aggregate_counts"] == {
         "target_count": 1,
         "fetched": 0,
@@ -1549,15 +1571,15 @@ def test_update_holdings_history_source_skips_matching_existing_snapshot(
             "etf_id": "etf_kodex_ai",
             "scope": "holdings_snapshot",
             "requested_date": "2026-05-11",
-            "observed_date": "2026-05-10",
+            "observed_date": "2026-05-11",
             "date_alignment": {
                 "requested_date": "2026-05-11",
-                "observed_date": "2026-05-10",
-                "status": "observed_differs_from_provider_query",
+                "observed_date": "2026-05-11",
+                "status": "matched",
             },
             "latest_upload_freshness": {
                 "status": "fresh_latest",
-                "observed_date": "2026-05-10",
+                "observed_date": "2026-05-11",
                 "latest_acceptable_observed_date": "2026-05-08",
             },
             "outcome": "skipped_existing",
@@ -1857,6 +1879,89 @@ def test_update_holdings_history_source_applies_retry_cooldown_and_backfill_plan
     assert "next_backfill_date_count" not in recovered
     assert "blocked_until" not in recovered
     assert (history_dir / "holdings_history.json").is_file()
+
+
+def test_update_holdings_history_source_processes_all_selected_provider_etfs(
+    tmp_path: Path,
+) -> None:
+    source_module = __import__(
+        "agent_treport.signal_report.adapters.source_acquisition",
+        fromlist=[""],
+    )
+    provider = source_module.FakeSourceProvider.from_fixture_path(
+        _write_fake_source_provider_fixture(
+            tmp_path,
+            entries=[
+                {
+                    "source_provider_id": "provider_kodex_fake",
+                    "provider_etf_id": "2ETF35",
+                    "etf_id": "etf_kodex_ai",
+                    "etf_name": "KODEX AI ETF",
+                    "brand_id": "brand_samsung",
+                    "brand_name": "Samsung Asset Management",
+                    "strategy_label": "active",
+                    "locator": "https://provider.example/internal/2ETF35",
+                },
+                {
+                    "source_provider_id": "provider_kodex_fake",
+                    "provider_etf_id": "2ETF36",
+                    "etf_id": "etf_kodex_robotics",
+                    "etf_name": "KODEX Robotics ETF",
+                    "brand_id": "brand_samsung",
+                    "brand_name": "Samsung Asset Management",
+                    "strategy_label": "active",
+                    "locator": "https://provider.example/internal/2ETF36",
+                },
+            ],
+            holdings_results=[
+                {
+                    "source_provider_id": "provider_kodex_fake",
+                    "provider_etf_id": "2ETF35",
+                    "requested_date": "2026-05-11",
+                    "observed_date": "2026-05-11",
+                    "outcome": "fetched",
+                    "holdings": [_source_holding(security_id="sec_nvda")],
+                },
+                {
+                    "source_provider_id": "provider_kodex_fake",
+                    "provider_etf_id": "2ETF36",
+                    "requested_date": "2026-05-11",
+                    "observed_date": "2026-05-11",
+                    "outcome": "fetched",
+                    "holdings": [_source_holding(security_id="sec_msft")],
+                },
+            ],
+        )
+    )
+    source_dir = tmp_path / "source_catalog"
+    source_module.collect_source_catalog(
+        provider=provider,
+        dest_dir=source_dir,
+        now=lambda: datetime(2026, 5, 11, 0, 45, tzinfo=UTC),
+    )
+
+    summary = source_module.update_holdings_history_source(
+        provider=provider,
+        source_catalog_path=source_dir / "source_catalog.json",
+        universe_state_path=source_dir / "universe_state.json",
+        history_dir=tmp_path / "holdings_history",
+        requested_date="2026-05-11",
+        provider_etf_ids={"2ETF35", "2ETF36"},
+        now=lambda: datetime(2026, 5, 11, 1, 30, tzinfo=UTC),
+    )
+
+    assert [item["etf_id"] for item in summary["target_outcomes"]] == [
+        "etf_kodex_ai",
+        "etf_kodex_robotics",
+    ]
+    assert summary["run_outcome"] == "succeeded"
+    assert summary["aggregate_counts"]["target_count"] == 2
+    assert summary["aggregate_counts"]["fetched"] == 2
+    assert summary["aggregate_counts"]["written_snapshot_count"] == 2
+    rendered_summary = json.dumps(summary, ensure_ascii=False)
+    assert "provider_etf_id" not in rendered_summary
+    assert "https://" not in rendered_summary
+    assert str(tmp_path) not in rendered_summary
 
 
 def test_update_holdings_history_source_selected_provider_etf_failure_stays_bounded(

@@ -1169,7 +1169,7 @@ def update_holdings_history_source(
         (entry.source_provider_id, entry.provider_etf_id): entry
         for entry in catalog_entries
     }
-    bounded_candidate_smoke = bool(provider_etf_ids)
+    bounded_candidate_smoke = len(provider_etf_ids or set()) == 1
 
     for target in targets:
         entry = catalog_by_target[(target.source_provider_id, target.provider_etf_id)]
@@ -1187,6 +1187,41 @@ def update_holdings_history_source(
                     retry_plan=retry_plan,
                 )
             )
+            continue
+        existing_rows = _existing_exact_snapshot_rows(
+            target=target,
+            stored=stored,
+            refresh_set=refresh_set,
+        )
+        if existing_rows is not None:
+            observed_date = target.provider_query_date
+            selected_snapshot_keys.add((target.etf_id, observed_date))
+            observed_dates.add(observed_date)
+            target_outcomes.append(
+                _target_outcome_item(
+                    target=target,
+                    entry=entry,
+                    result=HoldingsFetchResult(
+                        source_provider_id=target.source_provider_id,
+                        provider_etf_id=target.provider_etf_id,
+                        etf_id=target.etf_id,
+                        requested_date=target.requested_date,
+                        provider_query_date=target.provider_query_date,
+                        observed_date=observed_date,
+                        outcome="skipped_existing",
+                    ),
+                    outcome="skipped_existing",
+                    observed_date=observed_date,
+                    row_count=len(existing_rows),
+                    failure_code_class=None,
+                    retry_plan=retry_plan,
+                )
+            )
+            next_retry_state.pop(_retry_state_key(target), None)
+            if bounded_candidate_smoke and _target_latest_smoke_succeeded(
+                target_outcomes[-1]
+            ):
+                break
             continue
         result = provider.fetch_holdings(target)
         outcome, rows, failure_code_class = _apply_source_fetch_result(
@@ -3055,6 +3090,21 @@ def _apply_source_fetch_result(
         next_stored[key] = rows
         return "refreshed", rows, None
     return "failed", rows, "refresh_required"
+
+
+def _existing_exact_snapshot_rows(
+    *,
+    target: HoldingsFetchTarget,
+    stored: Mapping[tuple[str, str], list[dict[str, JsonValue]]],
+    refresh_set: set[tuple[str, str]],
+) -> list[dict[str, JsonValue]] | None:
+    key = (target.etf_id, target.provider_query_date)
+    if key in refresh_set:
+        return None
+    rows = stored.get(key)
+    if not rows:
+        return None
+    return [dict(row) for row in rows]
 
 
 def _validate_fetch_result_identity(

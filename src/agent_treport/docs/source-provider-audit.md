@@ -127,13 +127,14 @@ Passive, unknown-strategy, and non-equity-analysis entries remain in source
 catalog evidence but are excluded from default collection targets and handoff
 denominators.
 
-For bounded live smoke, when an operator selects a provider ETF id, that
-selection is exclusive for the holdings command. A failed or stale selected
-target records path-safe failure evidence and does not trigger an alternate
-EquityAnalysisETF request. Default unselected target ordering remains
-deterministic: high-confidence SourceProvider metadata, then high-confidence
-seed evidence, then TIMEFOLIO provider default, then low-confidence name-token
-evidence, with catalog order as the tie-breaker.
+For bounded live smoke, explicit provider ETF ids are exclusive for the holdings
+command. A failed or stale selected target records path-safe failure evidence
+and does not trigger an unselected alternate EquityAnalysisETF request. When
+multiple provider ETF ids are supplied, every selected id is processed; a single
+selected id remains the bounded one-target smoke path. Default unselected target
+ordering remains deterministic: high-confidence SourceProvider metadata, then
+high-confidence seed evidence, then TIMEFOLIO provider default, then
+low-confidence name-token evidence, with catalog order as the tie-breaker.
 
 Latest holdings smoke is considered support evidence only when the candidate
 outcome is fetched or live-confirmed skipped as an existing matching snapshot,
