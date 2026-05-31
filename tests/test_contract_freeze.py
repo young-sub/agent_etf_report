@@ -37,6 +37,8 @@ def test_package_import_and_module_cli_smoke() -> None:
     assert agent_treport.PACKAGE_NAME == "agent_treport"
     assert agent_treport.CLI_NAME == "agent-treport"
     assert agent_treport.DATA_ROOT == "data/agent_treport"
+    assert agent_treport.SCHEMA_NAMESPACE == "agent_treport"
+    assert agent_treport.EVENT_NAMESPACE == "agent_treport"
 
     result = subprocess.run(
         [sys.executable, "-m", "agent_treport", "--version"],

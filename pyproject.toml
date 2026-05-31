@@ -18,6 +18,7 @@ agent-treport = "agent_treport.cli:main"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/agent_treport"]
+dev-mode-dirs = ["src"]
 
 [tool.hatch.build.targets.sdist]
 only-include = ["src/agent_treport", "README.md", "pyproject.toml"]
