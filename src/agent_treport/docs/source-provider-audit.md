@@ -42,6 +42,15 @@ the reference fixture when present, but missing provider artifacts are reported
 as actionable diagnostics rather than silently passing readiness. Provider ids,
 FocusETFSet ids, and referenced artifact paths must stay path-safe and within
 the provider cache root.
+
+Issue #18 adds offline holdings-history reconciliation for this layout. The
+canonical mixed history remains the source of truth; provider histories are
+validated against it or created only when missing. Reconciliation summaries must
+preserve canonical totals, report provider row/ETF/snapshot/date coverage, flag
+missing/extra/changed provider snapshots, keep the HYUNDAI 2026-05-11
+`etf_hyundai_2912753` gap explicit when supplied as expected evidence, and leave
+KODEX partial coverage visible through missing canonical dates.
+
 ## Scope
 
 This audit reviews the read-only reference provider behavior before adding the
