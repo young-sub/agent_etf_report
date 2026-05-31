@@ -1068,6 +1068,18 @@ calls, crawl broad targets, mutate holdings history, or cut report/readiness
 inputs over to the provider cache. Use those diagnostics to seed provider roots
 or fix unsafe ids before running history reconciliation, refresh, security, or
 report-cutover Work Packets.
+
+Run `agent-treport reconcile-provider-holdings-history` to derive or validate
+provider-scoped `holdings-history/` caches from the canonical native history.
+The command partitions existing canonical rows by `source_provider_id`, reports
+provider row, ETF, snapshot, and date coverage, and compares existing provider
+histories without making live calls. `--write-missing-provider-histories` may
+create missing provider histories from canonical rows, but it does not rewrite
+the canonical history or overwrite existing provider histories. Use
+`--expected-snapshot <provider>:<etf_id>:<YYYY-MM-DD>` for operator-known gaps
+such as HYUNDAI `etf_hyundai_2912753` on 2026-05-11 so the gap stays visible
+instead of being hidden by provider partitioning. KODEX partial coverage remains
+visible through provider `dates` and `missing_canonical_dates` in the summary.
 Automated source-acquired report handoff coverage uses only
 `FakeSourceProvider`. It proves:
 

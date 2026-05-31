@@ -75,6 +75,10 @@ from agent_treport.signal_report.adapters.operational_universe import (
     OperationalUniverseInputError,
     collect_universe_fixture,
 )
+from agent_treport.signal_report.adapters.provider_history_reconciliation import (
+    ProviderExpectedSnapshot,
+    reconcile_provider_holdings_histories,
+)
 from agent_treport.signal_report.adapters.source_acquisition import (
     LIVE_SOURCE_PROVIDER_IDS,
     SOURCE_ACQUISITION_SUMMARY_FILENAME,
@@ -512,6 +516,38 @@ def build_parser() -> argparse.ArgumentParser:
         default=str(DEFAULT_OPERATIONAL_SOURCE_CACHE_ROOT),
     )
 
+    reconcile_provider_history = subcommands.add_parser(
+        "reconcile-provider-holdings-history",
+        description=(
+            "Derive or validate provider-scoped holdings histories from the "
+            "canonical native holdings history without live provider calls."
+        ),
+        help="reconcile provider-scoped holdings histories",
+    )
+    reconcile_provider_history.add_argument(
+        "--canonical-history-dir",
+        default=DEFAULT_NATIVE_HANDOFF_HISTORY_DIR,
+    )
+    reconcile_provider_history.add_argument(
+        "--cache-root",
+        default=str(DEFAULT_OPERATIONAL_SOURCE_CACHE_ROOT),
+    )
+    reconcile_provider_history.add_argument(
+        "--source-provider",
+        action="append",
+        choices=LIVE_SOURCE_PROVIDER_IDS,
+    )
+    reconcile_provider_history.add_argument(
+        "--expected-snapshot",
+        action="append",
+        default=[],
+        help="expected provider snapshot as source_provider_id:etf_id:YYYY-MM-DD",
+    )
+    reconcile_provider_history.add_argument(
+        "--write-missing-provider-histories",
+        action="store_true",
+    )
+
     live_source_baseline = subcommands.add_parser("run-live-source-baseline")
     live_source_baseline.add_argument("--config-path", required=True)
     live_source_baseline.add_argument("--operational-holdings-path", required=True)
@@ -762,6 +798,13 @@ async def run_cli_async(
 
     if args.command == "inspect-operational-source-cache":
         return _inspect_operational_source_cache_command(
+            args,
+            output=output,
+            error_output=error_output,
+        )
+
+    if args.command == "reconcile-provider-holdings-history":
+        return _reconcile_provider_holdings_history_command(
             args,
             output=output,
             error_output=error_output,
@@ -1210,6 +1253,55 @@ def _inspect_operational_source_cache_command(
             cache_root=args.cache_root,
         )
     except OperationalSourceCacheInputError as exc:
+        _write_cli_input_error(error_output, str(exc))
+        return 2
+    _write_compact_json(output, summary)
+    return 0
+
+
+def _parse_expected_provider_snapshots(
+    values: Sequence[str],
+) -> tuple[ProviderExpectedSnapshot, ...]:
+    snapshots: list[ProviderExpectedSnapshot] = []
+    for value in values:
+        parts = value.split(":")
+        if len(parts) != 3 or not all(part.strip() for part in parts):
+            raise OperationalHoldingsInputError(
+                "expected-snapshot must use source_provider_id:etf_id:YYYY-MM-DD"
+            )
+        source_provider_id, etf_id, observed_date = (part.strip() for part in parts)
+        try:
+            parsed = datetime.strptime(observed_date, "%Y-%m-%d").date()
+        except ValueError as exc:
+            raise OperationalHoldingsInputError(
+                "expected-snapshot date must be YYYY-MM-DD"
+            ) from exc
+        snapshots.append(
+            ProviderExpectedSnapshot(
+                source_provider_id=source_provider_id,
+                etf_id=etf_id,
+                observed_date=parsed.isoformat(),
+            )
+        )
+    return tuple(snapshots)
+
+
+def _reconcile_provider_holdings_history_command(
+    args: argparse.Namespace,
+    *,
+    output: TextIO,
+    error_output: TextIO,
+) -> int:
+    try:
+        expected_snapshots = _parse_expected_provider_snapshots(args.expected_snapshot)
+        summary = reconcile_provider_holdings_histories(
+            canonical_history_dir=args.canonical_history_dir,
+            cache_root=args.cache_root,
+            provider_ids=args.source_provider,
+            write_missing_provider_histories=args.write_missing_provider_histories,
+            expected_snapshots=expected_snapshots,
+        )
+    except (OperationalHoldingsInputError, OperationalSourceCacheInputError) as exc:
         _write_cli_input_error(error_output, str(exc))
         return 2
     _write_compact_json(output, summary)
