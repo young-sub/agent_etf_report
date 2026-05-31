@@ -139,6 +139,20 @@ one explicit choice:
    read-only legacy fallback; or
 3. provide a migration command that moves or copies local state.
 
+Chosen extraction-era policy for issue #6: keep `data/agent_treport/...` as the
+default path family and keep `agent-treport` as the supported CLI entrypoint.
+The default path contract is:
+
+- holdings: `data/agent_treport/operational-holdings/url_holdings_cumulative.json`
+- native holdings history: `data/agent_treport/live-source/holdings-history`
+- focus ETF set: `data/agent_treport/focus-etf-sets/default_focus_etf_set.json`
+- reviewed security resolution:
+  `data/agent_treport/security-master/security_resolution.json`
+
+No `agent_etf_report` package, CLI, data root, schema, event, or artifact
+rename is part of this phase. A migration command is deferred until a later
+rename packet explicitly accepts that compatibility behavior.
+
 Acceptance:
 
 - tests cover default holdings/history/focus/security-resolution paths;
