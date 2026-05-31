@@ -187,6 +187,10 @@ Acceptance:
 
 ## Phase 4 - Deterministic Document Evidence Composition
 
+Status: implemented for issue #7 on 2026-05-31. The workflow-owned path
+composes document evidence deterministically and keeps model-driven document
+tools disabled until Phase 5.
+
 Goal: let the domain use document evidence through `agent_pack_docs` without
 opening free model document access.
 
