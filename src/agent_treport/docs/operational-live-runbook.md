@@ -820,9 +820,11 @@ execution date's previous Korean weekday. This is a weekday approximation only;
 a KRX holiday calendar remains future work.
 
 Source-backed history updates preserve native `HoldingsSnapshot` identity and
-duplicate handling. Matching duplicates are skipped. Changed duplicate
-ETF/date snapshots require `--refresh-snapshot <ETF_ID>:<YYYY-MM-DD>` and are
-not silently overwritten. Partial acquisition is allowed: successful ETF/date
+duplicate handling. Existing exact `ETF + provider_query_date` snapshots are
+recorded as `skipped_existing` before provider calls unless explicitly selected
+with `--refresh-snapshot <ETF_ID>:<YYYY-MM-DD>`. Changed fetched duplicate
+ETF/date snapshots still require `--refresh-snapshot <ETF_ID>:<YYYY-MM-DD>` and
+are not silently overwritten. Partial acquisition is allowed: successful ETF/date
 snapshots are written even when other targets fail, rate-limit, or are
 unsupported.
 
@@ -860,11 +862,12 @@ available.
 ```
 
 Do not run live holdings smoke without `--provider-etf-id`. This keeps the smoke
-operator-bounded. An explicit provider ETF id is an exclusive selection set for
-that command: a failed or stale selected target must not trigger an alternate
-ActiveStrategyETF request. Do not exceed one catalog plus the explicitly
-selected holdings target per provider in the smoke path. Use the live
-replacement baseline flow below for gated bulk planning and backfill.
+operator-bounded. Explicit provider ETF ids are an exclusive selection set for
+that command: a failed or stale selected target must not trigger an unselected
+alternate ActiveStrategyETF request. When multiple provider ETF ids are supplied,
+the command processes every selected id; a single selected id remains the bounded
+one-target smoke path. Use the live replacement baseline flow below for gated
+bulk planning and backfill.
 
 A holdings smoke upgrades provider rollout status to `supported` only when the
 target outcome is fetched or live-confirmed skipped as an existing matching
