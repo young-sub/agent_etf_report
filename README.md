@@ -8,6 +8,15 @@ active package, CLI, data root, schema namespace, event namespace, and artifact
 contracts as `agent_treport` until the domain is fully separated from
 `agent_pack`.
 
+Current compatibility policy:
+
+- `agent-treport` remains the supported CLI entrypoint.
+- Default local data paths stay under `data/agent_treport/...`, including
+  operational holdings, native holdings history, focus ETF sets, and reviewed
+  security-resolution exports.
+- `agent_treport.*` schema, event, and artifact contract names are not renamed
+  during extraction.
+
 Primary plan:
 
 - `docs/plans/agent-treport-extraction-migration.md`

@@ -26,6 +26,11 @@ operator. The SourceProvider acquisition path below is Agent TReport-owned:
 fake provider runs are deterministic and offline, while live provider runs
 require explicit `--live` opt-in and a selected SourceProvider.
 
+Extraction-era compatibility keeps the supported CLI as `agent-treport` and
+keeps operational defaults under `data/agent_treport/...`. The later
+`agent_etf_report` rename must not change these runbook commands until a
+post-separation rename packet provides an accepted migration or alias policy.
+
 Readiness answers one FocusETFSet question:
 
 ```text

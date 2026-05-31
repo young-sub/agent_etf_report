@@ -24,6 +24,17 @@ Extraction-era domain names remain:
 The repository-level name `agent_etf_report` is the future target name, not the
 initial migration name.
 
+## Compatibility Policy
+
+Issue #6 fixes the extraction-era compatibility policy as conservative:
+
+- default local state and fixture paths stay under `data/agent_treport/...`;
+- the supported CLI entrypoint remains `agent-treport`;
+- persisted schema, event, and artifact contract identifiers remain
+  `agent_treport.*`;
+- migration to `agent_etf_report` names is a later post-separation packet, not
+  part of extraction-era path or CLI behavior.
+
 ## Dependency Direction
 
 ```text
