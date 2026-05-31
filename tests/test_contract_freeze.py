@@ -29,6 +29,15 @@ def test_distribution_import_and_cli_names_stay_agent_treport() -> None:
     assert distribution.metadata["Name"] == "agent-treport"
 
 
+def test_agent_etf_report_runtime_package_is_not_introduced() -> None:
+    pyproject = load_pyproject()
+    hatch_build = pyproject["tool"]["hatch"]["build"]["targets"]  # type: ignore[index]
+
+    assert not (REPO_ROOT / "src" / "agent_etf_report").exists()
+    assert "src/agent_etf_report" not in hatch_build["wheel"]["packages"]
+    assert "src/agent_etf_report" not in hatch_build["sdist"]["only-include"]
+
+
 def test_package_import_and_module_cli_smoke() -> None:
     import agent_treport
 
