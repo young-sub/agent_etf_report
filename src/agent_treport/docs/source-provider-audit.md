@@ -4,6 +4,7 @@
 
 Created for the Native ETF Source Acquisition Foundation goal on 2026-05-15.
 Updated for provider-flexible live handoff on 2026-05-16.
+Updated for provider-scoped operational cache layout contract on 2026-05-31.
 
 Current handoff state:
 
@@ -24,6 +25,23 @@ Current handoff state:
   default evidence; the internal source catalog still retains provider target
   keys for acquisition.
 
+## Provider-Scoped Operational Cache Layout
+
+Issue #17 promotes provider-scoped operational cache layout as an offline
+validation substrate before history reconciliation, daily refresh, security
+resolution rollout, or report/readiness cutover. The registered live
+SourceProvider cohort is `kodex`, `ace`, `hyundai`, `timefolio`, `tiger`,
+`rise`, and `sol`; each provider maps to
+`data/agent_treport/live-source/source-provider-operational/<provider>/` or a
+generated equivalent from `inspect-operational-source-cache`.
+
+Expected child artifacts are `catalog/source_catalog.json`,
+`catalog/universe_state.json`, `catalog/source_acquisition_summary.json`,
+`focus_etf_set.json`, `holdings-history/`, and `security-master/`. ACE remains
+the reference fixture when present, but missing provider artifacts are reported
+as actionable diagnostics rather than silently passing readiness. Provider ids,
+FocusETFSet ids, and referenced artifact paths must stay path-safe and within
+the provider cache root.
 ## Scope
 
 This audit reviews the read-only reference provider behavior before adding the

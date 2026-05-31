@@ -1051,6 +1051,23 @@ exclude provider-local ETF keys, raw network locators, response metadata/content
 machine paths, auth material, environment values, raw holdings rows, and raw
 provider wrappers.
 
+## Provider-Scoped Operational Cache Layout
+
+Provider-scoped operational cache validation is offline. Run
+`agent-treport inspect-operational-source-cache` before promoting later
+SourceProvider slices to confirm the registered provider cohort has a path-safe
+layout under `data/agent_treport/live-source/source-provider-operational/` or a
+generated equivalent. The expected provider child artifacts are
+`catalog/source_catalog.json`, `catalog/universe_state.json`,
+`catalog/source_acquisition_summary.json`, `focus_etf_set.json`,
+`holdings-history/`, and `security-master/`.
+
+The inspection output reports `missing_artifacts` or `invalid_artifacts` with
+provider ids and cache-root-relative paths. It must not make live provider
+calls, crawl broad targets, mutate holdings history, or cut report/readiness
+inputs over to the provider cache. Use those diagnostics to seed provider roots
+or fix unsafe ids before running history reconciliation, refresh, security, or
+report-cutover Work Packets.
 Automated source-acquired report handoff coverage uses only
 `FakeSourceProvider`. It proves:
 

@@ -66,6 +66,11 @@ from agent_treport.signal_report.adapters.operational_readiness import (
     OperationalReadinessInputError,
     check_operational_run_readiness,
 )
+from agent_treport.signal_report.adapters.operational_source_cache import (
+    DEFAULT_OPERATIONAL_SOURCE_CACHE_ROOT,
+    OperationalSourceCacheInputError,
+    inspect_provider_operational_cache_layouts,
+)
 from agent_treport.signal_report.adapters.operational_universe import (
     OperationalUniverseInputError,
     collect_universe_fixture,
@@ -494,6 +499,19 @@ def build_parser() -> argparse.ArgumentParser:
     )
     update_history_source.add_argument("--write-preflight", nargs="?", const="")
 
+    inspect_source_cache = subcommands.add_parser(
+        "inspect-operational-source-cache",
+        description=(
+            "Inspect provider-scoped operational cache layout without live "
+            "provider calls."
+        ),
+        help="inspect provider-scoped operational cache layout",
+    )
+    inspect_source_cache.add_argument(
+        "--cache-root",
+        default=str(DEFAULT_OPERATIONAL_SOURCE_CACHE_ROOT),
+    )
+
     live_source_baseline = subcommands.add_parser("run-live-source-baseline")
     live_source_baseline.add_argument("--config-path", required=True)
     live_source_baseline.add_argument("--operational-holdings-path", required=True)
@@ -740,6 +758,13 @@ async def run_cli_async(
             output=output,
             error_output=error_output,
             now=collection_now,
+        )
+
+    if args.command == "inspect-operational-source-cache":
+        return _inspect_operational_source_cache_command(
+            args,
+            output=output,
+            error_output=error_output,
         )
 
     if args.command == "run-live-source-baseline":
@@ -1170,6 +1195,23 @@ def _update_holdings_history_source_command(
         )
         return 1
 
+    _write_compact_json(output, summary)
+    return 0
+
+
+def _inspect_operational_source_cache_command(
+    args: argparse.Namespace,
+    *,
+    output: TextIO,
+    error_output: TextIO,
+) -> int:
+    try:
+        summary = inspect_provider_operational_cache_layouts(
+            cache_root=args.cache_root,
+        )
+    except OperationalSourceCacheInputError as exc:
+        _write_cli_input_error(error_output, str(exc))
+        return 2
     _write_compact_json(output, summary)
     return 0
 
