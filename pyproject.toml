@@ -1,0 +1,39 @@
+[build-system]
+requires = ["hatchling", "editables"]
+build-backend = "hatchling.build"
+
+[project]
+name = "agent-treport"
+version = "0.1.0"
+description = "Extraction-era Agent TReport domain package."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "agent-pack",
+    "agent-pack-docs",
+]
+
+[project.scripts]
+agent-treport = "agent_treport.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/agent_treport"]
+
+[tool.hatch.build.targets.sdist]
+only-include = ["src/agent_treport", "README.md", "pyproject.toml"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-p no:cacheprovider"
+
+[tool.ruff]
+line-length = 88
+target-version = "py312"
+
+[tool.pyright]
+pythonVersion = "3.12"
+include = ["src", "tests"]
+typeCheckingMode = "basic"
+venvPath = ".."
+venv = ".venv"

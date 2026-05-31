@@ -1,0 +1,91 @@
+from __future__ import annotations
+
+import ast
+import importlib.metadata
+import importlib.resources
+import subprocess
+import sys
+import tomllib
+from pathlib import Path
+
+
+REPO_ROOT = Path(__file__).resolve().parents[1]
+
+
+def load_pyproject() -> dict[str, object]:
+    with (REPO_ROOT / "pyproject.toml").open("rb") as pyproject:
+        return tomllib.load(pyproject)
+
+
+def test_distribution_import_and_cli_names_stay_agent_treport() -> None:
+    pyproject = load_pyproject()
+
+    assert pyproject["project"]["name"] == "agent-treport"  # type: ignore[index]
+    assert pyproject["project"]["requires-python"] >= ">=3.11"  # type: ignore[index]
+    assert pyproject["project"]["scripts"]["agent-treport"] == "agent_treport.cli:main"  # type: ignore[index]
+    assert "agent-etf-report" not in pyproject["project"].get("scripts", {})  # type: ignore[index]
+
+    distribution = importlib.metadata.distribution("agent-treport")
+    assert distribution.metadata["Name"] == "agent-treport"
+
+
+def test_package_import_and_module_cli_smoke() -> None:
+    import agent_treport
+
+    imported_from = Path(agent_treport.__file__).resolve()
+    assert imported_from.is_relative_to(REPO_ROOT / "src" / "agent_treport")
+    assert agent_treport.PACKAGE_NAME == "agent_treport"
+    assert agent_treport.CLI_NAME == "agent-treport"
+    assert agent_treport.DATA_ROOT == "data/agent_treport"
+
+    result = subprocess.run(
+        [sys.executable, "-m", "agent_treport", "--version"],
+        cwd=REPO_ROOT,
+        text=True,
+        capture_output=True,
+        check=True,
+    )
+
+    assert result.stdout.strip().startswith("agent-treport ")
+
+
+def test_dependency_boundary_excludes_direct_doc_parser_dependency() -> None:
+    pyproject = load_pyproject()
+
+    dependencies = set(pyproject["project"]["dependencies"])  # type: ignore[index]
+    normalized_dependencies = {dependency.split(" ", 1)[0].lower() for dependency in dependencies}
+    assert {"agent-pack", "agent-pack-docs"} <= normalized_dependencies
+    assert "doc-parser" not in normalized_dependencies
+    assert "doc_parser" not in normalized_dependencies
+
+
+def test_agent_treport_source_does_not_import_doc_parser() -> None:
+    source_root = REPO_ROOT / "src" / "agent_treport"
+
+    source_files = list(source_root.rglob("*.py"))
+    assert source_files, "expected repo-local src/agent_treport Python files"
+
+    for path in source_files:
+        tree = ast.parse(path.read_text(encoding="utf-8"), filename=str(path))
+        for node in ast.walk(tree):
+            if isinstance(node, ast.Import):
+                imported = {alias.name.split(".", 1)[0] for alias in node.names}
+                assert "doc_parser" not in imported, path
+            elif isinstance(node, ast.ImportFrom):
+                imported_from = (node.module or "").split(".", 1)[0]
+                assert imported_from != "doc_parser", path
+
+
+def test_typed_package_marker_is_included() -> None:
+    marker = importlib.resources.files("agent_treport").joinpath("py.typed")
+    assert marker.is_file()
+
+
+def test_package_data_policy_marker_is_included() -> None:
+    marker = importlib.resources.files("agent_treport").joinpath(
+        "resources",
+        "README.md",
+    )
+
+    assert marker.is_file()
+    assert "Package data policy marker" in marker.read_text(encoding="utf-8")
