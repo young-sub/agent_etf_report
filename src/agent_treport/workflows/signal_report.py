@@ -32,6 +32,10 @@ from agent_treport.signal_report import (
     build_signal_report_payload,
     load_fixture_signal_report_inputs,
 )
+from agent_treport.signal_report.adapters.document_evidence import (
+    DocumentEvidenceCompositionResult,
+    DocumentEvidenceSource,
+)
 from agent_treport.signal_report.domain.commentary_policy import (
     commentary_policy_summary,
     evaluate_model_commentary,
@@ -44,6 +48,7 @@ from agent_treport.signal_report.evaluator_review import (
 
 HOLDINGS_ARTIFACT_ID = "artifact_treport_holdings"
 SIGNAL_REPORT_INPUTS_ARTIFACT_ID = "artifact_treport_signal_report_inputs"
+DOCUMENT_EVIDENCE_ARTIFACT_ID = "artifact_treport_document_evidence"
 OPERATIONAL_HOLDINGS_PROVENANCE_ARTIFACT_ID = (
     "artifact_treport_operational_holdings_provenance"
 )
@@ -83,6 +88,16 @@ DOMAIN_FAILURE_REASONS = {
 
 class SignalReportInputProvider(Protocol):
     def load(self) -> SignalReportInputs: ...
+
+
+class DocumentEvidenceComposerProtocol(Protocol):
+    async def compose(
+        self,
+        *,
+        run_id: str,
+        sources: tuple[DocumentEvidenceSource, ...],
+    ) -> DocumentEvidenceCompositionResult:
+        ...
 
 
 class SignalReportMarkdownRenderer(Protocol):
@@ -158,6 +173,8 @@ async def run_signal_report(
     html_renderer: SignalReportHTMLRenderer | None = None,
     telegram_alert_renderer: SignalReportTelegramAlertRenderer | None = None,
     quality_gate: SignalReportQualityGate | None = None,
+    document_evidence_composer: DocumentEvidenceComposerProtocol | None = None,
+    document_evidence_sources: Sequence[DocumentEvidenceSource] = (),
 ) -> RunResult:
     workflow = build_signal_report_workflow(
         artifact_manager=artifact_manager,
@@ -167,6 +184,8 @@ async def run_signal_report(
         html_renderer=html_renderer,
         telegram_alert_renderer=telegram_alert_renderer,
         quality_gate=quality_gate,
+        document_evidence_composer=document_evidence_composer,
+        document_evidence_sources=document_evidence_sources,
     )
     result = await workflow.run(
         run_id=run_id,
@@ -208,6 +227,8 @@ def build_signal_report_workflow(
     html_renderer: SignalReportHTMLRenderer | None = None,
     telegram_alert_renderer: SignalReportTelegramAlertRenderer | None = None,
     quality_gate: SignalReportQualityGate | None = None,
+    document_evidence_composer: DocumentEvidenceComposerProtocol | None = None,
+    document_evidence_sources: Sequence[DocumentEvidenceSource] = (),
 ) -> Workflow:
     markdown_renderer = markdown_renderer or MarkdownSignalReportRenderer()
     html_renderer = html_renderer or HTMLResearchReportRenderer()
@@ -219,14 +240,24 @@ def build_signal_report_workflow(
             inputs = provider.load()
             raw_provenance = getattr(provider, "provenance", None)
             provenance = dict(raw_provenance) if isinstance(raw_provenance, Mapping) else None
+            document_evidence_result = None
+            evidence = inputs.evidence
+            if document_evidence_composer is not None and document_evidence_sources:
+                document_evidence_result = await document_evidence_composer.compose(
+                    run_id=context.run_id,
+                    sources=tuple(document_evidence_sources),
+                )
+                evidence = (*evidence, *document_evidence_result.evidence)
             payload = build_signal_report_payload(
                 snapshots=inputs.snapshots,
                 focus_etf_id=inputs.focus_etf_id,
                 focus_etf_ids=inputs.focus_etf_ids,
-                evidence=inputs.evidence,
+                evidence=evidence,
                 operational_provenance=provenance,
             )
-            inputs_data = inputs.model_dump(mode="json")
+            inputs_data = inputs.model_copy(update={"evidence": evidence}).model_dump(
+                mode="json"
+            )
             payload_data = payload.model_dump(mode="json")
         except Exception as exc:
             return _failed_domain_step(
@@ -252,6 +283,19 @@ def build_signal_report_workflow(
                 metadata={"capability": "signal_report_inputs"},
             )
             await _append_artifact_reference(context=context, artifact=inputs_ref)
+            document_evidence_ref = None
+            if document_evidence_result is not None:
+                document_evidence_ref = await _store_json_artifact(
+                    artifact_manager=artifact_manager,
+                    artifact_id=DOCUMENT_EVIDENCE_ARTIFACT_ID,
+                    name="document_evidence.json",
+                    payload=_document_evidence_artifact_payload(document_evidence_result),
+                    metadata={"capability": "document_evidence_composition"},
+                )
+                await _append_artifact_reference(
+                    context=context,
+                    artifact=document_evidence_ref,
+                )
             provenance_ref = None
             if provenance is not None:
                 provenance_ref = await _store_json_artifact(
@@ -356,6 +400,22 @@ def build_signal_report_workflow(
                 "changes_artifact_id": changes_ref.artifact_id,
                 "summary_artifact_id": summary_ref.artifact_id,
                 "signal_payload_artifact_id": payload_ref.artifact_id,
+                **(
+                    {
+                        "document_evidence_artifact_id": (
+                            document_evidence_ref.artifact_id
+                        ),
+                        "document_evidence_count": len(document_evidence_result.evidence),
+                        "document_evidence_tool_names": _document_evidence_tool_names(
+                            document_evidence_result
+                        ),
+                    }
+                    if (
+                        document_evidence_ref is not None
+                        and document_evidence_result is not None
+                    )
+                    else {}
+                ),
             },
         )
 
@@ -589,6 +649,32 @@ def build_signal_report_workflow(
             FunctionStep(name="evaluate-harness", function=evaluate_harness),
         ),
     )
+
+
+def _document_evidence_artifact_payload(
+    result: DocumentEvidenceCompositionResult,
+) -> dict[str, JsonValue]:
+    return {
+        "schema_version": "agent_treport.document_evidence_artifact.v1",
+        "diagnostics": _json_safe(result.diagnostics),
+        "evidence_count": len(result.evidence),
+        "evidence_ids": [item.evidence_id for item in result.evidence],
+    }
+
+
+def _document_evidence_tool_names(
+    result: DocumentEvidenceCompositionResult,
+) -> tuple[str, ...]:
+    tool_names = result.diagnostics.get("registered_tool_names")
+    if not isinstance(tool_names, Sequence) or isinstance(
+        tool_names, str | bytes | bytearray
+    ):
+        return ()
+    return tuple(item for item in tool_names if isinstance(item, str))
+
+
+def _json_safe(value: object) -> JsonValue:
+    return json.loads(json.dumps(value, ensure_ascii=False, default=str))
 
 
 def _operational_readiness_projection(
