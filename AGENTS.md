@@ -12,8 +12,9 @@
 
 - Repository: `young-sub/agent_etf_report`.
 - Default branch: `main`.
-- Current contents are bootstrap/control-plane docs only until the extraction
-  Work Packet lands.
+- Current contents are control-plane docs, an extraction-era package skeleton,
+  and contract-freeze tests. The full domain implementation has not migrated
+  from `agent_pack` yet.
 - The repository name is `agent_etf_report`, but extraction-era Python package,
   CLI, data path, schema, and event names stay `agent_treport` until the domain
   is fully separated from `agent_pack`.
@@ -32,23 +33,26 @@
 
 ## Commands
 
-- Current docs-only verification:
+- Setup/control-plane verification:
   `git status --short --branch`
   `git ls-files`
-- After package skeleton exists:
-  `..\.venv\Scripts\python.exe -m pip install -e .`
-  `..\.venv\Scripts\python.exe -m pytest`
-  `..\.venv\Scripts\python.exe -m ruff check .`
-  `..\.venv\Scripts\python.exe -m pyright`
+- Package install: `..\.venv\Scripts\python.exe -m pip install -e .`
+- Tests: `..\.venv\Scripts\python.exe -m pytest`
+- Lint: `..\.venv\Scripts\python.exe -m ruff check .`
+- Typecheck: `..\.venv\Scripts\python.exe -m pyright`
 
 ## Work Tracking
 
 - Tracker: GitHub Issues in `young-sub/agent_etf_report`.
 - Branch convention: `issue-<issue-number>-<slug>` or
   `wp-<work-packet-id>-<slug>`.
-- `.scratch/` is local operating state only and should stay ignored.
+- `.scratch/work-packets/` and `.scratch/archive/` are local operating state
+  only and stay ignored.
 - Cross-repo cleanup in `young-sub/agent_pack` must be tracked separately when
   it touches that repo.
+- User-facing completion reports and result summaries should be written in
+  Korean by default. Keep code identifiers, commands, paths, issue/PR canonical
+  sections, and source-of-truth titles in their original language.
 
 ## Dependency Rules
 
@@ -81,4 +85,4 @@ Forbidden:
   migrated domain tests pass here, `agent_pack` runtime tests still pass there,
   and active docs in both repos point at the new ownership boundary.
 - Report unrun checks, legacy compatibility assumptions, and remaining rename
-  risks explicitly.
+  risks explicitly in Korean by default.
