@@ -1,0 +1,20 @@
+{
+  "schema_version": "agent_treport.focus_etf_set.v1",
+  "focus_etf_ids": [
+    "etf_ace_k55101ep9626",
+    "etf_ace_k55101ep9634",
+    "etf_rise_44k0",
+    "etf_sol_210940",
+    "etf_sol_211099",
+    "etf_sol_211104",
+    "etf_tiger_kr7387270002",
+    "etf_tiger_kr7466950003",
+    "etf_timefolio_11",
+    "etf_timefolio_17",
+    "etf_timefolio_2",
+    "etf_timefolio_5",
+    "etf_timefolio_6"
+  ],
+  "label": "Default live handoff focus set",
+  "notes": "Equity-analysis active ETF focus set for provider-flexible live handoff."
+}

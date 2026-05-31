@@ -1,4 +1,4 @@
-"""Extraction-era Agent TReport package contract."""
+"""Extraction-era Agent TReport domain application package."""
 
 from __future__ import annotations
 

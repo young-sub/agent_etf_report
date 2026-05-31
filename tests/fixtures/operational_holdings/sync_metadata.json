@@ -1,0 +1,71 @@
+{
+  "cash_identification_counts": {
+    "code_exact_cash": 2,
+    "code_prefix_cash": 2,
+    "code_prefix_currency": 1,
+    "name_cash_keyword": 0,
+    "uncoded_cash_keyword": 1
+  },
+  "copied_dates": [
+    "2026-05-11",
+    "2026-05-08",
+    "2026-05-07"
+  ],
+  "copied_manifest_path": "tests\\fixtures\\operational_holdings\\url_holdings_cumulative.json",
+  "copied_partition_count": 3,
+  "copied_record_count": 18,
+  "derived_cash_weight_count": 3,
+  "derived_cash_weight_fit_failed_count": 0,
+  "duplicate_aggregated_count": 1,
+  "field_mappings": {
+    "as_of_date": "as_of_date",
+    "code": "security_id",
+    "eval_amount_krw": "market_value_krw",
+    "fund_id": "etf_id",
+    "fund_name": "etf_name",
+    "name": "name",
+    "quantity": "shares",
+    "weight_pct": "weight_percent"
+  },
+  "missing_source_dates": [],
+  "numeric_null_normalized_count": 1,
+  "renamed_security_count": 1,
+  "requested_observed_partitions": 3,
+  "schema_version": "agent_treport.operational_holdings.sync_metadata.v1",
+  "security_name_aliases": [
+    {
+      "aliases": [
+        "NVIDIA Corporation"
+      ],
+      "canonical_name": "NVIDIA Corp.",
+      "security_id": "US67066G1040"
+    }
+  ],
+  "skipped_missing_security_id_count": 1,
+  "skipped_unusable_cash_weight_count": 0,
+  "source_dates": [
+    "20260511",
+    "20260508",
+    "20260507"
+  ],
+  "source_file_strategy_counts": {
+    "manifest_file": 0,
+    "sibling": 3
+  },
+  "source_manifest_path": "tests\\fixtures\\operational_holdings_source\\url_holdings_cumulative.json",
+  "source_quality_samples": [
+    {
+      "code": "",
+      "eval_amount_krw": "1",
+      "fund_id": "etf_peer_ai",
+      "line_number": 14,
+      "source_provider_id": "provider_operational_fixture",
+      "reason": "missing_security_id",
+      "source_date": "20260511",
+      "weight_pct": "0.1"
+    }
+  ],
+  "source_record_count": 20,
+  "synced_at": "2026-05-11T22:00:00+00:00",
+  "uncoded_cash_holding_count": 1
+}

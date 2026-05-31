@@ -1,0 +1,36 @@
+{
+  "dates": [
+    "2026-05-11",
+    "2026-05-08",
+    "2026-05-07"
+  ],
+  "partitions": {
+    "2026-05-07": {
+      "file": "url_holdings_cumulative.json.parts/2026-05-07.jsonl",
+      "record_count": 2,
+      "source_date": "20260507",
+      "source_file_strategy": "sibling",
+      "source_file_used": "tests\\fixtures\\operational_holdings_source\\url_holdings_cumulative.json.parts\\20260507.jsonl"
+    },
+    "2026-05-08": {
+      "file": "url_holdings_cumulative.json.parts/2026-05-08.jsonl",
+      "record_count": 4,
+      "source_date": "20260508",
+      "source_file_strategy": "sibling",
+      "source_file_used": "tests\\fixtures\\operational_holdings_source\\url_holdings_cumulative.json.parts\\20260508.jsonl"
+    },
+    "2026-05-11": {
+      "file": "url_holdings_cumulative.json.parts/2026-05-11.jsonl",
+      "record_count": 12,
+      "source_date": "20260511",
+      "source_file_strategy": "sibling",
+      "source_file_used": "tests\\fixtures\\operational_holdings_source\\url_holdings_cumulative.json.parts\\20260511.jsonl"
+    }
+  },
+  "record_count": 18,
+  "schema_version": "agent_treport.operational_holdings.v1",
+  "source_storage_format": "partitioned_jsonl_v2",
+  "source_updated_at": "2026-05-11 21:33:33",
+  "storage_format": "normalized_partitioned_jsonl_v1",
+  "synced_at": "2026-05-11T22:00:00+00:00"
+}

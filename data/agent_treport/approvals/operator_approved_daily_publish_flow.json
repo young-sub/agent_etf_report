@@ -1,0 +1,47 @@
+{
+  "approved_at": "2026-05-19T00:00:00+00:00",
+  "approved_by": "operator",
+  "approved_delivery_target_aliases": [
+    "default"
+  ],
+  "approved_flow": "manual_daily_publish_flow",
+  "approved_model_boundary": "Manual pre-publish model export using the documented Agent TReport model boundary for the approved daily publish flow.",
+  "approved_provider_set": [
+    "finnhub",
+    "yfinance",
+    "dart",
+    "alpha_vantage",
+    "newsapi",
+    "naver"
+  ],
+  "approved_scopes": [
+    "external_evidence_collection",
+    "model_export",
+    "actual_telegram_delivery",
+    "duplicate_send_check",
+    "closure_verification"
+  ],
+  "out_of_scope": [
+    "scheduler_or_daemon_execution",
+    "autonomous_daily_delivery",
+    "operator_review_only_forced_delivery",
+    "correction_or_reannouncement_flow",
+    "telegram_message_content_changes",
+    "sec_edgar_required_provider_expansion",
+    "live_provider_retry_policy_changes"
+  ],
+  "requires_manual_operator_execution": true,
+  "safety_exclusions": [
+    "credentials",
+    "undisclosed_chat_target_values",
+    "telegram_body",
+    "provider_payload_storage",
+    "request_response_envelope_storage",
+    "env_file_contents",
+    "absolute_workspace_paths",
+    "stack_traces"
+  ],
+  "schema_version": "agent_treport.operator_approved_daily_publish_flow.v1",
+  "source_decision_summary": "Approves the manually executed daily publish flow across external evidence collection, model export, actual Telegram delivery, duplicate-send check, and closure verification within the documented scope. A new approval is required for provider-set expansion, model/export boundary changes, added delivery target aliases, scheduler or automation, forced delivery, correction or reannouncement flows, or changed provider payload and credential storage policy.",
+  "status": "approved"
+}

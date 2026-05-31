@@ -1,0 +1,25 @@
+{
+  "version": 2,
+  "storage_format": "partitioned_jsonl_v2",
+  "updated_at": "2026-05-11 21:33:33",
+  "dates": [
+    "20260511",
+    "20260508",
+    "20260507"
+  ],
+  "record_count": 20,
+  "partitions": {
+    "20260511": {
+      "file": "C:/ETF_tracker/data/url_holdings_cumulative.json.parts/20260511.jsonl",
+      "record_count": 14
+    },
+    "20260508": {
+      "file": "C:/ETF_tracker/data/url_holdings_cumulative.json.parts/20260508.jsonl",
+      "record_count": 4
+    },
+    "20260507": {
+      "file": "C:/ETF_tracker/data/url_holdings_cumulative.json.parts/20260507.jsonl",
+      "record_count": 2
+    }
+  }
+}
