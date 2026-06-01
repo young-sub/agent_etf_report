@@ -95,6 +95,155 @@ def _write_cli_normalized_holdings(
     return manifest_path
 
 
+def _write_cli_provider_cache(
+    tmp_path: Path,
+    *,
+    source_provider_id: str = "ace",
+    include_provider_exclusion: bool = False,
+) -> tuple[Path, list[str]]:
+    cache_root = tmp_path / "source-provider-operational"
+    provider_root = cache_root / source_provider_id
+    catalog_dir = provider_root / "catalog"
+    history_dir = provider_root / "holdings-history"
+    security_dir = provider_root / "security-master"
+    parts_dir = history_dir / "holdings_history.json.parts"
+    for directory in (catalog_dir, parts_dir, security_dir):
+        directory.mkdir(parents=True, exist_ok=True)
+
+    focus_etf_ids = ["etf_alpha", "etf_beta", "etf_gamma"]
+    if include_provider_exclusion:
+        focus_etf_ids.append("etf_delta")
+    exported_etf_ids = focus_etf_ids[:3]
+    _write_cli_focus_etf_set(provider_root / "focus_etf_set.json", focus_etf_ids)
+    _write_json(
+        catalog_dir / "universe_state.json",
+        {
+            "schema_version": "agent_treport.native_universe.state.v1",
+            "collection_source_type": "source_provider",
+            "updated_at": "2026-05-11T01:00:00+00:00",
+            "brands": [
+                {
+                    "brand_id": "brand_ace",
+                    "brand_name": "ACE Asset Management",
+                    "source_provider_id": source_provider_id,
+                    "status": "active",
+                }
+            ],
+            "etfs": [
+                {
+                    "etf_id": etf_id,
+                    "etf_name": f"ACE Focus ETF {index}",
+                    "brand_id": "brand_ace",
+                    "source_provider_id": source_provider_id,
+                    "status": "active",
+                }
+                for index, etf_id in enumerate(focus_etf_ids, 1)
+            ],
+        },
+    )
+    _write_json(
+        catalog_dir / "source_acquisition_summary.json",
+        {
+            "schema_version": "agent_treport.source_acquisition.summary.v1",
+            "source_provider_id": source_provider_id,
+            "run_outcome": "succeeded",
+            "catalog_entry_count": len(focus_etf_ids),
+            "brand_count": 1,
+            "etf_count": len(focus_etf_ids),
+        },
+    )
+    _write_json(
+        history_dir / "source_acquisition_summary.json",
+        {
+            "schema_version": "agent_treport.source_acquisition.summary.v1",
+            "source_provider_id": source_provider_id,
+            "target_outcomes": [
+                {
+                    "source_provider_id": source_provider_id,
+                    "provider_etf_id": "provider_delta",
+                    "etf_id": "etf_delta",
+                    "requested_date": "2026-05-11",
+                    "observed_date": None,
+                    "outcome": "failed",
+                    "failure_code_class": "invalid_provider_payload",
+                    "raw_url": "https://provider.example/raw",
+                    "local_path": str(tmp_path / "raw-provider-payload.json"),
+                }
+            ]
+            if include_provider_exclusion
+            else [],
+        },
+    )
+    _write_json(
+        security_dir / "security_resolution.json",
+        {
+            "schema_version": "agent_treport.security_resolution_export.v1",
+            "mappings": [
+                {
+                    "security_id": "LOCAL123",
+                    "ticker": "ACEP",
+                    "name": "ACE Provider Reviewed Equity",
+                    "exchange": "KRX",
+                    "security_classification": "ticker_candidate",
+                    "security_group_id": "group_ace_provider_reviewed",
+                    "security_group_name": "ACE Provider Reviewed Group",
+                    "security_group_ticker": "ACEP",
+                }
+            ],
+            "exclusions": [],
+        },
+    )
+    partitions: dict[str, dict[str, object]] = {}
+    for observed_date in ("2026-05-11", "2026-05-08"):
+        weight_percent = 1.5 if observed_date == "2026-05-11" else 1.0
+        rows = [
+            {
+                "etf_id": etf_id,
+                "etf_name": f"ACE Focus ETF {index}",
+                "brand_id": "brand_ace",
+                "source_provider_id": source_provider_id,
+                "as_of_date": observed_date,
+                "security_id": "LOCAL123",
+                "ticker": None,
+                "name": "ACE Provider Reviewed Equity",
+                "market": None,
+                "sector": None,
+                "theme": None,
+                "country": None,
+                "weight_percent": weight_percent,
+                "shares": 1.0,
+                "market_value_krw": 1.0,
+                "price_krw": None,
+                "is_cash": False,
+                "security_classification": "ticker_candidate",
+            }
+            for index, etf_id in enumerate(exported_etf_ids, 1)
+        ]
+        partition_path = parts_dir / f"{observed_date}.jsonl"
+        partition_path.write_text(
+            "".join(json.dumps(row, ensure_ascii=False) + "\n" for row in rows),
+            encoding="utf-8",
+        )
+        partitions[observed_date] = {
+            "file": f"holdings_history.json.parts/{observed_date}.jsonl",
+            "record_count": len(rows),
+            "snapshot_count": len(exported_etf_ids),
+        }
+    _write_json(
+        history_dir / "holdings_history.json",
+        {
+            "schema_version": "agent_treport.native_holdings.history.v1",
+            "storage_format": "native_history_partitioned_jsonl_v1",
+            "updated_at": "2026-05-11T01:00:00+00:00",
+            "dates": ["2026-05-11", "2026-05-08"],
+            "record_count": len(exported_etf_ids) * 2,
+            "snapshot_count": len(exported_etf_ids) * 2,
+            "partitions": partitions,
+        },
+    )
+    return cache_root, focus_etf_ids
+
+
 def _write_cli_native_collection_fixture(tmp_path: Path) -> Path:
     fixture_path = tmp_path / "native_fixture.json"
     _write_json(
@@ -4767,6 +4916,124 @@ def test_agent_treport_check_operational_readiness_accepts_focus_etf_set_path(
     run_async(scenario())
 
 
+def test_agent_treport_check_operational_readiness_loads_provider_cache_inputs(
+    tmp_path: Path,
+) -> None:
+    async def scenario() -> None:
+        stdout = StringIO()
+        stderr = StringIO()
+        cache_root, focus_etf_ids = _write_cli_provider_cache(tmp_path)
+        export_dir = tmp_path / "provider-cache-export"
+
+        exit_code = await run_cli_async(
+            [
+                "check-operational-readiness",
+                "--provider-cache-root",
+                str(cache_root),
+                "--source-provider",
+                "ace",
+                "--provider-export-dir",
+                str(export_dir),
+            ],
+            stdout=stdout,
+            stderr=stderr,
+            readiness_now=_cli_readiness_now,
+        )
+
+        payload = json.loads(stdout.getvalue())
+        manifest_path = export_dir / "url_holdings_cumulative.json"
+        current_rows = [
+            json.loads(line)
+            for line in (
+                export_dir
+                / "url_holdings_cumulative.json.parts"
+                / "2026-05-11.jsonl"
+            )
+            .read_text(encoding="utf-8")
+            .splitlines()
+        ]
+
+        assert exit_code == 0
+        assert stderr.getvalue() == ""
+        assert payload["status"] == "ready"
+        assert payload["readiness_evidence_type"] == "native_history"
+        assert payload["focus_etf_ids"] == focus_etf_ids
+        assert payload["holdings_path"] == str(manifest_path)
+        assert payload["export_fingerprint"] == compute_operational_export_fingerprint(
+            manifest_path
+        )
+        assert {row["ticker"] for row in current_rows} == {"ACEP"}
+        assert {row["security_group_id"] for row in current_rows} == {
+            "group_ace_provider_reviewed"
+        }
+        assert (
+            payload["collection_summary"]["security_coverage"][
+                "security_resolution_available"
+            ]
+            is True
+        )
+
+    run_async(scenario())
+
+
+def test_agent_treport_check_operational_readiness_projects_provider_cache_exclusions(
+    tmp_path: Path,
+) -> None:
+    async def scenario() -> None:
+        stdout = StringIO()
+        stderr = StringIO()
+        cache_root, focus_etf_ids = _write_cli_provider_cache(
+            tmp_path,
+            include_provider_exclusion=True,
+        )
+        export_dir = tmp_path / "provider-cache-export"
+
+        exit_code = await run_cli_async(
+            [
+                "check-operational-readiness",
+                "--provider-cache-root",
+                str(cache_root),
+                "--source-provider",
+                "ace",
+                "--provider-export-dir",
+                str(export_dir),
+            ],
+            stdout=stdout,
+            stderr=stderr,
+            readiness_now=_cli_readiness_now,
+        )
+
+        payload = json.loads(stdout.getvalue())
+        rendered = json.dumps(payload, ensure_ascii=False)
+
+        assert exit_code == 0
+        assert stderr.getvalue() == ""
+        assert payload["status"] == "ready_with_warnings"
+        assert payload["focus_etf_ids"] == focus_etf_ids
+        assert payload["focus_eligibility"]["eligible_focus_etf_ids"] == [
+            "etf_alpha",
+            "etf_beta",
+            "etf_gamma",
+        ]
+        assert payload["focus_eligibility"]["handoff_exclusions"] == [
+            {
+                "source_provider_id": "ace",
+                "etf_id": "etf_delta",
+                "scope": "holdings_snapshot",
+                "reason_code": "invalid_provider_payload",
+                "observed_dates_missing": ["2026-05-11"],
+            }
+        ]
+        assert [warning["code"] for warning in payload["warnings"]] == [
+            "handoff_exclusions_present",
+        ]
+        assert "provider_etf_id" not in rendered
+        assert "https://provider.example/raw" not in rendered
+        assert str(tmp_path) not in rendered
+
+    run_async(scenario())
+
+
 def test_agent_treport_check_operational_readiness_invalid_options_return_exit_2(
     tmp_path: Path,
 ) -> None:
@@ -4960,6 +5227,63 @@ def test_agent_treport_run_report_operational_requires_focus_etf_before_resource
         assert stderr.getvalue() == (
             "agent-treport: error: --focus-etf-id or --focus-etf-set-path is required\n"
         )
+        assert model_calls == []
+        assert not sqlite_path.exists()
+        assert not artifact_root.exists()
+
+    run_async(scenario())
+
+
+def test_agent_treport_run_report_rejects_provider_cache_inputs_without_operational_source(
+    tmp_path: Path,
+) -> None:
+    async def scenario() -> None:
+        stdout = StringIO()
+        stderr = StringIO()
+        model_calls: list[ModelProviderConfig] = []
+        cache_root, _focus_etf_ids = _write_cli_provider_cache(tmp_path)
+        sqlite_path = tmp_path / "state" / "treport.sqlite3"
+        artifact_root = tmp_path / "artifacts"
+
+        exit_code = await run_cli_async(
+            [
+                "run-report",
+                "--run-id",
+                "run_treport_provider_cache_missing_operational_source",
+                "--provider-cache-root",
+                str(cache_root),
+                "--source-provider",
+                "ace",
+                "--provider-export-dir",
+                str(tmp_path / "provider-cache-export"),
+                "--sqlite-path",
+                str(sqlite_path),
+                "--artifact-root",
+                str(artifact_root),
+                "--model",
+                "codex",
+            ],
+            stdout=stdout,
+            stderr=stderr,
+            model_client_factory=lambda config: model_calls.append(config)
+            or FakeModelClient(
+                [
+                    ModelResponse(
+                        message=Message(
+                            role="assistant",
+                            content=(TextBlock(text="unexpected fixture report"),),
+                        )
+                    )
+                ]
+            ),
+        )
+
+        assert exit_code == 2
+        assert stdout.getvalue() == ""
+        assert (
+            "provider cache or operational readiness inputs require "
+            "--holdings-source operational"
+        ) in stderr.getvalue()
         assert model_calls == []
         assert not sqlite_path.exists()
         assert not artifact_root.exists()
@@ -6347,6 +6671,104 @@ def test_agent_treport_operational_ready_handoff_e2e_user_ready_and_inspect(
             "artifact_treport_telegram_alert",
             "artifact_treport_quality",
         }.issubset(inspect_artifact_ids)
+
+    run_async(scenario())
+
+
+def test_agent_treport_provider_cache_handoff_e2e_user_ready(
+    tmp_path: Path,
+) -> None:
+    async def scenario() -> None:
+        readiness_stdout = StringIO()
+        run_stdout = StringIO()
+        cache_root, focus_etf_ids = _write_cli_provider_cache(tmp_path)
+        export_dir = tmp_path / "provider-cache-export"
+        readiness_path = tmp_path / "provider_cache_readiness.json"
+        sqlite_path = tmp_path / "state" / "treport.sqlite3"
+        artifact_root = tmp_path / "artifacts"
+
+        readiness_exit = await run_cli_async(
+            [
+                "check-operational-readiness",
+                "--provider-cache-root",
+                str(cache_root),
+                "--source-provider",
+                "ace",
+                "--provider-export-dir",
+                str(export_dir),
+                "--observed-partitions",
+                "2",
+            ],
+            stdout=readiness_stdout,
+            readiness_now=_cli_readiness_now,
+        )
+        readiness_path.write_text(readiness_stdout.getvalue(), encoding="utf-8")
+
+        run_exit = await run_cli_async(
+            [
+                "run-report",
+                "--run-id",
+                "run_treport_provider_cache_ready_e2e",
+                "--holdings-source",
+                "operational",
+                "--provider-cache-root",
+                str(cache_root),
+                "--source-provider",
+                "ace",
+                "--provider-export-dir",
+                str(export_dir),
+                "--observed-partitions",
+                "2",
+                "--readiness-path",
+                str(readiness_path),
+                "--sqlite-path",
+                str(sqlite_path),
+                "--artifact-root",
+                str(artifact_root),
+                "--model",
+                "codex",
+            ],
+            stdout=run_stdout,
+            model_client_factory=lambda _config: FakeModelClient(
+                [
+                    ModelResponse(
+                        message=Message(
+                            role="assistant",
+                            content=(TextBlock(text="provider cache commentary"),),
+                        )
+                    )
+                ]
+            ),
+        )
+
+        readiness = json.loads(readiness_stdout.getvalue())
+        run_payload = json.loads(run_stdout.getvalue())
+        signal_payload = json.loads(
+            (artifact_root / "artifact_treport_signal_payload.json").read_text(
+                encoding="utf-8"
+            )
+        )
+
+        assert readiness_exit == 0
+        assert readiness["status"] == "ready"
+        assert readiness["holdings_path"] == str(
+            export_dir / "url_holdings_cumulative.json"
+        )
+        assert readiness["focus_etf_ids"] == focus_etf_ids
+        assert run_exit == 0
+        assert run_payload["status"] == "succeeded"
+        assert "user_ready" in run_payload["output"]
+        assert "operator_review_only" not in run_payload["output"]
+        assert run_payload["output"]["user_ready"]["readiness"]["status"] == "ready"
+        assert signal_payload["meta"]["as_of_date"] == "2026-05-11"
+        assert signal_payload["meta"]["period"]["previous"] == "2026-05-08"
+        assert signal_payload["meta"]["focus_etf_id"] == "etf_alpha"
+        assert signal_payload["meta"]["focus_etf_ids"] == focus_etf_ids
+        assert signal_payload["coverage"]["ticker_mapping_coverage_ratio"] == 1.0
+        assert signal_payload["signal_board"][0]["ticker"] == "ACEP"
+        assert signal_payload["signal_board"][0]["security_group_id"] == (
+            "group_ace_provider_reviewed"
+        )
 
     run_async(scenario())
 
