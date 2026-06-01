@@ -428,7 +428,9 @@ def _write_external_evidence(
                 "url": None,
                 "stance": "supporting",
                 "strength": "moderate",
-                "claim_scope": "signal:security:sec_nvda:weight_increase",
+                "claim_scope": (
+                    "signal:security:provider=ace|security=sec_nvda:weight_increase"
+                ),
                 "evidence_role": "interpretation_support",
                 "relevance": "high",
                 "novelty": "new",
@@ -449,7 +451,10 @@ def _write_external_evidence(
                 "selected_targets": [
                     {
                         "ticker": "NVDA",
-                        "claim_scope": "signal:security:sec_nvda:weight_increase",
+                        "claim_scope": (
+                            "signal:security:provider=ace|security=sec_nvda"
+                            ":weight_increase"
+                        ),
                     }
                 ],
                 "excluded_targets": [],

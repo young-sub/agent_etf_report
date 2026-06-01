@@ -316,7 +316,9 @@ def _write_cached_external_evidence(
     evidence_path: Path,
     summary_path: Path,
     *,
-    claim_scope: str = "signal:security:sec_nvda:weight_increase",
+    claim_scope: str = (
+        "signal:security:provider=ace|security=sec_nvda:weight_increase"
+    ),
 ) -> None:
     _write_json(
         evidence_path,
@@ -385,7 +387,7 @@ def _write_cached_external_evidence(
                         "rank": 1,
                         "ticker": "NVDA",
                         "name": "NVIDIA Corp.",
-                        "aggregation_key": "sec_nvda",
+                        "aggregation_key": "provider=ace|security=sec_nvda",
                         "security_group_id": None,
                         "member_security_ids": ["sec_nvda"],
                         "listing_keys": [],

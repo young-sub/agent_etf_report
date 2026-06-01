@@ -47,6 +47,7 @@ from agent_treport.signal_report.adapters.openfigi import (
 )
 from agent_treport.signal_report.adapters.operational_holdings import (
     COLLECTION_SUMMARY_SCHEMA_VERSION,
+    HOLDINGS_HISTORY_MANIFEST_FILENAME,
     OPERATIONAL_EXPORT_FINGERPRINT_SCOPE,
     SYNC_METADATA_SCHEMA_VERSION,
     OperationalHoldingsInputError,
@@ -70,6 +71,7 @@ from agent_treport.signal_report.adapters.operational_source_cache import (
     DEFAULT_OPERATIONAL_SOURCE_CACHE_ROOT,
     OperationalSourceCacheInputError,
     inspect_provider_operational_cache_layouts,
+    provider_operational_cache_path,
 )
 from agent_treport.signal_report.adapters.operational_universe import (
     OperationalUniverseInputError,
@@ -621,7 +623,12 @@ def build_parser() -> argparse.ArgumentParser:
     export_security_resolution.add_argument("--output-path", required=True)
 
     resolve_security_master = subcommands.add_parser("resolve-security-master")
-    resolve_security_master.add_argument("--holdings-path", required=True)
+    resolve_security_master.add_argument("--holdings-path")
+    resolve_security_master.add_argument("--provider-cache-root")
+    resolve_security_master.add_argument(
+        "--source-provider",
+        choices=LIVE_SOURCE_PROVIDER_IDS,
+    )
     resolve_security_master.add_argument("--security-master-path", required=True)
     resolve_security_master.add_argument("--output-path", required=True)
     resolve_security_master.add_argument("--review-queue-path", required=True)
@@ -1535,13 +1542,15 @@ def _resolve_security_master_command(
     output_path = Path(args.output_path)
     review_queue_path = Path(args.review_queue_path)
     try:
+        holdings_path, source_provider_id = _resolve_security_master_holdings_path(args)
         security_master = _read_cli_json_object(
             Path(args.security_master_path),
             label="security master",
         )
         observations = _read_security_resolution_observations(
-            Path(args.holdings_path),
+            holdings_path,
             observed_partitions=int(args.observed_partitions),
+            source_provider_id=source_provider_id,
         )
         openfigi_lookup_count = 0
         warnings: list[dict[str, JsonValue]] = []
@@ -1574,18 +1583,46 @@ def _resolve_security_master_command(
         )
         return 1
 
-    _write_compact_json(
-        output,
-        {
-            **summary,
-            "output_path": str(output_path),
-            "review_queue_path": str(review_queue_path),
-            "openfigi_lookup_enabled": not bool(args.disable_openfigi_lookup),
-            "openfigi_lookup_count": openfigi_lookup_count,
-            "warnings": warnings,
-        },
-    )
+    payload = {
+        **summary,
+        "holdings_path": str(holdings_path),
+        "output_path": str(output_path),
+        "review_queue_path": str(review_queue_path),
+        "openfigi_lookup_enabled": not bool(args.disable_openfigi_lookup),
+        "openfigi_lookup_count": openfigi_lookup_count,
+        "warnings": warnings,
+    }
+    if source_provider_id is not None:
+        payload["source_provider_id"] = source_provider_id
+    _write_compact_json(output, payload)
     return 0
+
+
+def _resolve_security_master_holdings_path(
+    args: argparse.Namespace,
+) -> tuple[Path, str | None]:
+    has_direct_path = args.holdings_path is not None
+    has_provider_input = (
+        args.provider_cache_root is not None or args.source_provider is not None
+    )
+    if has_direct_path and has_provider_input:
+        raise OperationalHoldingsInputError(
+            "--holdings-path cannot be combined with provider cache inputs"
+        )
+    if has_direct_path:
+        return Path(args.holdings_path), None
+    if args.provider_cache_root is None or args.source_provider is None:
+        raise OperationalHoldingsInputError(
+            "--holdings-path or --provider-cache-root with --source-provider is required"
+        )
+    provider_cache = provider_operational_cache_path(
+        cache_root=Path(args.provider_cache_root),
+        source_provider_id=str(args.source_provider),
+    )
+    return (
+        provider_cache / "holdings-history" / HOLDINGS_HISTORY_MANIFEST_FILENAME,
+        str(args.source_provider),
+    )
 
 
 def _check_operational_readiness_command(
@@ -5953,7 +5990,10 @@ def _read_stock_mapping_csv(path: Path) -> list[dict[str, str]]:
 
 
 def _read_security_resolution_observations(
-    holdings_path: Path, *, observed_partitions: int
+    holdings_path: Path,
+    *,
+    observed_partitions: int,
+    source_provider_id: str | None = None,
 ) -> list[dict[str, JsonValue]]:
     manifest = _read_cli_json_object(holdings_path, label="holdings")
     if manifest.get("schema_version") != "agent_treport.operational_holdings.v1":
@@ -5981,7 +6021,12 @@ def _read_security_resolution_observations(
             raise OperationalHoldingsInputError(
                 "holdings partition file must stay inside holdings export"
             ) from exc
-        observations.extend(_read_security_resolution_observation_partition(partition_path))
+        observations.extend(
+            _read_security_resolution_observation_partition(
+                partition_path,
+                source_provider_id=source_provider_id,
+            )
+        )
     return observations
 
 
@@ -6052,6 +6097,8 @@ def _looks_like_isin(value: str) -> bool:
 
 def _read_security_resolution_observation_partition(
     partition_path: Path,
+    *,
+    source_provider_id: str | None = None,
 ) -> list[dict[str, JsonValue]]:
     observations: list[dict[str, JsonValue]] = []
     for line_number, line in enumerate(partition_path.read_text(encoding="utf-8").splitlines(), 1):
@@ -6085,14 +6132,15 @@ def _read_security_resolution_observation_partition(
             if ticker_value is not None
             else None
         )
-        observations.append(
-            {
-                "security_id": security_id,
-                "name": name,
-                "ticker": ticker,
-                "security_classification": classification,
-            }
-        )
+        observation: dict[str, JsonValue] = {
+            "security_id": security_id,
+            "name": name,
+            "ticker": ticker,
+            "security_classification": classification,
+        }
+        if source_provider_id is not None:
+            observation["source_provider_id"] = source_provider_id
+        observations.append(observation)
     return observations
 
 

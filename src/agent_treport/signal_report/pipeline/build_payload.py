@@ -60,6 +60,7 @@ _DATA_QUALITY_PENALTIES = {
 class _Change:
     etf_id: str
     security_id: str
+    analytical_identity_key: str | None
     security_group_id: str | None
     member_security_ids: tuple[str, ...]
     listing_keys: tuple[str, ...]
@@ -84,6 +85,7 @@ class _Change:
 class _HoldingAggregate:
     key: str
     security_id: str
+    analytical_identity_key: str | None
     security_group_id: str | None
     member_security_ids: tuple[str, ...]
     listing_keys: tuple[str, ...]
@@ -219,6 +221,7 @@ def _build_changes(snapshots: MultiETFHoldingsSnapshots) -> tuple[_Change, ...]:
                 _Change(
                     etf_id=etf.etf_id,
                     security_id=reference.security_id,
+                    analytical_identity_key=reference.analytical_identity_key,
                     security_group_id=reference.security_group_id,
                     member_security_ids=reference.member_security_ids,
                     listing_keys=reference.listing_keys,
@@ -270,6 +273,7 @@ def _holding_aggregate(
     return _HoldingAggregate(
         key=key,
         security_id=reference.security_id,
+        analytical_identity_key=reference.analytical_identity_key,
         security_group_id=reference.security_group_id,
         member_security_ids=tuple(dict.fromkeys(item.security_id for item in ordered)),
         listing_keys=tuple(
@@ -486,7 +490,7 @@ def _claim_scope(*, claim_key: str, signal_type: str) -> str:
 def _identity_claim_key(change: _Change) -> str:
     if change.security_group_id is not None:
         return f"security_group:{change.security_group_id}"
-    return f"security:{change.security_id}"
+    return f"security:{change.key}"
 
 
 def _claim_display(
@@ -1494,7 +1498,7 @@ def _dossier_ref(signal: SignalBoardRow) -> str:
 
 
 def _holding_key(holding: SecurityHolding) -> str:
-    return holding.security_group_id or holding.security_id
+    return holding.security_group_id or holding.analytical_identity_key or holding.security_id
 
 
 def _member_security_ids(changes: tuple[_Change, ...]) -> tuple[str, ...]:

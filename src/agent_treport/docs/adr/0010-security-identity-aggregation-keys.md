@@ -52,6 +52,10 @@ Agent TReport uses four separate identity concepts:
 
 - `security_id`: the observed constituent identity from the source or reviewed
   security resolution. This remains the normalized holdings ledger key.
+- `analytical_identity_key`: the fallback report-analysis identity used when no
+  reviewed group exists. Globally meaningful identifiers such as ISIN, KRX
+  code, and exchange-qualified Bloomberg equity code use `security_id`; provider
+  local or unknown identifiers are scoped by `source_provider_id`.
 - `listing_key`: a market-scoped listing identity such as ticker plus exchange
   or MIC. This is suitable for display disambiguation, price lookup, and
   provider-specific enrichment, not canonical exposure aggregation.
@@ -66,11 +70,12 @@ evidence. If a reviewed group lacks a display label, aggregation still proceeds
 with a deterministic fallback label and the report records a data-quality
 warning.
 
-Aggregation defaults to `security_id`. Report builders aggregate by
-`security_group_id` only when a reviewed `SecurityMaster` or equivalent
-identity ledger has explicitly assigned one. If no reviewed group exists, two
-different `security_id` values remain separate even when their display tickers
-match.
+Aggregation defaults to the identity-safe analytical fallback, not to a bare
+ticker. Report builders aggregate by `security_group_id` only when a reviewed
+`SecurityMaster` or equivalent identity ledger has explicitly assigned one. If
+no reviewed group exists, global identifiers can aggregate by `security_id`;
+provider-local or unknown identifiers remain provider-scoped. Two different
+identities remain separate even when their display tickers match.
 
 ## Consequences
 
@@ -129,6 +134,26 @@ match.
   display labels produce deterministic fallback labels plus warnings, and
   claim-scoped evidence affects scores only on exact identity-safe claims.
 - No `agent_pack` changes were required.
+
+## Implementation Note - 2026-06-01
+
+- Provider-specific `SecurityMaster` and provider-specific
+  `SecurityResolutionExport` are the operating records for the live
+  SourceProvider cohort. Agent TReport does not flatten asset-manager-specific
+  source semantics into one cohort-level master ledger.
+- Provider-cache resolution can read observations from
+  `source-provider-operational/<provider>/holdings-history/holdings_history.json`
+  while writing the provider's own `security-master/` artifacts. Review queue
+  items from provider-cache resolution retain `source_provider_id` as source
+  evidence.
+- Normalized holdings exports now carry `analytical_identity_key` and
+  `analytical_identity_scope`. The key is `security_id` for global identifiers
+  and `provider=<source_provider_id>|security=<security_id>` for provider-local
+  or unknown identifiers.
+- Report construction uses `security_group_id` when reviewed, then
+  `analytical_identity_key`, then legacy `security_id`. This keeps ticker-facing
+  analysis usable while preventing raw ticker or provider-local id collisions
+  from becoming implicit merges.
 
 Verification evidence:
 

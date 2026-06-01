@@ -392,6 +392,62 @@ def test_reviewed_same_share_class_alias_aggregates_by_security_group() -> None:
     )
 
 
+def test_provider_local_security_ids_do_not_cross_provider_aggregate() -> None:
+    snapshots = MultiETFHoldingsSnapshots(
+        as_of_date="2026-05-15",
+        previous_date="2026-05-08",
+        current_date="2026-05-15",
+        lookback_days=7,
+        universe="provider_local_identity",
+        etfs=(
+            ETFHoldingsSnapshots(
+                etf_id="etf_ace_local",
+                etf_name="ACE Local ETF",
+                brand_id="brand_ace",
+                source_provider_id="ace",
+                previous=(),
+                current=(
+                    _security_holding(
+                        security_id="LOCAL123",
+                        analytical_identity_key="provider=ace|security=LOCAL123",
+                        ticker="LGRW",
+                        name="ACE Local Growth Basket",
+                        weight_percent=2.0,
+                    ),
+                ),
+            ),
+            ETFHoldingsSnapshots(
+                etf_id="etf_beta_local",
+                etf_name="Beta Local ETF",
+                brand_id="brand_beta",
+                source_provider_id="beta",
+                previous=(),
+                current=(
+                    _security_holding(
+                        security_id="LOCAL123",
+                        analytical_identity_key="provider=beta|security=LOCAL123",
+                        ticker="LGRW",
+                        name="Beta Local Growth Basket",
+                        weight_percent=3.0,
+                    ),
+                ),
+            ),
+        ),
+    )
+
+    payload = build_signal_report_payload(snapshots=snapshots, evidence=())
+
+    assert {signal.claim_scope for signal in payload.signal_board} == {
+        "signal:security:provider=ace|security=LOCAL123:new_position",
+        "signal:security:provider=beta|security=LOCAL123:new_position",
+    }
+    assert {signal.participating_etfs for signal in payload.signal_board} == {
+        ("etf_ace_local",),
+        ("etf_beta_local",),
+    }
+    assert all(signal.ticker == "LGRW" for signal in payload.signal_board)
+
+
 def test_reviewed_group_missing_display_label_uses_fallback_and_warning() -> None:
     snapshots = _identity_regression_snapshots(
         previous=(
@@ -1010,6 +1066,7 @@ def _identity_regression_snapshots(
 def _security_holding(
     *,
     security_id: str,
+    analytical_identity_key: str | None = None,
     ticker: str | None,
     name: str,
     weight_percent: float,
@@ -1020,6 +1077,7 @@ def _security_holding(
 ) -> SecurityHolding:
     return SecurityHolding(
         security_id=security_id,
+        analytical_identity_key=analytical_identity_key,
         ticker=ticker,
         name=name,
         market="US",
