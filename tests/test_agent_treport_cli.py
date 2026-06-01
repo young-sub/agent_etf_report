@@ -422,12 +422,13 @@ def _cli_normalized_row(
     ticker: str | None,
     security_classification: str,
     is_cash: bool = False,
+    source_provider_id: str = "provider_operational_fixture",
 ) -> dict[str, object]:
     return {
         "etf_id": "etf_focus_ai",
         "etf_name": "AI Innovation Active ETF",
         "brand_id": "brand_alpha",
-        "source_provider_id": "provider_operational_fixture",
+        "source_provider_id": source_provider_id,
         "as_of_date": "2026-05-11",
         "security_id": security_id,
         "ticker": ticker,
@@ -2589,6 +2590,119 @@ def test_agent_treport_resolve_security_master_observes_holdings_and_writes_revi
                 },
             ],
         }
+
+    run_async(scenario())
+
+
+def test_agent_treport_resolve_security_master_reads_provider_cache_holdings(
+    tmp_path: Path,
+) -> None:
+    async def scenario() -> None:
+        stdout = StringIO()
+        stderr = StringIO()
+        cache_root = tmp_path / "source-provider-operational"
+        provider_history_dir = cache_root / "ace" / "holdings-history"
+        parts_dir = provider_history_dir / "holdings_history.json.parts"
+        parts_dir.mkdir(parents=True)
+        partition_path = parts_dir / "2026-05-11.jsonl"
+        partition_path.write_text(
+            json.dumps(
+                _cli_normalized_row(
+                    security_id="LOCAL123",
+                    name="ACE Local Growth Basket",
+                    ticker="LGRW",
+                    security_classification="ticker_candidate",
+                    source_provider_id="ace",
+                ),
+                ensure_ascii=False,
+            )
+            + "\n",
+            encoding="utf-8",
+        )
+        with partition_path.open("a", encoding="utf-8") as handle:
+            handle.write(
+                json.dumps(
+                    _cli_normalized_row(
+                        security_id="LOCAL_UNRESOLVED",
+                        name="ACE Local Unresolved Basket",
+                        ticker=None,
+                        security_classification="ticker_candidate",
+                        source_provider_id="ace",
+                    ),
+                    ensure_ascii=False,
+                )
+                + "\n"
+            )
+        _write_json(
+            provider_history_dir / "holdings_history.json",
+            {
+                "schema_version": "agent_treport.operational_holdings.v1",
+                "storage_format": "normalized_partitioned_jsonl_v1",
+                "dates": ["2026-05-11"],
+                "record_count": 2,
+                "partitions": {
+                    "2026-05-11": {
+                        "file": "holdings_history.json.parts/2026-05-11.jsonl",
+                        "record_count": 2,
+                    }
+                },
+            },
+        )
+        security_master_dir = cache_root / "ace" / "security-master"
+        security_master_dir.mkdir(parents=True)
+        master_path = security_master_dir / "security_master.json"
+        output_path = security_master_dir / "security_master.resolved.json"
+        review_queue_path = security_master_dir / "review_queue.json"
+        _write_json(
+            master_path,
+            {"schema_version": "agent_treport.security_master.v1", "entries": []},
+        )
+
+        exit_code = await run_cli_async(
+            [
+                "resolve-security-master",
+                "--provider-cache-root",
+                str(cache_root),
+                "--source-provider",
+                "ace",
+                "--security-master-path",
+                str(master_path),
+                "--output-path",
+                str(output_path),
+                "--review-queue-path",
+                str(review_queue_path),
+                "--observed-partitions",
+                "1",
+                "--disable-openfigi-lookup",
+            ],
+            stdout=stdout,
+            stderr=stderr,
+        )
+
+        payload = json.loads(stdout.getvalue())
+        resolved = json.loads(output_path.read_text(encoding="utf-8"))
+        review_queue = json.loads(review_queue_path.read_text(encoding="utf-8"))
+        entries = {entry["security_id"]: entry for entry in resolved["entries"]}
+
+        assert exit_code == 0
+        assert stderr.getvalue() == ""
+        assert payload["observed_security_count"] == 2
+        assert payload["source_provider_id"] == "ace"
+        assert Path(payload["holdings_path"]).parts[-3:] == (
+            "ace",
+            "holdings-history",
+            "holdings_history.json",
+        )
+        assert entries["LOCAL123"]["ticker"] == "LGRW"
+        assert review_queue["items"] == [
+            {
+                "security_id": "LOCAL_UNRESOLVED",
+                "reason": "ticker_candidate_unresolved",
+                "candidate_name": "ACE Local Unresolved Basket",
+                "source": "holdings_observation",
+                "source_provider_id": "ace",
+            }
+        ]
 
     run_async(scenario())
 

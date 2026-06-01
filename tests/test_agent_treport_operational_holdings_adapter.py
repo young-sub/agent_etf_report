@@ -4891,6 +4891,8 @@ def test_sync_operational_holdings_copies_latest_observed_partitions_as_normaliz
         "source_provider_id",
         "as_of_date",
         "security_id",
+        "analytical_identity_key",
+        "analytical_identity_scope",
         "ticker",
         "name",
         "market",
@@ -4905,6 +4907,8 @@ def test_sync_operational_holdings_copies_latest_observed_partitions_as_normaliz
         "security_classification",
     }
     assert focus_nvidia["ticker"] is None
+    assert focus_nvidia["analytical_identity_key"] == "US67066G1040"
+    assert focus_nvidia["analytical_identity_scope"] == "global_identifier"
     assert focus_nvidia["weight_percent"] == 7.5
     assert focus_nvidia["shares"] == 1500
     assert focus_nvidia["market_value_krw"] == 240000000
@@ -5194,6 +5198,76 @@ def test_security_resolution_identity_metadata_reaches_normalized_holdings(
     assert rows[0]["listing_key"] == "XNAS:GOOG"
     assert rows[0]["security_group_name"] == "Alphabet Class C"
     assert rows[0]["security_group_ticker"] == "GOOG"
+
+
+def test_sync_operational_holdings_marks_provider_local_analytical_identity(
+    tmp_path: Path,
+) -> None:
+    manifest_path = _write_source_export(
+        tmp_path,
+        {
+            "20260511": [
+                _source_row(
+                    code="US67066G1040",
+                    name="NVIDIA Corp.",
+                    weight_pct="60",
+                    eval_amount_krw="60",
+                    source_provider_id="ace",
+                ),
+                _source_row(
+                    code="LOCAL123",
+                    name="Provider Local Growth Basket",
+                    weight_pct="40",
+                    eval_amount_krw="40",
+                    source_provider_id="ace",
+                ),
+            ],
+        },
+    )
+    security_resolution_path = _write_security_resolution(
+        tmp_path,
+        mappings=[
+            {
+                "security_id": "US67066G1040",
+                "ticker": "NVDA",
+                "name": "NVIDIA Corp",
+                "exchange": "NMS",
+                "security_classification": "ticker_candidate",
+            },
+            {
+                "security_id": "LOCAL123",
+                "ticker": "LGRW",
+                "name": "Provider Local Growth Basket",
+                "exchange": None,
+                "security_classification": "ticker_candidate",
+            },
+        ],
+        exclusions=[],
+    )
+
+    sync_operational_holdings(
+        source_manifest_path=manifest_path,
+        dest_dir=tmp_path / "dest",
+        security_resolution_path=security_resolution_path,
+    )
+
+    rows = _jsonl_rows(
+        tmp_path / "dest" / "url_holdings_cumulative.json.parts" / "2026-05-11.jsonl"
+    )
+    rows_by_security_id = {str(row["security_id"]): row for row in rows}
+
+    assert rows_by_security_id["US67066G1040"]["analytical_identity_key"] == (
+        "US67066G1040"
+    )
+    assert rows_by_security_id["US67066G1040"]["analytical_identity_scope"] == (
+        "global_identifier"
+    )
+    assert rows_by_security_id["LOCAL123"]["analytical_identity_key"] == (
+        "provider=ace|security=LOCAL123"
+    )
+    assert rows_by_security_id["LOCAL123"]["analytical_identity_scope"] == (
+        "provider_scoped"
+    )
 
 
 def test_sync_operational_holdings_records_ticker_collision_review_evidence(

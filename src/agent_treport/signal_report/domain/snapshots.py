@@ -5,6 +5,7 @@ from agent_pack.models import RuntimeModel
 
 class SecurityHolding(RuntimeModel):
     security_id: str
+    analytical_identity_key: str | None = None
     security_group_id: str | None = None
     listing_key: str | None = None
     security_group_name: str | None = None

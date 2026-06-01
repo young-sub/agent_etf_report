@@ -20,6 +20,7 @@ from agent_treport.signal_report.domain.evidence import EvidenceItemInput
 from agent_treport.signal_report.domain.inputs import SignalReportInputs
 from agent_treport.signal_report.domain.security_resolution import (
     SecurityClassificationPolicy,
+    analytical_identity_for_security,
     validate_security_classification,
     validate_security_resolution_export,
 )
@@ -1320,6 +1321,7 @@ def _history_export_row_with_security_resolution(
     security_resolution: _SecurityResolution | None,
 ) -> dict[str, JsonValue]:
     exported = dict(row)
+    _apply_analytical_identity_fields(exported)
     if security_resolution is None:
         return exported
     security_id = str(exported["security_id"])
@@ -1423,6 +1425,19 @@ def _apply_optional_identity_fields(
         value = source.get(field)
         if isinstance(value, str) and value.strip():
             row[field] = value.strip()
+
+
+def _apply_analytical_identity_fields(row: dict[str, JsonValue]) -> None:
+    source_provider_id = row.get("source_provider_id")
+    security_id = row.get("security_id")
+    if not isinstance(source_provider_id, str) or not isinstance(security_id, str):
+        return
+    analytical_key, analytical_scope = analytical_identity_for_security(
+        source_provider_id=source_provider_id,
+        security_id=security_id,
+    )
+    row["analytical_identity_key"] = analytical_key
+    row["analytical_identity_scope"] = analytical_scope
 
 
 def _native_history_recovery_observation(
@@ -2278,6 +2293,7 @@ def _build_etf_snapshots(
 def _security_holding_from_row(row: Mapping[str, JsonValue]) -> SecurityHolding:
     return SecurityHolding(
         security_id=str(row["security_id"]),
+        analytical_identity_key=_optional_text(row.get("analytical_identity_key")),
         security_group_id=_optional_text(row.get("security_group_id")),
         listing_key=_optional_text(row.get("listing_key")),
         security_group_name=_optional_text(row.get("security_group_name")),
@@ -2944,6 +2960,7 @@ def _normalize_source_row(
         "is_cash": is_cash,
         "security_classification": security_classification,
     }
+    _apply_analytical_identity_fields(row)
     row.update(identity_metadata)
     return _AggregateHolding(
         row=row,

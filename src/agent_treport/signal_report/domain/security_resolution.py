@@ -59,6 +59,11 @@ SECURITY_IDENTIFIER_TYPES = frozenset(
     }
 )
 _EXPORTABLE_SECURITY_MASTER_STATUSES = {"verified", "auto_verified"}
+_GLOBAL_ANALYTICAL_IDENTIFIER_TYPES = {
+    "isin",
+    "krx_code",
+    "bloomberg_equity_code",
+}
 
 _CASH_EXACT_CODES = {"KRD010010001", "010010", "USDZZ0000001"}
 _CURRENCY_CODE_PREFIXES = ("KRW", "USD", "EUR", "JPY")
@@ -143,6 +148,15 @@ def has_structural_ticker_resolution(
         )
         is not None
     )
+
+
+def analytical_identity_for_security(
+    *, source_provider_id: str, security_id: str
+) -> tuple[str, str]:
+    identifier_type = _identifier_type(security_id)
+    if identifier_type in _GLOBAL_ANALYTICAL_IDENTIFIER_TYPES:
+        return security_id, "global_identifier"
+    return f"provider={source_provider_id}|security={security_id}", "provider_scoped"
 
 
 def validate_security_master_document(document: Mapping[str, JsonValue]) -> dict[str, JsonValue]:
@@ -326,16 +340,16 @@ def resolve_security_master_observations(
                 and candidate_ticker
                 and candidate_ticker != existing.get("ticker")
             ):
-                review_items.append(
-                    {
-                        "security_id": security_id,
-                        "reason": "holding_ticker_conflict",
-                        "existing_ticker": existing.get("ticker"),
-                        "candidate_ticker": candidate_ticker,
-                        "candidate_name": observation["name"],
-                        "source": "holdings_observation",
-                    }
-                )
+                review_item = {
+                    "security_id": security_id,
+                    "reason": "holding_ticker_conflict",
+                    "existing_ticker": existing.get("ticker"),
+                    "candidate_ticker": candidate_ticker,
+                    "candidate_name": observation["name"],
+                    "source": "holdings_observation",
+                }
+                _apply_observation_source_provider(review_item, observation)
+                review_items.append(review_item)
             if existing.get("status") != "unresolved":
                 continue
             if candidate_ticker is not None:
@@ -386,18 +400,18 @@ def resolve_security_master_observations(
             ticker=None,
         )
         unresolved_count += 1
-        review_items.append(
-            {
-                "security_id": security_id,
-                "reason": (
-                    "ticker_candidate_unresolved"
-                    if classification == "ticker_candidate"
-                    else "classification_unknown"
-                ),
-                "candidate_name": observation["name"],
-                "source": "holdings_observation",
-            }
-        )
+        review_item = {
+            "security_id": security_id,
+            "reason": (
+                "ticker_candidate_unresolved"
+                if classification == "ticker_candidate"
+                else "classification_unknown"
+            ),
+            "candidate_name": observation["name"],
+            "source": "holdings_observation",
+        }
+        _apply_observation_source_provider(review_item, observation)
+        review_items.append(review_item)
 
     resolved_master: dict[str, JsonValue] = {
         "schema_version": SECURITY_MASTER_SCHEMA_VERSION,
@@ -683,8 +697,11 @@ def _group_security_observations(
                 "security_classification": classification,
                 "observed_row_count": 1,
             }
+            _apply_observation_source_provider(grouped[security_id], item)
             continue
         existing["observed_row_count"] = int(existing["observed_row_count"]) + 1
+        if existing.get("source_provider_id") is None:
+            _apply_observation_source_provider(existing, item)
         if existing.get("ticker") is None and ticker is not None:
             existing["ticker"] = ticker
         if existing.get("exchange") is None and exchange is not None:
@@ -703,6 +720,11 @@ def _observation_entry(
 ) -> dict[str, JsonValue]:
     security_id = str(observation["security_id"])
     classification = str(observation["security_classification"])
+    source: dict[str, JsonValue] = {
+        "source": "holdings_observation",
+        "observed_row_count": observation["observed_row_count"],
+    }
+    _apply_observation_source_provider(source, observation)
     return {
         "security_id": security_id,
         "name": observation["name"],
@@ -715,13 +737,19 @@ def _observation_entry(
         "confidence": confidence,
         "security_classification": classification,
         "identifier_type": _observation_identifier_type(security_id, classification),
-        "sources": [
-            {
-                "source": "holdings_observation",
-                "observed_row_count": observation["observed_row_count"],
-            }
-        ],
+        "sources": [source],
     }
+
+
+def _apply_observation_source_provider(
+    target: dict[str, JsonValue], observation: Mapping[str, JsonValue]
+) -> None:
+    source_provider_id = _optional_text(
+        observation.get("source_provider_id"),
+        label=f"observation source_provider_id {observation.get('security_id', '')}",
+    )
+    if source_provider_id is not None:
+        target["source_provider_id"] = source_provider_id
 
 
 def _structural_observation_entry(
@@ -730,6 +758,11 @@ def _structural_observation_entry(
     structural_resolution: tuple[str, str, str, str],
 ) -> dict[str, JsonValue]:
     ticker, exchange, identifier_type, rule = structural_resolution
+    source: dict[str, JsonValue] = {
+        "source": "holdings_observation",
+        "observed_row_count": observation["observed_row_count"],
+    }
+    _apply_observation_source_provider(source, observation)
     return {
         "security_id": observation["security_id"],
         "name": observation["name"],
@@ -740,10 +773,7 @@ def _structural_observation_entry(
         "security_classification": "ticker_candidate",
         "identifier_type": identifier_type,
         "sources": [
-            {
-                "source": "holdings_observation",
-                "observed_row_count": observation["observed_row_count"],
-            },
+            source,
             {
                 "source": "structural_rule",
                 "rule": rule,
