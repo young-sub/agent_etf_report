@@ -273,6 +273,12 @@ def build_parser() -> argparse.ArgumentParser:
         default="fixture",
     )
     run_report.add_argument("--holdings-path")
+    run_report.add_argument("--provider-cache-root")
+    run_report.add_argument(
+        "--source-provider",
+        choices=LIVE_SOURCE_PROVIDER_IDS,
+    )
+    run_report.add_argument("--provider-export-dir")
     run_report.add_argument("--evidence-path")
     run_report.add_argument("--evidence-summary-path")
     run_report.add_argument("--focus-etf-id")
@@ -636,7 +642,13 @@ def build_parser() -> argparse.ArgumentParser:
     resolve_security_master.add_argument("--disable-openfigi-lookup", action="store_true")
 
     check_readiness = subcommands.add_parser("check-operational-readiness")
-    check_readiness.add_argument("--holdings-path", required=True)
+    check_readiness.add_argument("--holdings-path")
+    check_readiness.add_argument("--provider-cache-root")
+    check_readiness.add_argument(
+        "--source-provider",
+        choices=LIVE_SOURCE_PROVIDER_IDS,
+    )
+    check_readiness.add_argument("--provider-export-dir")
     check_readiness.add_argument("--focus-etf-id")
     check_readiness.add_argument("--focus-etf-set-path")
     check_readiness.add_argument("--observed-partitions", type=int, default=30)
@@ -1625,6 +1637,118 @@ def _resolve_security_master_holdings_path(
     )
 
 
+def _has_provider_cache_report_input(args: argparse.Namespace) -> bool:
+    return any(
+        getattr(args, field, None) is not None
+        for field in ("provider_cache_root", "source_provider", "provider_export_dir")
+    )
+
+
+def _has_operational_report_input(args: argparse.Namespace) -> bool:
+    return (
+        _has_provider_cache_report_input(args)
+        or getattr(args, "readiness_path", None) is not None
+        or bool(getattr(args, "allow_operator_review_output", False))
+    )
+
+
+def _copy_provider_cache_source_handoff_summary(
+    *,
+    provider_cache: Path,
+    export_dir: Path,
+) -> None:
+    source_summary_candidates = (
+        provider_cache / "holdings-history" / SOURCE_ACQUISITION_SUMMARY_FILENAME,
+        provider_cache / "catalog" / SOURCE_ACQUISITION_SUMMARY_FILENAME,
+    )
+    for source_summary_path in source_summary_candidates:
+        if not source_summary_path.is_file():
+            continue
+        _write_native_handoff_payload(
+            export_dir / SOURCE_ACQUISITION_SUMMARY_FILENAME,
+            _read_cli_json_object(
+                source_summary_path,
+                label="source acquisition summary",
+            ),
+        )
+        return
+
+
+def _prepare_provider_cache_operational_export(
+    args: argparse.Namespace,
+    *,
+    now: Callable[[], datetime] | None = None,
+    reuse_existing: bool = False,
+) -> Path:
+    has_direct_path = getattr(args, "holdings_path", None) is not None
+    has_provider_input = _has_provider_cache_report_input(args)
+    if has_direct_path and has_provider_input:
+        raise SignalReportInputError(
+            "--holdings-path cannot be combined with provider cache inputs"
+        )
+    if has_direct_path:
+        return Path(str(args.holdings_path))
+    if not has_provider_input:
+        raise SignalReportInputError(
+            "--holdings-path or provider cache inputs are required"
+        )
+    if args.provider_cache_root is None or args.source_provider is None:
+        raise SignalReportInputError(
+            "--provider-cache-root and --source-provider are required together"
+        )
+    if args.provider_export_dir is None:
+        raise SignalReportInputError(
+            "--provider-export-dir is required with provider cache inputs"
+        )
+
+    provider_cache = provider_operational_cache_path(
+        cache_root=Path(args.provider_cache_root),
+        source_provider_id=str(args.source_provider),
+    )
+    export_dir = Path(args.provider_export_dir)
+    manifest_path = export_dir / "url_holdings_cumulative.json"
+    if reuse_existing and manifest_path.is_file() and (
+        export_dir / "collection_summary.json"
+    ).is_file():
+        _copy_provider_cache_source_handoff_summary(
+            provider_cache=provider_cache,
+            export_dir=export_dir,
+        )
+        focus_set_path = provider_cache / "focus_etf_set.json"
+        if (
+            getattr(args, "focus_etf_id", None) is None
+            and getattr(args, "focus_etf_set_path", None) is None
+            and focus_set_path.is_file()
+        ):
+            args.focus_etf_set_path = str(focus_set_path)
+        args.holdings_path = str(manifest_path)
+        return manifest_path
+
+    security_resolution_path = provider_cache / "security-master" / "security_resolution.json"
+    export_latest_holdings_comparison(
+        history_dir=provider_cache / "holdings-history",
+        universe_state_path=provider_cache / "catalog" / "universe_state.json",
+        dest_dir=export_dir,
+        security_resolution_path=(
+            security_resolution_path if security_resolution_path.is_file() else None
+        ),
+        now=now,
+    )
+    _copy_provider_cache_source_handoff_summary(
+        provider_cache=provider_cache,
+        export_dir=export_dir,
+    )
+    focus_set_path = provider_cache / "focus_etf_set.json"
+    if (
+        getattr(args, "focus_etf_id", None) is None
+        and getattr(args, "focus_etf_set_path", None) is None
+        and focus_set_path.is_file()
+    ):
+        args.focus_etf_set_path = str(focus_set_path)
+    args.holdings_path = str(manifest_path)
+    return manifest_path
+
+
 def _check_operational_readiness_command(
     args: argparse.Namespace,
     *,
@@ -1645,6 +1769,7 @@ def _check_operational_readiness_command(
         )
         return 2
     try:
+        _prepare_provider_cache_operational_export(args, now=now)
         focus_etf_ids = None
         if args.focus_etf_set_path is not None:
             focus_etf_ids = load_focus_etf_set_file(
@@ -1660,7 +1785,11 @@ def _check_operational_readiness_command(
             operator_timezone=args.operator_timezone,
             now=now,
         )
-    except (FocusETFSetInputError, OperationalReadinessInputError) as exc:
+    except (
+        FocusETFSetInputError,
+        OperationalReadinessInputError,
+        SignalReportInputError,
+    ) as exc:
         _write_cli_input_error(error_output, str(exc))
         return 2
     except Exception as exc:
@@ -5378,6 +5507,11 @@ def _build_run_report_input_provider(args: argparse.Namespace) -> SignalReportIn
         raise SignalReportInputError("observed-partitions must be a positive integer")
     focus_etf_ids = _focus_etf_ids_from_args(args)
     if args.holdings_source == "fixture":
+        if _has_operational_report_input(args):
+            raise SignalReportInputError(
+                "provider cache or operational readiness inputs require "
+                "--holdings-source operational"
+            )
         return FixtureSignalReportInputProvider(
             holdings_path=args.holdings_path,
             evidence_path=args.evidence_path,
@@ -5385,7 +5519,15 @@ def _build_run_report_input_provider(args: argparse.Namespace) -> SignalReportIn
         )
     if args.holdings_source == "operational":
         if not args.focus_etf_id and not focus_etf_ids:
-            raise SignalReportInputError("--focus-etf-id or --focus-etf-set-path is required")
+            if _has_provider_cache_report_input(args):
+                _prepare_provider_cache_operational_export(args, reuse_existing=True)
+                focus_etf_ids = _focus_etf_ids_from_args(args)
+            if not args.focus_etf_id and not focus_etf_ids:
+                raise SignalReportInputError(
+                    "--focus-etf-id or --focus-etf-set-path is required"
+                )
+        elif _has_provider_cache_report_input(args):
+            _prepare_provider_cache_operational_export(args, reuse_existing=True)
         return OperationalSignalReportInputProvider(
             manifest_path=args.holdings_path or DEFAULT_OPERATIONAL_HOLDINGS_PATH,
             focus_etf_id=args.focus_etf_id,

@@ -18,6 +18,9 @@ PATH_COMPATIBILITY_POLICY = {
             "url_holdings_cumulative.json"
         ),
         "native_history": "data/agent_treport/live-source/holdings-history",
+        "provider_operational_cache": (
+            "data/agent_treport/live-source/source-provider-operational"
+        ),
         "focus_etf_set": (
             "data/agent_treport/focus-etf-sets/default_focus_etf_set.json"
         ),

@@ -72,6 +72,9 @@ def test_path_and_cli_compatibility_policy_is_explicit() -> None:
                 "url_holdings_cumulative.json"
             ),
             "native_history": "data/agent_treport/live-source/holdings-history",
+            "provider_operational_cache": (
+                "data/agent_treport/live-source/source-provider-operational"
+            ),
             "focus_etf_set": (
                 "data/agent_treport/focus-etf-sets/default_focus_etf_set.json"
             ),
@@ -97,6 +100,9 @@ def test_cli_default_paths_follow_compatibility_policy() -> None:
     ]
     assert treport_cli.DEFAULT_NATIVE_HANDOFF_HISTORY_DIR == defaults[
         "native_history"
+    ]
+    assert treport_cli.DEFAULT_OPERATIONAL_SOURCE_CACHE_ROOT.as_posix() == defaults[
+        "provider_operational_cache"
     ]
     assert treport_cli.DEFAULT_FOCUS_ETF_SET_PATH == defaults["focus_etf_set"]
     assert treport_cli.DEFAULT_SECURITY_RESOLUTION_PATH == defaults[

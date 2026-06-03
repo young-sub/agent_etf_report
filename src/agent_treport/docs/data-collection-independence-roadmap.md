@@ -679,7 +679,9 @@ holdings_history
 Implemented:
 
 - CLI command: `run-native-operational-handoff`.
-- Default holdings input:
+- Default report/readiness operating input:
+  `data/agent_treport/live-source/source-provider-operational/<provider>/`.
+- Compatibility/archive holdings input:
   `data/agent_treport/live-source/holdings-history/`.
 - Fresh normalized export by default, with readiness and report execution bound
   to the fresh export fingerprint.

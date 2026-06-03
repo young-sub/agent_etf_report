@@ -87,38 +87,44 @@ verified single-command handoff when the inputs already exist:
 export-holdings-comparison -> check-operational-readiness -> run-report -> native handoff
 ```
 
-The composer defaults to the canonical live holdings history:
+The provider-cache cutover default for report/readiness input is the
+provider-scoped operational cache:
 
 ```text
-data/agent_treport/live-source/holdings-history/
+data/agent_treport/live-source/source-provider-operational/<provider>/
 ```
 
-It does not collect live holdings, call broad external evidence APIs, publish
-alerts, schedule future runs, or mutate canonical live history. It creates a
-fresh normalized comparison export by default and binds readiness plus
-`run-report` to that fresh export fingerprint. Resume/debug use of an existing
-export is available through `--resume-export-path`, but the adjacent
-`collection_summary.json` fingerprint must match the export content.
+The older mixed canonical history under
+`data/agent_treport/live-source/holdings-history/` remains compatibility/archive
+input and reconciliation evidence. The provider-cache readiness/report path does
+not collect live holdings, call broad external evidence APIs, publish alerts,
+schedule future runs, or mutate provider or mixed history. It creates a fresh
+normalized comparison export by default and binds readiness plus `run-report` to
+that export fingerprint. Resume/debug use of an existing export is available
+through `--resume-export-path`, but the adjacent `collection_summary.json`
+fingerprint must match the export content.
 
 Example verified handoff command:
 
 ```powershell
 ..\.venv\Scripts\python.exe -m agent_treport.cli run-native-operational-handoff `
   --run-id <RUN_ID> `
-  --history-dir data\agent_treport\live-source\holdings-history `
-  --universe-state-path <NATIVE_UNIVERSE_STATE_JSON> `
-  --focus-etf-set-path data\agent_treport\focus-etf-sets\default_focus_etf_set.json `
-  --security-resolution-path data\agent_treport\security-master\security_resolution.json `
+  --history-dir data\agent_treport\live-source\source-provider-operational\<PROVIDER>\holdings-history `
+  --universe-state-path data\agent_treport\live-source\source-provider-operational\<PROVIDER>\catalog\universe_state.json `
+  --focus-etf-set-path data\agent_treport\live-source\source-provider-operational\<PROVIDER>\focus_etf_set.json `
+  --security-resolution-path data\agent_treport\live-source\source-provider-operational\<PROVIDER>\security-master\security_resolution.json `
   --evidence-path <external_evidence.json> `
   --evidence-summary-path <external_evidence_summary.json> `
   --dest .scratch\native-operational-handoff\<RUN_ID> `
   --model codex
 ```
 
-Use `--use-default-security-resolution` only when the operator explicitly wants
-the default reviewed export at
-`data\agent_treport\security-master\security_resolution.json`. If no reviewed
-security resolution is supplied, the composer can still produce general
+Use `--use-default-security-resolution` only for compatibility/archive runs that
+intentionally use the root reviewed export at
+`data\agent_treport\security-master\security_resolution.json`. Provider-cache
+runs should use the provider-owned
+`security-master\security_resolution.json`. If no reviewed security resolution
+is supplied, the composer can still produce general
 `user_ready` under existing `ready_with_warnings` behavior, but
 `verified_operational_flow_acceptance.status` is `not_met`.
 
@@ -1245,6 +1251,24 @@ Run readiness for a FocusETFSet:
 
 ```powershell
 ..\.venv\Scripts\python.exe -m agent_treport.cli check-operational-readiness `
+  --provider-cache-root data\agent_treport\live-source\source-provider-operational `
+  --source-provider <PROVIDER> `
+  --provider-export-dir .scratch\operational-live-run\provider-cache-export `
+  --observed-partitions 30
+```
+
+This provider-cache form reads
+`source-provider-operational\<PROVIDER>\focus_etf_set.json` by default, applies
+`security-master\security_resolution.json` when present, copies path-safe source
+acquisition summary evidence from `holdings-history\source_acquisition_summary.json`
+into the internal handoff export, and writes the
+normalized `OperationalHoldingsExport` plus `collection_summary.json` under
+`--provider-export-dir`.
+
+Compatibility/archive readiness can still inspect an existing normalized export:
+
+```powershell
+..\.venv\Scripts\python.exe -m agent_treport.cli check-operational-readiness `
   --holdings-path .scratch\operational-live-run\operational-holdings\url_holdings_cumulative.json `
   --focus-etf-set-path data\agent_treport\focus-etf-sets\default_focus_etf_set.json `
   --observed-partitions 30
@@ -1253,7 +1277,7 @@ Run readiness for a FocusETFSet:
 Optional arguments:
 
 - `--sync-metadata-path <sync_metadata.json>` when checking a non-adjacent
-  metadata file.
+  metadata file for compatibility/archive normalized exports.
 - `--max-observed-age-days <N>`, default `3`. `0` is strict same-observed-date
   mode.
 - `--operator-timezone <IANA_NAME>`, default `Asia/Seoul`.
@@ -1264,8 +1288,10 @@ readiness statuses. Redirect stdout to save the result:
 
 ```powershell
 ..\.venv\Scripts\python.exe -m agent_treport.cli check-operational-readiness `
-  --holdings-path <copied_manifest> `
-  --focus-etf-id <FOCUS_ETF_ID> > .scratch\operational-live-run\readiness.json
+  --provider-cache-root data\agent_treport\live-source\source-provider-operational `
+  --source-provider <PROVIDER> `
+  --provider-export-dir .scratch\operational-live-run\provider-cache-export `
+  --observed-partitions 30 > .scratch\operational-live-run\readiness.json
 ```
 
 CLI input errors, such as invalid JSON, invalid timezone, non-positive
@@ -1365,8 +1391,9 @@ Proceed with final user-ready delivery only when readiness status is `ready` or
 
 ```powershell
 ..\.venv\Scripts\python.exe -m agent_treport.cli check-operational-readiness `
-  --holdings-path .scratch\operational-live-run\operational-holdings\url_holdings_cumulative.json `
-  --focus-etf-id <FOCUS_ETF_ID> `
+  --provider-cache-root data\agent_treport\live-source\source-provider-operational `
+  --source-provider <PROVIDER> `
+  --provider-export-dir .scratch\operational-live-run\provider-cache-export `
   --observed-partitions 30 > .scratch\operational-live-run\readiness.json
 ```
 
@@ -1376,8 +1403,9 @@ Then pass it explicitly to `run-report`:
 ..\.venv\Scripts\python.exe -m agent_treport.cli run-report `
   --run-id <RUN_ID> `
   --holdings-source operational `
-  --holdings-path .scratch\operational-live-run\operational-holdings\url_holdings_cumulative.json `
-  --focus-etf-id <FOCUS_ETF_ID> `
+  --provider-cache-root data\agent_treport\live-source\source-provider-operational `
+  --source-provider <PROVIDER> `
+  --provider-export-dir .scratch\operational-live-run\provider-cache-export `
   --observed-partitions 30 `
   --readiness-path .scratch\operational-live-run\readiness.json `
   --evidence-path .scratch\operational-live-run\external_evidence.json `
